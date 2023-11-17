@@ -68,8 +68,8 @@ public class UserInfoFrame extends JFrame {
                     int age = Integer.parseInt(ageText);
 
                     // Checking if age is a reasonable number
-                    if (age <= 0 || age > 100) {
-                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Please enter a reasonable age (1-100).");
+                    if (age < 18 || age > 119) {
+                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Please enter a reasonable age.");
                         return;
                     }
 
@@ -88,8 +88,8 @@ public class UserInfoFrame extends JFrame {
                     }
                     double weight = Double.parseDouble(weightText);
 
-                    if (weight <= 0) {
-                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Weight must be greater than 0.");
+                    if (weight < 20 || weight > 200) {
+                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Please enter a reasonable weight");
                         return;
                     }
 
@@ -101,8 +101,8 @@ public class UserInfoFrame extends JFrame {
                     }
                     double height = Double.parseDouble(heightText);
 
-                    if (height <= 0) {
-                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Height must be greater than 0.");
+                    if (height <= 60 || height >= 250) {
+                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Please enter a reasonable height.");
                         return;
                     }
 
@@ -133,6 +133,8 @@ public class UserInfoFrame extends JFrame {
 
                     // Assuming you have a method in the ViewModel to create a Person instance
                     viewModel.createPerson();
+                    JOptionPane.showMessageDialog(UserInfoFrame.this, "Submitted the form successfully!");
+                    dispose();
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(UserInfoFrame.this, "An unexpected error occurred, please check your inputs.");
                 }
@@ -155,7 +157,7 @@ public class UserInfoFrame extends JFrame {
         panel.add(new JLabel("Weight (kg):"));
         panel.add(weightField);
 
-        panel.add(new JLabel("Height (m):"));
+        panel.add(new JLabel("Height (cm):"));
         panel.add(heightField);
 
         panel.add(new JLabel("Activity Level:"));
@@ -165,7 +167,7 @@ public class UserInfoFrame extends JFrame {
         activityLevelPanel.add(highActivityRadioButton);
         panel.add(activityLevelPanel);
 
-        panel.add(new JLabel("Dietary Preference:"));
+        panel.add(new JLabel("Dietary Requirement:"));
         panel.add(dietaryPreferenceComboBox);
 
         panel.add(new JLabel("Goal:"));
