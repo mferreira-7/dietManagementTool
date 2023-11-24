@@ -18,3 +18,15 @@
 #### Detailed Nutritional Information Epic:
 - As a fitness trainer, I want the Diet Management Tool to provide detailed nutritional information for each meal plan.
 - So that I can better educate and guide my clients on their dietary choices to help them achieve their fitness goals and improve their overall health.
+
+### Planning
+
+#### Must-have (Check on Moodle)
+1. Welcome Screen
+2. User Information Collection Screen
+3. Nutrition Suggestion (API or dataset) + Linear Regression (Graph showing the trends - Manual)
+
+#### Optional
+- PDF Export
+- Save user's data into database
+- Consider User Preferences
