@@ -23,7 +23,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2XM5Sbtrj8opBIF8dtlhst7b2G3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,18 +39,31 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/rafaysmac/Desktop/Team Projectt/23-24_CE201-col_team-50/23-24_CE201-col_team-50",
+    "git-widget-placeholder": "Ege",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Ege/23-24_CE201-col_team-50",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ege\23-24_CE201-col_team-50\DietManagementTool\src\main" />
+      <recent name="C:\Users\Ege\23-24_CE201-col_team-50\DietManagementTool\src" />
+      <recent name="C:\Users\Ege\23-24_CE201-col_team-50\DietManagementTool\src\main\app" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Ege\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7df4dd7e-8507-47a8-a98a-032ac916f264" name="Changes" comment="" />
@@ -52,11 +71,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1698426108741</updated>
-      <workItem from="1699632119733" duration="989000" />
+      <workItem from="1699808751400" duration="931000" />
+      <workItem from="1699809781676" duration="386000" />
+      <workItem from="1699811343793" duration="28000" />
+      <workItem from="1699811379178" duration="277000" />
+      <workItem from="1700048888279" duration="2511000" />
+      <workItem from="1700063158324" duration="996000" />
+      <workItem from="1700065633997" duration="5000" />
+      <workItem from="1700132956305" duration="39000" />
+      <workItem from="1700140011899" duration="210000" />
+      <workItem from="1700237008221" duration="55000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

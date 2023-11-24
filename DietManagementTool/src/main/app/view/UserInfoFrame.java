@@ -33,6 +33,8 @@ public class UserInfoFrame extends JFrame {
         setVisible(true);
     }
 
+
+
     private void initializeComponents() {
         ageField = new JTextField(20);
         maleRadioButton = new JRadioButton("Male");
