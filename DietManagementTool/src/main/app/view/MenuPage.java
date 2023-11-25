@@ -13,7 +13,6 @@ public class MenuPage extends JFrame {
         initializeComponents();
         setLayout();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        pack();
         setLocationRelativeTo(null);
         setVisible(true);
     }
@@ -37,9 +36,9 @@ public class MenuPage extends JFrame {
     private void setLayout() {
         JPanel panel = new JPanel(new FlowLayout());
         JLabel calculateLabel = new JLabel("Please Click to Calculate your Info -->");
-
+        setSize(600, 500);
         panel.add(calculateLabel);
-        panel.add(calculatorButton);
+        panel.add(calculatorButton, BorderLayout.NORTH);
         setContentPane(panel);
 
 

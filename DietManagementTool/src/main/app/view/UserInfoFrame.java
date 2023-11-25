@@ -28,7 +28,6 @@ public class UserInfoFrame extends JFrame {
         initializeComponents();
         setLayout();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        pack();
         setLocationRelativeTo(null);
         setVisible(true);
     }
@@ -146,7 +145,7 @@ public class UserInfoFrame extends JFrame {
 
     private void setLayout() {
         JPanel panel = new JPanel(new GridLayout(11, 2, 10, 10));
-
+        setSize(600, 500);
         panel.add(new JLabel("Age:"));
         panel.add(ageField);
 
