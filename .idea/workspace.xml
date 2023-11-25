@@ -27,7 +27,7 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2XM5Sbtrj8opBIF8dtlhst7b2G3" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -39,7 +39,6 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Ege",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Ege/23-24_CE201-col_team-50",
     "node.js.detected.package.eslint": "true",
@@ -81,6 +80,7 @@
       <workItem from="1700132956305" duration="39000" />
       <workItem from="1700140011899" duration="210000" />
       <workItem from="1700237008221" duration="55000" />
+      <workItem from="1700844319811" duration="2614000" />
     </task>
     <servers />
   </component>
