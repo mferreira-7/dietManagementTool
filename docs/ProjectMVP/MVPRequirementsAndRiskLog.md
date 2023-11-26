@@ -1,4 +1,3 @@
-
 ## User Stories
 
 
@@ -43,7 +42,7 @@ Jira Issue: https://cseejira.essex.ac.uk/browse/D201070-43
 > This plan is for a hypothetical structure where the tool has to be scaled to a high traffic environment.
 > The minimised access to the database and the use of saving only when it is needed prevents too much unnessecary traffic.
 
-![https://drive.google.com/file/d/1FAh6hPk_UxJATRZMq2KC66eQ2U-guLC_/view?usp=sharing](https://drive.google.com/file/d/1hJaWlO6F7e22w8ma09wEGirxFpIAlZdt/view?usp=sharing "https://drive.google.com/file/d/1hJaWlO6F7e22w8ma09wEGirxFpIAlZdt/view?usp=sharing")
+![https://drive.google.com/file/d/1FAh6hPk_UxJATRZMq2KC66eQ2U-guLC_/view?usp=sharing](https://drive.google.com/file/d/1FAh6hPk_UxJATRZMq2KC66eQ2U-guLC_/view?usp=sharing "https://drive.google.com/file/d/1FAh6hPk_UxJATRZMq2KC66eQ2U-guLC_/view?usp=sharing")
 
 ## Risk Assessment
 #### Technical Integration Challenges
