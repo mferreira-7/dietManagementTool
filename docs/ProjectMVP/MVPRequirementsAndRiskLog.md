@@ -44,6 +44,8 @@ Jira Issue: https://cseejira.essex.ac.uk/browse/D201070-43
 
 ![https://drive.google.com/file/d/1FAh6hPk_UxJATRZMq2KC66eQ2U-guLC_/view?usp=sharing](https://drive.google.com/file/d/1FAh6hPk_UxJATRZMq2KC66eQ2U-guLC_/view?usp=sharing "https://drive.google.com/file/d/1FAh6hPk_UxJATRZMq2KC66eQ2U-guLC_/view?usp=sharing")
 
+>Directory of the Image(docs/MVPFiles/ScalabilityUseCase.png)
+
 ## Risk Assessment
 #### Technical Integration Challenges
 - Description: Difficulty integrating the system with external databases or APIs for food information.
