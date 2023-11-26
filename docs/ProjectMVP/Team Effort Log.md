@@ -98,19 +98,19 @@
 - (https://cseejira.essex.ac.uk/browse/D201070-50?jql=assignee%20in%20(vs22222)%20ORDER%20BY%20created%20DESC)
   - This was set and completed in Week 6. It took 5 days to complete. This task involved Vladyslav researching APIs to find one that fits our need
 
-## Muhammad R B Zahid
+## Rafay Zahid
 
 - ***Sprint 1:***
 (https://cseejira.essex.ac.uk/browse/D201070-4?jql=assignee%20in%20(mz22085)%20ORDER%20BY%20created%20DESC)
-  - This was set and completed in Week 3. It took about 30 minutes to complete. This task involved Muhammad learning how to use the command line effectively
+  - This was set and completed in Week 3. It took about 30 minutes to complete. This task involved Rafay learning how to use the command line effectively
 
 - ***Sprint 2:***
 (https://cseejira.essex.ac.uk/browse/D201070-26?jql=assignee%20in%20(mz22085)%20ORDER%20BY%20created%20DESC)
-  - This was set and completed in Weeks 5-6. It took a week to complete. This task involved Muhammad implementing a JFrame to collect user data
+  - This was set and completed in Weeks 5-6. It took a week to complete. This task involved Rafay implementing a JFrame to collect user data
 
 - ***Sprint 3:***
 (https://cseejira.essex.ac.uk/browse/D201070-42?jql=assignee%20in%20(mz22085)%20ORDER%20BY%20created%20DESC)
-  - This was set and completed in Week 6. It took 1 day to complete. This task involved Muhammad customizing the user input jframe, as well as implementing error checking (https://cseegit.essex.ac.uk/23-24-ce201-col/23-24_CE201-col_team-50/-/commit/6d4dac92dcb510a064c99b9f053aae49d76c3ffa)
+  - This was set and completed in Week 6. It took 1 day to complete. This task involved Rafay customizing the user input jframe, as well as implementing error checking (https://cseegit.essex.ac.uk/23-24-ce201-col/23-24_CE201-col_team-50/-/commit/6d4dac92dcb510a064c99b9f053aae49d76c3ffa)
 
 - (https://cseejira.essex.ac.uk/browse/D201070-81?jql=assignee%20in%20(mz22085)%20ORDER%20BY%20created%20DESC)
-  - This was set and compeleted in Weeks 8-9. It took 6 days to complete. This task involved Muhammad adjusting the UserInputViewModel page to align correctly and consistently
+  - This was set and compeleted in Weeks 8-9. It took 6 days to complete. This task involved Rafay adjusting the UserInputViewModel page to align correctly and consistently
