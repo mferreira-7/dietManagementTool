@@ -36,8 +36,7 @@ Jira Issue: https://cseejira.essex.ac.uk/browse/D201070-43
 ## Nutrition Calculation (Functional Requirement) Sequence Diagram
 
 Access the image through the link: https://drive.google.com/file/d/1hJaWlO6F7e22w8ma09wEGirxFpIAlZdt/view?usp=sharing
-
-![image](MVPFiles\sequence.png)
+<img src="MVPFiles\sequence.png" alt="image">
 
 ## Scalability plan (Non-Functional Requirement) Use-Case Diagram
 
@@ -45,8 +44,7 @@ Access the image through the link: https://drive.google.com/file/d/1hJaWlO6F7e22
 > The minimised access to the database and the use of saving only when it is needed prevents too much unnessecary traffic.
 
 Access the image through the link: https://drive.google.com/file/d/1FAh6hPk_UxJATRZMq2KC66eQ2U-guLC_/view?usp=sharing
-
-![image](MVPFiles\ScalabilityUseCase.png)
+<img src="MVPFiles\ScalabilityUseCase.png" alt="image">
 
 ## Risk Assessment
 #### Technical Integration Challenges
