@@ -1,5 +1,7 @@
 package main.app.view;
 
+import main.app.model.Person;
+import main.app.viewmodel.NutritionViewModel;
 import main.app.viewmodel.UserInfoViewModel;
 
 import javax.swing.*;
@@ -135,6 +137,13 @@ public class UserInfoFrame extends JFrame {
                     // Assuming you have a method in the ViewModel to create a Person instance
                     viewModel.createPerson();
                     JOptionPane.showMessageDialog(UserInfoFrame.this, "Submitted the form successfully!");
+                    Person person = viewModel.createPerson();
+
+                    // Open NutritionView with the created person
+                    NutritionViewModel nutritionViewModel = new NutritionViewModel(person);
+                    new NutritionView(nutritionViewModel);
+
+                    dispose(); // Close the current UserInfoFrame
                     dispose();
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(UserInfoFrame.this, "An unexpected error occurred, please check your inputs.");

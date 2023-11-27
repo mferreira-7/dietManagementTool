@@ -41,8 +41,8 @@ public class UserInfoViewModel {
         this.goal = goal;
     }
 
-    public void createPerson() {
+    public Person createPerson() {
         // Creating a Person instance using the set information
-        new Person(gender, age, weight, height, activityLevel, dietaryPreference, goal);
+        return new Person(gender, age, weight, height, activityLevel, dietaryPreference, goal);
     }
 }

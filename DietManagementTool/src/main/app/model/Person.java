@@ -4,7 +4,7 @@ public class Person {
     private int gender; // 0 - male, 1 - "female"
     private int age;
     private double weight; // in kilograms
-    private double height; // in meters
+    private double height; // in centimeters
     private double activityLevel; // 1.2 - low, 1.5 - moderate, 1.8 - high
     private int dietaryPreference; // 0 - neither, 1 - vegan, 2 - vegetarian
     private int goal; // 0 - lose weight, 1 - maintain weight, 2 - gain muscles,

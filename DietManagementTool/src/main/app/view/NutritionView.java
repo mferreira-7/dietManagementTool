@@ -1,6 +1,7 @@
 package main.app.view;
 
 import javax.swing.*;
+
 import main.app.model.NutritionResult;
 import main.app.model.Person;
 import main.app.viewmodel.NutritionViewModel;
@@ -22,10 +23,10 @@ public class NutritionView {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        panel.add(new JLabel("Total Calories: " + result.getTotalCalories()));
-        panel.add(new JLabel("Protein: " + result.getProtein() + "g"));
-        panel.add(new JLabel("Fat: " + result.getFat() + "g"));
-        panel.add(new JLabel("Carbs: " + result.getCarbs() + "g"));
+        panel.add(new JLabel("Total Calories: " + (int) result.getTotalCalories()));
+        panel.add(new JLabel("Protein: " + (int) result.getProtein() + "g"));
+        panel.add(new JLabel("Fat: " + (int) result.getFat() + "g"));
+        panel.add(new JLabel("Carbs: " + (int) result.getCarbs() + "g"));
 
         frame.add(panel);
         frame.pack();
@@ -34,7 +35,7 @@ public class NutritionView {
 
     public static void main(String[] args) {
         // Example usage
-        Person person = new Person(0, 25, 70, 1.75, 1.5, 0, 1);
+        Person person = new Person(0, 25, 70, 175, 1.5, 0, 1);
         NutritionViewModel viewModel = new NutritionViewModel(person);
         new NutritionView(viewModel);
     }
