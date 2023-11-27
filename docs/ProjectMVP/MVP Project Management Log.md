@@ -60,6 +60,6 @@ Each team member demonstrates commendable self-discipline, diligently completing
 
 ## Product Backlog
 There are no backlog at the moment except for the feedback provided. All members of the time are on track.
-<img src="MVPFiles\backlog.png" alt="image">
+<img src="MVPFiles/backlog.png" alt="image">
 Access the image through the link: https://www.dropbox.com/scl/fi/39zsxnfixpgimnwwd1t1u/Screenshot-2023-11-24-at-06.24.45.png?rlkey=whqlcio3s9wm7few9m29bdxjw&dl=0
 
