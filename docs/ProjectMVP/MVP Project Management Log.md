@@ -23,8 +23,21 @@ We created a whatsapp group which is where we hold our daily or demand stand-ups
 
 ## Sprint Burndown Charts
 
-A link to the team burndown chart using issue counts. 
-https://www.dropbox.com/scl/fo/m2p2ovh0a7qrq4e41z3ys/h?rlkey=9h251chwvo0rjns2cuqcxurcv&dl=0
+A link to the team burndown chart using issue counts.
+Access the images through the link: https://www.dropbox.com/scl/fo/m2p2ovh0a7qrq4e41z3ys/h?rlkey=9h251chwvo0rjns2cuqcxurcv&dl=0
+
+<table>
+  <tr>
+    <td><img src="MVPFiles/charts/chartWeek3.png" alt="image"></td>
+    <td><img src="MVPFiles/charts/chartWeek4.png" alt="image"></td>
+    <td><img src="MVPFiles/charts/chartWeek5n6.png" alt="image"></td>
+  </tr>
+  <tr>
+    <td><img src="MVPFiles/charts/chartWeek6.png" alt="image"></td>
+    <td><img src="MVPFiles/charts/chartWeek7n9.png" alt="image"></td>
+    <td></td> <!-- Empty cell for alignment -->
+  </tr>
+</table>
 
 ## Burndown-Charts Discussion
 
@@ -46,6 +59,7 @@ Each team member demonstrates commendable self-discipline, diligently completing
 
 
 ## Product Backlog
-There are no backlog at the moment except for the feedback provided. All members of the time are on track. 
-https://www.dropbox.com/scl/fi/39zsxnfixpgimnwwd1t1u/Screenshot-2023-11-24-at-06.24.45.png?rlkey=whqlcio3s9wm7few9m29bdxjw&dl=0
+There are no backlog at the moment except for the feedback provided. All members of the time are on track.
+<img src="MVPFiles/backlog.png" alt="image">
+Access the image through the link: https://www.dropbox.com/scl/fi/39zsxnfixpgimnwwd1t1u/Screenshot-2023-11-24-at-06.24.45.png?rlkey=whqlcio3s9wm7few9m29bdxjw&dl=0
 
