@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7df4dd7e-8507-47a8-a98a-032ac916f264" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7df4dd7e-8507-47a8-a98a-032ac916f264" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +41,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/Projects/University/TeamProject/23-24_CE201-col_team-50/DietManagementTool",
+    "last_opened_file_path": "E:/Projects/University/TeamProject/23-24_CE201-col_team-50",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -85,6 +83,7 @@
       <workItem from="1700237008221" duration="55000" />
       <workItem from="1700844319811" duration="2614000" />
       <workItem from="1701116201833" duration="69000" />
+      <workItem from="1701118607559" duration="311000" />
     </task>
     <servers />
   </component>
