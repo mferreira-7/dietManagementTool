@@ -23,9 +23,14 @@ We created a whatsapp group which is where we hold our daily or demand stand-ups
 
 ## Sprint Burndown Charts
 
-A link to the team burndown chart using issue counts. 
-https://www.dropbox.com/scl/fo/m2p2ovh0a7qrq4e41z3ys/h?rlkey=9h251chwvo0rjns2cuqcxurcv&dl=0
+A link to the team burndown chart using issue counts.
+Access images through the link: https://www.dropbox.com/scl/fo/m2p2ovh0a7qrq4e41z3ys/h?rlkey=9h251chwvo0rjns2cuqcxurcv&dl=0
 
+![image](MVPFiles\charts\chartWeek3.png) 
+![image](MVPFiles\charts\chartWeek4.png) 
+![image](MVPFiles\charts\chartWeek5-6.png) 
+![image](MVPFiles\charts\chartWeek6.png) 
+![image](MVPFiles\charts\chartWeek7-9.png)
 ## Burndown-Charts Discussion
 
 Burndown charts is a key tool in Agile and Scrum methodologies, providing a visual representation of work left to do versus time remaining in a sprint.
@@ -46,6 +51,7 @@ Each team member demonstrates commendable self-discipline, diligently completing
 
 
 ## Product Backlog
-There are no backlog at the moment except for the feedback provided. All members of the time are on track. 
+There are no backlog at the moment except for the feedback provided. All members of the time are on track.
+
 https://www.dropbox.com/scl/fi/39zsxnfixpgimnwwd1t1u/Screenshot-2023-11-24-at-06.24.45.png?rlkey=whqlcio3s9wm7few9m29bdxjw&dl=0
 
