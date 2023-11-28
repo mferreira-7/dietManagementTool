@@ -150,52 +150,89 @@ public class UserInfoFrame extends JFrame {
                 }
             }
         });
+        applyStyles();
+    }
+
+    private void applyStyles() {
+        Font labelFont = new Font("Roboto", Font.PLAIN, 18);
+        Font fieldFont = new Font("Roboto", Font.PLAIN, 16);
+        Color buttonColor = new Color(100, 181, 246);
+        Color buttonTextColor = Color.BLACK;
+
+        // Apply styles to components
+        ageField.setFont(fieldFont);
+        maleRadioButton.setFont(labelFont);
+        femaleRadioButton.setFont(labelFont);
+        weightField.setFont(fieldFont);
+        heightField.setFont(fieldFont);
+        dietaryPreferenceComboBox.setFont(fieldFont);
+        goalComboBox.setFont(fieldFont);
+        lowActivityRadioButton.setFont(labelFont);
+        moderateActivityRadioButton.setFont(labelFont);
+        highActivityRadioButton.setFont(labelFont);
+
+        submitButton.setFont(new Font("Roboto", Font.BOLD, 22));
+        submitButton.setBackground(buttonColor);
+        submitButton.setForeground(buttonTextColor);
+        submitButton.setFocusPainted(false);
     }
 
     private void setLayout() {
-        JPanel panel = new JPanel(new GridLayout(11, 2, 10, 10));
-        setSize(600, 500);
-        panel.add(new JLabel("Age:"));
-        panel.add(ageField);
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        panel.add(new JLabel("Gender:"));
+        // Create and style each row with its own JPanel
+        mainPanel.add(createRowPanel(new JLabel("Age:"), ageField));
+        mainPanel.add(createRowPanel(new JLabel("Gender:"), createGenderPanel()));
+        mainPanel.add(createRowPanel(new JLabel("Weight (kg):"), weightField));
+        mainPanel.add(createRowPanel(new JLabel("Height (cm):"), heightField));
+        mainPanel.add(createRowPanel(new JLabel("Activity Level:"), createActivityLevelPanel()));
+        mainPanel.add(createRowPanel(new JLabel("Dietary Requirement:"), dietaryPreferenceComboBox));
+        mainPanel.add(createRowPanel(new JLabel("Goal:"), goalComboBox));
+
+        // Submit button styled and placed
+        submitButton.setPreferredSize(new Dimension(200, 50));
+        submitButton.setFont(new Font("Roboto", Font.BOLD, 22));
+        submitButton.setBackground(new Color(100, 181, 246));
+        submitButton.setForeground(Color.BLACK);
+        submitButton.setFocusPainted(false);
+
+        JPanel submitPanel = new JPanel();
+        submitPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        submitPanel.add(submitButton);
+
+        mainPanel.add(submitPanel);
+
+        // Set the main panel as the content pane of the frame
+        setContentPane(mainPanel);
+
+        // Adjust the window to fit the preferred size and layouts of its subcomponents
+        pack();
+        setLocationRelativeTo(null); // Center the frame on the screen
+    }
+
+    private JPanel createRowPanel(JComponent label, JComponent field) {
+        JPanel rowPanel = new JPanel(new BorderLayout());
+        rowPanel.add(label, BorderLayout.WEST);
+        rowPanel.add(field, BorderLayout.CENTER);
+        return rowPanel;
+    }
+
+    private JPanel createGenderPanel() {
         JPanel genderPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         genderPanel.add(maleRadioButton);
         genderPanel.add(femaleRadioButton);
-        panel.add(genderPanel);
+        return genderPanel;
+    }
 
-        panel.add(new JLabel("Weight (kg):"));
-        panel.add(weightField);
-
-        panel.add(new JLabel("Height (cm):"));
-        panel.add(heightField);
-
-        panel.add(new JLabel("Activity Level:"));
+    private JPanel createActivityLevelPanel() {
         JPanel activityLevelPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         activityLevelPanel.add(lowActivityRadioButton);
         activityLevelPanel.add(moderateActivityRadioButton);
         activityLevelPanel.add(highActivityRadioButton);
-        panel.add(activityLevelPanel);
-
-        panel.add(new JLabel("Dietary Requirement:"));
-        panel.add(dietaryPreferenceComboBox);
-
-        panel.add(new JLabel("Goal:"));
-        panel.add(goalComboBox);
-
-        // New panel for the submit button
-        JPanel submitButtonPanel = new JPanel(new FlowLayout());
-        submitButtonPanel.add(submitButton);
-
-        // Add an empty label for the left cell of the grid if needed
-        panel.add(new JLabel(""));
-        panel.add(submitButtonPanel);
-
-
-        setContentPane(panel);
+        return activityLevelPanel;
     }
-
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new UserInfoFrame());
     }
