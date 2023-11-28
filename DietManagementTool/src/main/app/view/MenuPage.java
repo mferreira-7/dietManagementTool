@@ -34,6 +34,7 @@ public class MenuPage extends JFrame {
     }
 
     private void setLayout() {
+
         JPanel panel = new JPanel(new FlowLayout());
         JLabel calculateLabel = new JLabel("Please Click to Calculate your Info -->");
         setSize(600, 500);

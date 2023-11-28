@@ -42,7 +42,7 @@ public class WelcomeFrame extends JFrame {
     private void setLayout() {
         JPanel panel = new JPanel(new FlowLayout());
         setSize(600, 500);
-        welcomeLabel = new JLabel("Welcome to Diet Management Tool", JLabel.CENTER);
+        welcomeLabel = new JLabel("Welcome to Diet Management App", JLabel.CENTER);
         welcomeLabel.setFont(new Font("Arial", Font.BOLD, 24));
         welcomeLabel.setBorder(BorderFactory.createEmptyBorder(100, 0, 100, 0));
 
