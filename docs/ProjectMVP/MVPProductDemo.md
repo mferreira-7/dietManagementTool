@@ -20,18 +20,18 @@ This is the actual calculator screen.
 <table>
   <tr>
     <td><img src="MVPFiles/demo/error1.jpg" alt="image" height = "150">
-    Various checks have been made to make sure the input data is valid. This is the age check.
+    <br>Various checks have been made to make sure the input data is valid. This is the age check.
     </td>
     <td><img src="MVPFiles/demo/error2.jpg" alt="image" height = "150">
-    If a field is left empty, the program checks that as well. This is the gender check.</td>
+    <br>If a field is left empty, the program checks that as well. This is the gender check.</td>
   </tr>
   <tr>
     <td>
     <img src="MVPFiles/demo/error3.jpg" alt="image" height = "150">
-    The weight should be a reasonable value as well. This is the weight check.
+    <br>The weight should be a reasonable value as well. This is the weight check.
     </td>
     <td><img src="MVPFiles/demo/error4.jpg" alt="image" height = "150">
-    The height check. To ensure the user's height has a valid value.</td>
+    <br>The height check. To ensure the user's height has a valid value.</td>
   </tr>
 </table>
 
