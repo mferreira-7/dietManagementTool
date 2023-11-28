@@ -1,5 +1,42 @@
 # Key Features and Future Developments
 
+## Screenshots
+### Welcome Screen
+<img src="MVPFiles/demo/welcome.jpg" alt="image">
+This is the home screen. Press start to start the application.
+
+### Menu
+<img src="MVPFiles/demo/menu.jpg" alt="image">
+This is the menu screen, the nutrition calculator can be accessed here. We aim to add other options as well.
+
+### Calculator
+<img src="MVPFiles/demo/calculator.jpg" alt="image">
+This is the actual calculator screen.
+
+### Invalid Input Handling
+<table>
+  <tr>
+    <td><img src="MVPFiles/demo/error1.jpg" alt="image">
+    Various checks have been made to make sure the input data is valid. This is the age check.
+    </td>
+    <td><img src="MVPFiles/demo/error2.jpg" alt="image">
+    If a field is left empty, the program checks that as well. This is the gender check.</td>
+  </tr>
+  <tr>
+    <td><img src="MVPFiles/demo/error3.jpg" alt="image">
+    The weight should be a reasonable value as well. This is the weight check.</td>
+    <td><img src="MVPFiles/demo/error4.jpg" alt="image">
+    The height check. To ensure the user's height has a valid value.</td>
+  </tr>
+</table>
+
+<img src="MVPFiles/demo/success.jpg" alt="image">
+Once all the information is checked and verified, the screen is closed and the user data is saved. Press "OK" to move to the next screen.
+
+### Nutrition Suggestion
+<img src="MVPFiles/demo/result.jpg" alt="image">
+After collecting the data, the nutrition calculator does its magic, voilà the calories and other stats are shown!
+
 ## Proud Achievements
 We're overjoyed to share some of the standout features in our app that we are particularly proud of:
 
