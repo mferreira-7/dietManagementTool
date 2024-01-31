@@ -41,11 +41,13 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/Projects/University/TeamProject/23-24_CE201-col_team-50",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Projects/University/TeamProject/23-24_CE201-col_team-50/DietManagementTool",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -84,6 +86,7 @@
       <workItem from="1700844319811" duration="2614000" />
       <workItem from="1701116201833" duration="69000" />
       <workItem from="1701118607559" duration="311000" />
+      <workItem from="1706736316364" duration="614000" />
     </task>
     <servers />
   </component>
