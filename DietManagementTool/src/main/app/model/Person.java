@@ -9,6 +9,8 @@ public class Person {
     private int dietaryPreference; // 0 - neither, 1 - vegan, 2 - vegetarian
     private int goal; // 0 - lose weight, 1 - maintain weight, 2 - gain muscles,
 
+    private NutritionResult nutrition;
+
     public Person(int gender, int age, double weight, double height, double activityLevel, int dietaryPreference, int goal) {
         this.gender = gender;
         this.age = age;
@@ -46,4 +48,13 @@ public class Person {
     public int getGoal() {
         return goal;
     }
+
+    public void storeFoodData(NutritionResult nutrition ){
+        this.nutrition = nutrition;
+
+    }
+
 }
+
+
+
