@@ -1,5 +1,7 @@
 package main.app.model;
 
+import main.app.utils.Meal;
+
 public class Person {
     private int gender; // 0 - male, 1 - "female"
     private int age;
@@ -8,6 +10,7 @@ public class Person {
     private double activityLevel; // 1.2 - low, 1.5 - moderate, 1.8 - high
     private int dietaryPreference; // 0 - neither, 1 - vegan, 2 - vegetarian
     private int goal; // 0 - lose weight, 1 - maintain weight, 2 - gain muscles,
+    Meal personalMeal;
 
     public Person(int gender, int age, double weight, double height, double activityLevel, int dietaryPreference, int goal) {
         this.gender = gender;
@@ -46,4 +49,13 @@ public class Person {
     public int getGoal() {
         return goal;
     }
+
+    public void storeMealData(Meal meal){
+        this.personalMeal = meal;
+
+    }
+
 }
+
+
+
