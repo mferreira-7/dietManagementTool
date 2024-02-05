@@ -27,7 +27,7 @@ enum foodDataType{
 
 public class FoodItemSearchAPI {
     //This function only works by searching 1 item at a time
-    public static Vector<String> getNutritionInfo(String apiKey, String foodName) {
+    public static Food getNutritionInfo(String apiKey, String foodName) {
         Vector<String> results = new Vector<>();
 
         try {
@@ -58,16 +58,19 @@ public class FoodItemSearchAPI {
                     // Process the response
                     if (line.startsWith("{\"items\": [{\"name\":")){
                         adaptedLine = line.replaceAll("\"", "");
-                        System.out.println(adaptedLine);
+                        adaptedLine = adaptedLine.replaceAll("}", "");
+                        adaptedLine = adaptedLine.replaceAll("\\{", "");
+                        //System.out.println(adaptedLine);
 
-                        adaptedLine = adaptedLine.substring(10, adaptedLine.length() - 3);
-                        System.out.println(adaptedLine);
+                        adaptedLine = adaptedLine.substring(8, adaptedLine.length() - 3);
+                        //System.out.println(adaptedLine);
 
                         String[] dataArr = adaptedLine.split(", ");
 
                         for (String i:dataArr){
-                            results.add(i.toString());
+                            results.add(i.toString());//If two results of food data come, only the first will be saved
                         }
+
                     } else if (line.startsWith("{\"items\": [{")) {
                         System.out.println("No food with that name can be found");
                     }
@@ -86,8 +89,24 @@ public class FoodItemSearchAPI {
             results.add("Error: " + e.getMessage());
         }
 
-        return results;
+        // Create a Food object with the extracted data
+        return new Food(
+                getName(results),
+                getStat(foodDataType.CALORIES, results),
+                getStat(foodDataType.SERVING_SIZE, results),
+                getStat(foodDataType.TOTAL_FAT, results),
+                getStat(foodDataType.SATURATED_FAT, results),
+                getStat(foodDataType.PROTEIN, results),
+                getStat(foodDataType.SODIUM, results),
+                getStat(foodDataType.POTASSIUM, results),
+                getStat(foodDataType.CHOLESTEROL_MG, results),
+                getStat(foodDataType.TOTAL_CARBS, results),
+                getStat(foodDataType.FIBER, results),
+                getStat(foodDataType.SUGAR, results)
+        );
     }
+
+
 
     public static Double getStat(foodDataType TYPE, Vector<String> foodData){
         switch (TYPE){
@@ -180,16 +199,37 @@ public class FoodItemSearchAPI {
 
     public static void main(String[] args) {
         String apiKey = "yA0vx21q3TVlRNuMK6ZXdQ==9UmAidTa6j7VpLtR";
-        String foodName = "250g Brown rice";
+        String foodName = "chicken breast and salad";
 
         // Call the function to get nutrition information
-        Vector<String> nutritionInfo = getNutritionInfo(apiKey, foodName);
+        Food nutritionInfo = getNutritionInfo(apiKey, foodName);
 
+        /*    OUTDATED
         // Display the results
         for (String result : nutritionInfo) {
             System.out.println(result);
         }
 
-        System.out.println(getStat(foodDataType.PROTEIN,nutritionInfo) + " " + getName(nutritionInfo));
+        //System.out.println(getStat(foodDataType.PROTEIN,nutritionInfo) + " " + getName(nutritionInfo) + " " + getStat(foodDataType.SUGAR,nutritionInfo));
+        */
+
+        System.out.println(nutritionInfo + " " + nutritionInfo.getSugar());
+
+        Meal example = new Meal(MealType.Breakfast);
+
+        Food sausage = getNutritionInfo(apiKey, "Sausage");
+        Food eggs = getNutritionInfo(apiKey, "eggs");
+        Food toast = getNutritionInfo(apiKey, "toast");
+
+        example.addFood(sausage);
+        example.addFood(eggs);
+        example.addFood(toast);
+
+        example.printFoods();
+
+        Food totalNutritionalValues = example.getTotalNutritionalValues();
+
+        System.out.println(totalNutritionalValues);
+
     }
 }
