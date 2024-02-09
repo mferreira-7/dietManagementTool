@@ -8,27 +8,12 @@ import java.net.URL;
 import java.util.Vector;
 import java.net.URLEncoder;
 
-enum foodDataType{
-    NAME,
-    CALORIES,
-    SERVING_SIZE,
-    TOTAL_FAT,
-    SATURATED_FAT,
-    PROTEIN,
-    SODIUM,
-    POTASSIUM,
-    CHOLESTEROL_MG,
-    TOTAL_CARBS,
-    FIBER,
-    SUGAR
-
-}
-
 
 public class FoodItemSearchAPI {
     //This function only works by searching 1 item at a time
-    public static Food getNutritionInfo(String apiKey, String foodName) {
+    public static Food getNutritionInfo(String foodName) {
         Vector<String> results = new Vector<>();
+        String apiKey = "yA0vx21q3TVlRNuMK6ZXdQ==9UmAidTa6j7VpLtR";
 
         try {
             // Create the URL for the Calorieninjas API
@@ -89,21 +74,28 @@ public class FoodItemSearchAPI {
             results.add("Error: " + e.getMessage());
         }
 
-        // Create a Food object with the extracted data
-        return new Food(
-                getName(results),
-                getStat(foodDataType.CALORIES, results),
-                getStat(foodDataType.SERVING_SIZE, results),
-                getStat(foodDataType.TOTAL_FAT, results),
-                getStat(foodDataType.SATURATED_FAT, results),
-                getStat(foodDataType.PROTEIN, results),
-                getStat(foodDataType.SODIUM, results),
-                getStat(foodDataType.POTASSIUM, results),
-                getStat(foodDataType.CHOLESTEROL_MG, results),
-                getStat(foodDataType.TOTAL_CARBS, results),
-                getStat(foodDataType.FIBER, results),
-                getStat(foodDataType.SUGAR, results)
-        );
+        try {
+            // Create a Food object with the extracted data
+            return new Food(
+                    getName(results),
+                    getStat(foodDataType.CALORIES, results),
+                    getStat(foodDataType.SERVING_SIZE, results),
+                    getStat(foodDataType.TOTAL_FAT, results),
+                    getStat(foodDataType.SATURATED_FAT, results),
+                    getStat(foodDataType.PROTEIN, results),
+                    getStat(foodDataType.SODIUM, results),
+                    getStat(foodDataType.POTASSIUM, results),
+                    getStat(foodDataType.CHOLESTEROL_MG, results),
+                    getStat(foodDataType.TOTAL_CARBS, results),
+                    getStat(foodDataType.FIBER, results),
+                    getStat(foodDataType.SUGAR, results)
+            );
+        } catch (ArrayIndexOutOfBoundsException e){
+            return new Food("NULL",Double.NaN,Double.NaN,Double.NaN,Double.NaN,
+                    Double.NaN,Double.NaN,Double.NaN,Double.NaN,Double.NaN,Double.NaN,Double.NaN);
+        }
+
+
     }
 
 
@@ -185,7 +177,6 @@ public class FoodItemSearchAPI {
         return "NULL";
     }
 
-
     private static void printStringVector(Vector<String> vector) {
         System.out.print("[");
         for (int i = 0; i < vector.size(); i++) {
@@ -198,28 +189,20 @@ public class FoodItemSearchAPI {
     }
 
     public static void main(String[] args) {
-        String apiKey = "yA0vx21q3TVlRNuMK6ZXdQ==9UmAidTa6j7VpLtR";
-        String foodName = "chicken breast and salad";
+
+        String foodName = "";
 
         // Call the function to get nutrition information
-        Food nutritionInfo = getNutritionInfo(apiKey, foodName);
+        Food nutritionInfo = getNutritionInfo(foodName);
 
-        /*    OUTDATED
-        // Display the results
-        for (String result : nutritionInfo) {
-            System.out.println(result);
-        }
-
-        //System.out.println(getStat(foodDataType.PROTEIN,nutritionInfo) + " " + getName(nutritionInfo) + " " + getStat(foodDataType.SUGAR,nutritionInfo));
-        */
 
         System.out.println(nutritionInfo + " " + nutritionInfo.getSugar());
 
         Meal example = new Meal(MealType.Breakfast);
 
-        Food sausage = getNutritionInfo(apiKey, "Sausage");
-        Food eggs = getNutritionInfo(apiKey, "eggs");
-        Food toast = getNutritionInfo(apiKey, "toast");
+        Food sausage = getNutritionInfo("Sausage");
+        Food eggs = getNutritionInfo("eggs");
+        Food toast = getNutritionInfo("toast");
 
         example.addFood(sausage);
         example.addFood(eggs);
