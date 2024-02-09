@@ -36,3 +36,8 @@
 5. **Goal Tracking and Alerts:** Sets and tracks dietary goals, with alerts for deviations.
 6. **User-Friendly GUI Design:** Focuses on an intuitive and visually appealing interface.
 7. **Extra Features for User Engagement:** Additional features to enhance user experience, like gamification, community forums, etc.
+
+
+## Structure for storing the food data internally
+
+A Person (Contains)-> Meal objects (Contains)-> food objects
