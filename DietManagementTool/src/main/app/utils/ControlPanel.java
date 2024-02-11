@@ -1,6 +1,6 @@
 package main.app.utils;
 
-import main.app.view.addMealFrame;
+import main.app.view.DailyFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,14 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControlPanel extends JPanel {
-    private final main.app.view.addMealFrame addMealFrame;
+    private final DailyFrame dailyFrame;
     private final InputPanel inputPanel;
     private final MealDisplayPanel mealDisplayPanel;
 
 
     //Constructor initialises all the buttons and takes in all the panel classes
-    public ControlPanel(addMealFrame mainFrame, InputPanel userInputPanel,MealDisplayPanel mealDisplayPanel) {
-        this.addMealFrame = mainFrame;
+    public ControlPanel(DailyFrame mainFrame, InputPanel userInputPanel, MealDisplayPanel mealDisplayPanel) {
+        this.dailyFrame = mainFrame;
         this.inputPanel = userInputPanel;
         this.mealDisplayPanel = mealDisplayPanel;
         setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -31,7 +31,7 @@ public class ControlPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                boolean successFlag = addMealFrame.addFoodToMeal();
+                boolean successFlag = dailyFrame.addFoodToMeal();
 
                 if(successFlag){
                     JOptionPane.showMessageDialog(null,
@@ -39,7 +39,7 @@ public class ControlPanel extends JPanel {
                             "Notice - Added item",
                             JOptionPane.INFORMATION_MESSAGE);
 
-                    mealDisplayPanel.foodItemLabels.setText(addMealFrame.foodList());
+                    mealDisplayPanel.foodItemLabels.setText(dailyFrame.foodList());
 
                 }else {
                     JOptionPane.showMessageDialog(null,
@@ -58,7 +58,7 @@ public class ControlPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                addMealFrame.setMealType();
+                dailyFrame.setMealType();
 
                 JOptionPane.showMessageDialog(null,
                         "Meal Type Set",

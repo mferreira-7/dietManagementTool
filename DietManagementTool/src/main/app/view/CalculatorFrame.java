@@ -2,14 +2,13 @@ package main.app.view;
 
 import main.app.model.Person;
 import main.app.viewmodel.NutritionViewModel;
-import main.app.viewmodel.UserInfoViewModel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class UserInfoFrame extends JFrame {
+public class CalculatorFrame extends JFrame {
     private JTextField ageField;
     private JRadioButton maleRadioButton;
     private JRadioButton femaleRadioButton;
@@ -22,10 +21,10 @@ public class UserInfoFrame extends JFrame {
     private JComboBox<String> dietaryPreferenceComboBox;
     private JComboBox<String> goalComboBox;
     private JButton submitButton;
-    private UserInfoViewModel viewModel;
+    private main.app.viewmodel.CalculatorFrame viewModel;
 
-    public UserInfoFrame() {
-        viewModel = new UserInfoViewModel(); // Create an instance of the ViewModel
+    public CalculatorFrame() {
+        viewModel = new main.app.viewmodel.CalculatorFrame();
 
         initializeComponents();
         setLayout();
@@ -35,8 +34,9 @@ public class UserInfoFrame extends JFrame {
     }
 
 
-
     private void initializeComponents() {
+        setTitle("Diet Management Tool");
+
         ageField = new JTextField(20);
         maleRadioButton = new JRadioButton("Male");
         femaleRadioButton = new JRadioButton("Female");
@@ -65,20 +65,20 @@ public class UserInfoFrame extends JFrame {
                     // Validating and parsing age
                     String ageText = ageField.getText();
                     if (!ageText.matches("\\d+")) { // Check if the text contains only digits
-                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Please enter a valid number for age.");
+                        JOptionPane.showMessageDialog(CalculatorFrame.this, "Please enter a valid number for age.");
                         return;
                     }
                     int age = Integer.parseInt(ageText);
 
                     // Checking if age is a reasonable number
                     if (age < 18 || age > 119) {
-                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Please enter a reasonable age.");
+                        JOptionPane.showMessageDialog(CalculatorFrame.this, "Please enter a reasonable age.");
                         return;
                     }
 
                     // Check if gender is selected
                     if (!maleRadioButton.isSelected() && !femaleRadioButton.isSelected()) {
-                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Please select a gender.");
+                        JOptionPane.showMessageDialog(CalculatorFrame.this, "Please select a gender.");
                         return;
                     }
                     int gender = maleRadioButton.isSelected() ? 0 : 1;
@@ -86,26 +86,26 @@ public class UserInfoFrame extends JFrame {
                     // Validating and parsing weight
                     String weightText = weightField.getText();
                     if (!weightText.matches("\\d+(\\.\\d+)?")) { // Check if the text is a valid floating point number
-                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Please enter a valid number for weight.");
+                        JOptionPane.showMessageDialog(CalculatorFrame.this, "Please enter a valid number for weight.");
                         return;
                     }
                     double weight = Double.parseDouble(weightText);
 
                     if (weight < 20 || weight > 200) {
-                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Please enter a reasonable weight");
+                        JOptionPane.showMessageDialog(CalculatorFrame.this, "Please enter a reasonable weight");
                         return;
                     }
 
                     // Validating and parsing height
                     String heightText = heightField.getText();
                     if (!heightText.matches("\\d+(\\.\\d+)?")) {
-                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Please enter a valid number for height.");
+                        JOptionPane.showMessageDialog(CalculatorFrame.this, "Please enter a valid number for height.");
                         return;
                     }
                     double height = Double.parseDouble(heightText);
 
                     if (height <= 60 || height >= 250) {
-                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Please enter a reasonable height.");
+                        JOptionPane.showMessageDialog(CalculatorFrame.this, "Please enter a reasonable height.");
                         return;
                     }
 
@@ -118,7 +118,7 @@ public class UserInfoFrame extends JFrame {
                     } else if (highActivityRadioButton.isSelected()) {
                         activityLevel = 1.8;
                     } else {
-                        JOptionPane.showMessageDialog(UserInfoFrame.this, "Please select an activity level.");
+                        JOptionPane.showMessageDialog(CalculatorFrame.this, "Please select an activity level.");
                         return;
                     }
 
@@ -136,7 +136,7 @@ public class UserInfoFrame extends JFrame {
 
                     // Assuming you have a method in the ViewModel to create a Person instance
                     viewModel.createPerson();
-                    JOptionPane.showMessageDialog(UserInfoFrame.this, "Submitted the form successfully!");
+                    JOptionPane.showMessageDialog(CalculatorFrame.this, "Submitted the form successfully!");
                     Person person = viewModel.createPerson();
 
                     // Open NutritionView with the created person
@@ -146,7 +146,7 @@ public class UserInfoFrame extends JFrame {
                     dispose(); // Close the current UserInfoFrame
                     dispose();
                 } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(UserInfoFrame.this, "An unexpected error occurred, please check your inputs.");
+                    JOptionPane.showMessageDialog(CalculatorFrame.this, "An unexpected error occurred, please check your inputs.");
                 }
             }
         });
@@ -159,7 +159,6 @@ public class UserInfoFrame extends JFrame {
         Color buttonColor = new Color(100, 181, 246);
         Color buttonTextColor = Color.BLACK;
 
-        // Apply styles to components
         ageField.setFont(fieldFont);
         maleRadioButton.setFont(labelFont);
         femaleRadioButton.setFont(labelFont);
@@ -171,13 +170,17 @@ public class UserInfoFrame extends JFrame {
         moderateActivityRadioButton.setFont(labelFont);
         highActivityRadioButton.setFont(labelFont);
 
-        submitButton.setFont(new Font("Roboto", Font.BOLD, 22));
+        submitButton.setFont(labelFont);
         submitButton.setBackground(buttonColor);
         submitButton.setForeground(buttonTextColor);
         submitButton.setFocusPainted(false);
+        submitButton.setPreferredSize(new Dimension(150, 40));
+        submitButton.setMaximumSize(new Dimension(150, 40));
     }
 
     private void setLayout() {
+        setSize(800, 500);
+        setResizable(false);
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -191,25 +194,15 @@ public class UserInfoFrame extends JFrame {
         mainPanel.add(createRowPanel(new JLabel("Dietary Requirement:"), dietaryPreferenceComboBox));
         mainPanel.add(createRowPanel(new JLabel("Goal:"), goalComboBox));
 
-        // Submit button styled and placed
-        submitButton.setPreferredSize(new Dimension(200, 50));
-        submitButton.setFont(new Font("Roboto", Font.BOLD, 22));
-        submitButton.setBackground(new Color(100, 181, 246));
-        submitButton.setForeground(Color.BLACK);
-        submitButton.setFocusPainted(false);
-
         JPanel submitPanel = new JPanel();
         submitPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         submitPanel.add(submitButton);
 
         mainPanel.add(submitPanel);
 
-        // Set the main panel as the content pane of the frame
-        setContentPane(mainPanel);
 
-        // Adjust the window to fit the preferred size and layouts of its subcomponents
-        pack();
-        setLocationRelativeTo(null); // Center the frame on the screen
+        setContentPane(mainPanel);
+        setLocationRelativeTo(null);
     }
 
     private JPanel createRowPanel(JComponent label, JComponent field) {
@@ -233,7 +226,8 @@ public class UserInfoFrame extends JFrame {
         activityLevelPanel.add(highActivityRadioButton);
         return activityLevelPanel;
     }
+
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new UserInfoFrame());
+        SwingUtilities.invokeLater(() -> new CalculatorFrame());
     }
 }

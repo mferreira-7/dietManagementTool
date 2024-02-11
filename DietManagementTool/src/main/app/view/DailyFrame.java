@@ -7,13 +7,19 @@ import main.app.utils.Food;
 import javax.swing.*;
 import java.awt.*;
 
-public class addMealFrame extends JFrame {
+public class DailyFrame extends JFrame {
 
     InputPanel inputPanel;
     ControlPanel controlPanel;
     MealDisplayPanel mealDisplayPanel;
     Person appendingPerson;
     Meal mealToAdd = new Meal(MealType.Other);
+
+    public DailyFrame() {
+        Person person = new Person(0, 25, 70, 175, 1.5, 0, 1);
+        DailyFrame amf = new DailyFrame();
+        amf.createComponents(person);
+    }
 
 
     public void createComponents(Person personToChange) {
@@ -63,7 +69,7 @@ public class addMealFrame extends JFrame {
 
     public static void main(String[] args){
         Person person = new Person(0, 25, 70, 175, 1.5, 0, 1);
-        addMealFrame amf = new addMealFrame();
+        DailyFrame amf = new DailyFrame();
         amf.createComponents(person);
     }
 }
