@@ -10,4 +10,7 @@ public class Constants {
     public static final int FIELD_FONT_SIZE = 18;
     public static final int BUTTON_WIDTH = 200;
     public static final int BUTTON_HEIGHT = 40;
+    public static final int SCREEN_WIDTH = 800;
+    public static final int SCREEN_HEIGHT = 500;
+
 }

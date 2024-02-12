@@ -22,6 +22,8 @@ public class MenuFrame extends JFrame {
     }
 
     private void initializeComponents() {
+        setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+        setResizable(false);
         setTitle("Diet Management Tool - Menu");
 
         calculateLabel = new JLabel("Nutrition Recommendation Calculator -->");
@@ -62,8 +64,6 @@ public class MenuFrame extends JFrame {
     }
 
     private void setLayout() {
-        setSize(800, 500);
-        setResizable(false);
         JPanel panel = new JPanel(new GridBagLayout());
 
         GridBagConstraints gbc = new GridBagConstraints();

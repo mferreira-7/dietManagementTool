@@ -52,13 +52,13 @@ public class LoginFrame extends JFrame {
         startButton.setBackground(buttonColor);
         startButton.setForeground(buttonTextColor);
         startButton.setFocusPainted(false);
-        startButton.setPreferredSize(new Dimension(150, 40));
-        startButton.setMaximumSize(new Dimension(150, 40));
+        startButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+        startButton.setMaximumSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
     }
 
 
     private void setLayout() {
-        setSize(800, 500);
+        setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         setResizable(false);
         JPanel panel = new JPanel(new GridBagLayout());
 

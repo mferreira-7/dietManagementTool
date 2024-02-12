@@ -1,64 +1,99 @@
 package main.app.view;
 
 import main.app.utils.*;
-import main.app.model.Person;
-import main.app.utils.Food;
 
 import javax.swing.*;
 import java.awt.*;
+
+import static main.app.utils.Constants.SCREEN_HEIGHT;
+import static main.app.utils.Constants.SCREEN_WIDTH;
 
 public class DailyFrame extends JFrame {
 
     InputPanel inputPanel;
     ControlPanel controlPanel;
     MealDisplayPanel mealDisplayPanel;
-    Person appendingPerson;
     Meal mealToAdd = new Meal(MealType.Other);
 
     public DailyFrame() {
-        Person person = new Person(0, 25, 70, 175, 1.5, 0, 1);
-        DailyFrame amf = new DailyFrame();
-        amf.createComponents(person);
+        initializeComponents();
+        setLayout();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
 
-    public void createComponents(Person personToChange) {
+    private void initializeComponents() {
+        setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+        setResizable(false);
+        setLayout(new GridBagLayout());
 
-        //This is the person that is going to get the meals added to
-        this.appendingPerson = personToChange;
+
+    }
+
+
+
+    private void applyStyles() {
+
+    }
+
+    private void setLayout() {
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         inputPanel = new InputPanel();
         inputPanel.setBackground(Color.lightGray);
-        inputPanel.setPreferredSize(new Dimension(500,80));
-        add(inputPanel, BorderLayout.NORTH);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weightx = 1;
+        gbc.weighty = 0;
+        gbc.anchor = GridBagConstraints.NORTH;
+        gbc.insets = new Insets(0, 0, 0, 0);
+        add(inputPanel, gbc);
 
         mealDisplayPanel = new MealDisplayPanel();
-        add(mealDisplayPanel, BorderLayout.CENTER);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weightx = 1;
+        gbc.weighty = 1;
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.insets = new Insets(0, 0, 0, 0);
+        add(mealDisplayPanel, gbc);
 
-        controlPanel = new ControlPanel(this, inputPanel,mealDisplayPanel);
-        add(controlPanel, BorderLayout.SOUTH);
+        controlPanel = new ControlPanel(this, inputPanel, mealDisplayPanel);
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weightx = 1;
+        gbc.weighty = 0;
+        gbc.anchor = GridBagConstraints.SOUTH;
+        gbc.insets = new Insets(0, 0, 0, 0);
+        add(controlPanel, gbc);
 
-        setMealType();//setting it to the one displayed
+        setMealType();
 
-        setSize(700, 365);
-        setVisible(true);
-        setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        setLocationRelativeTo(null);
     }
 
-    public void setMealType(){
+    public void setMealType() {
         mealToAdd.setMealType(inputPanel.getMealType());
     }
 
-    public String foodList(){
+    public String foodList() {
         return mealToAdd.displayFoods();
     }
 
-    public boolean addFoodToMeal()
-    {
+    public boolean addFoodToMeal() {
         boolean successFlag = true;
         Food foodToAdd = FoodItemSearchAPI.getNutritionInfo(inputPanel.getUserSearch());
 
-        if(foodToAdd.getName() == "NULL"){
+        if (foodToAdd.getName() == "NULL") {
             return false;
         }
 
@@ -67,9 +102,7 @@ public class DailyFrame extends JFrame {
         return successFlag;
     }
 
-    public static void main(String[] args){
-        Person person = new Person(0, 25, 70, 175, 1.5, 0, 1);
-        DailyFrame amf = new DailyFrame();
-        amf.createComponents(person);
+    public static void main(String[] args) {
+        new DailyFrame();
     }
 }

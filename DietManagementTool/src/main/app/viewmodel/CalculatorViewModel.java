@@ -2,7 +2,7 @@ package main.app.viewmodel;
 
 import main.app.model.Person;
 
-public class CalculatorFrame {
+public class CalculatorViewModel {
     private int age;
     private int gender; // 0 - male, 1 - female
     private double weight; // in kilograms

@@ -1,12 +1,15 @@
 package main.app.view;
 
 import main.app.model.Person;
-import main.app.viewmodel.NutritionViewModel;
+import main.app.viewmodel.CalculatorViewModel;
+import main.app.viewmodel.NutritionRecommendationViewModel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import static main.app.utils.Constants.*;
 
 public class CalculatorFrame extends JFrame {
     private JTextField ageField;
@@ -21,10 +24,10 @@ public class CalculatorFrame extends JFrame {
     private JComboBox<String> dietaryPreferenceComboBox;
     private JComboBox<String> goalComboBox;
     private JButton submitButton;
-    private main.app.viewmodel.CalculatorFrame viewModel;
+    private CalculatorViewModel viewModel;
 
     public CalculatorFrame() {
-        viewModel = new main.app.viewmodel.CalculatorFrame();
+        viewModel = new CalculatorViewModel();
 
         initializeComponents();
         setLayout();
@@ -35,6 +38,8 @@ public class CalculatorFrame extends JFrame {
 
 
     private void initializeComponents() {
+        setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+        setResizable(false);
         setTitle("Diet Management Tool");
 
         ageField = new JTextField(20);
@@ -140,8 +145,8 @@ public class CalculatorFrame extends JFrame {
                     Person person = viewModel.createPerson();
 
                     // Open NutritionView with the created person
-                    NutritionViewModel nutritionViewModel = new NutritionViewModel(person);
-                    new NutritionView(nutritionViewModel);
+                    NutritionRecommendationViewModel nutritionRecommendationViewModel = new NutritionRecommendationViewModel(person);
+                    new NutritionRecommendationFrame(nutritionRecommendationViewModel);
 
                     dispose(); // Close the current UserInfoFrame
                     dispose();
@@ -174,13 +179,12 @@ public class CalculatorFrame extends JFrame {
         submitButton.setBackground(buttonColor);
         submitButton.setForeground(buttonTextColor);
         submitButton.setFocusPainted(false);
-        submitButton.setPreferredSize(new Dimension(150, 40));
-        submitButton.setMaximumSize(new Dimension(150, 40));
+        submitButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+        submitButton.setMaximumSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
     }
 
     private void setLayout() {
-        setSize(800, 500);
-        setResizable(false);
+
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
