@@ -13,9 +13,24 @@ public class HTMLGenerator {
                 "<html>\n" +
                 "<head>\n" +
                 "<title>DateFood List</title>\n" +
+                "<style>\n" +
+                "table {\n" +
+                "    font-family: Arial, sans-serif;\n" +
+                "    border-collapse: collapse;\n" +
+                "    width: 100%;\n" +
+                "}\n" +
+                "th, td {\n" +
+                "    border: 1px solid #dddddd;\n" +
+                "    text-align: left;\n" +
+                "    padding: 8px;\n" +
+                "}\n" +
+                "th {\n" +
+                "    background-color: #f2f2f2;\n" +
+                "}\n" +
+                "</style>\n" +
                 "</head>\n" +
                 "<body>\n" +
-                "<table border=\"1\">\n" +
+                "<table>\n" +
                 "<tr>\n" +
                 "<th>Date</th>\n" +
                 "<th>Name</th>\n" +
@@ -63,6 +78,8 @@ public class HTMLGenerator {
             e.printStackTrace();
         }
     }
+
+
 
     public static void main(String[] args) {
         // Assuming 'foods' is the list of DateFood objects obtained from CSVReader
