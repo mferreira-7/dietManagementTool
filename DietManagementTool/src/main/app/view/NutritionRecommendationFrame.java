@@ -1,15 +1,16 @@
 package main.app.view;
 
-import javax.swing.*;
 import main.app.model.NutritionResult;
 import main.app.model.Person;
-import main.app.viewmodel.NutritionViewModel;
+import main.app.viewmodel.NutritionRecommendationViewModel;
+
+import javax.swing.*;
 import java.awt.*;
 
-public class NutritionView {
-    private NutritionViewModel viewModel;
+public class NutritionRecommendationFrame {
+    private NutritionRecommendationViewModel viewModel;
 
-    public NutritionView(NutritionViewModel viewModel) {
+    public NutritionRecommendationFrame(NutritionRecommendationViewModel viewModel) {
         this.viewModel = viewModel;
         createAndShowGUI();
     }
@@ -58,7 +59,7 @@ public class NutritionView {
     public static void main(String[] args) {
         // Example usage
         Person person = new Person(0, 25, 70, 175, 1.5, 0, 1);
-        NutritionViewModel viewModel = new NutritionViewModel(person);
-        new NutritionView(viewModel);
+        NutritionRecommendationViewModel viewModel = new NutritionRecommendationViewModel(person);
+        new NutritionRecommendationFrame(viewModel);
     }
 }

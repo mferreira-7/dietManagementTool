@@ -13,5 +13,4 @@ enum foodDataType{
     TOTAL_CARBS,
     FIBER,
     SUGAR
-
 }
