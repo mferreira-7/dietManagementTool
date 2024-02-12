@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7df4dd7e-8507-47a8-a98a-032ac916f264" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7df4dd7e-8507-47a8-a98a-032ac916f264" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +42,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/racha/Documents/GitShit/23-24_CE201-col_team-50/DietManagementTool",
+    "last_opened_file_path": "E:/Projects/University/TeamProject/23-24_CE201-col_team-50/DietManagementTool",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,6 +61,13 @@
       <recent name="C:\Users\Ege\23-24_CE201-col_team-50\DietManagementTool\src" />
       <recent name="C:\Users\Ege\23-24_CE201-col_team-50\DietManagementTool\src\main\app" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -90,6 +94,7 @@
       <workItem from="1701116201833" duration="69000" />
       <workItem from="1701118607559" duration="311000" />
       <workItem from="1706736316364" duration="614000" />
+      <workItem from="1707750517883" duration="396000" />
     </task>
     <servers />
   </component>
