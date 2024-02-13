@@ -1,5 +1,7 @@
 package main.app.view;
 
+import main.app.utils.CSVReader;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,8 +12,10 @@ import static main.app.utils.Constants.*;
 public class MenuFrame extends JFrame {
     private JButton calculatorButton;
     private JButton dailyButton;
+    private JButton reportButton;
     private JLabel calculateLabel;
     private JLabel dailyLabel;
+    private JLabel reportLabel;
 
     public MenuFrame() {
         initializeComponents();
@@ -28,6 +32,7 @@ public class MenuFrame extends JFrame {
 
         calculateLabel = new JLabel("Nutrition Recommendation Calculator -->");
         dailyLabel = new JLabel("Daily Food Intake -->");
+        reportLabel = new JLabel("Generate Report -->");
 
         calculatorButton = new JButton("Proceed");
         CalculatorButtonListener calculatorButtonListener = new CalculatorButtonListener(this);
@@ -36,6 +41,10 @@ public class MenuFrame extends JFrame {
         dailyButton = new JButton("Proceed");
         DailyButtonListener dailyButtonListener = new DailyButtonListener(this);
         dailyButton.addActionListener(dailyButtonListener);
+
+        reportButton = new JButton("Proceed");
+        ReportButtonListener reportButtonListener = new ReportButtonListener(this);
+        reportButton.addActionListener(reportButtonListener);
 
         applyStyles();
     }
@@ -48,6 +57,7 @@ public class MenuFrame extends JFrame {
 
         calculateLabel.setFont(labelFont);
         dailyLabel.setFont(labelFont);
+        reportLabel.setFont(labelFont);
 
         calculatorButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         calculatorButton.setFont(labelFont);
@@ -60,6 +70,12 @@ public class MenuFrame extends JFrame {
         dailyButton.setBackground(buttonColor);
         dailyButton.setForeground(buttonTextColor);
         dailyButton.setFocusPainted(false);
+
+        reportButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+        reportButton.setFont(labelFont);
+        reportButton.setBackground(buttonColor);
+        reportButton.setForeground(buttonTextColor);
+        reportButton.setFocusPainted(false);
 
     }
 
@@ -74,15 +90,21 @@ public class MenuFrame extends JFrame {
         JPanel calculatorOptionPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         calculatorOptionPanel.add(calculateLabel);
         calculatorOptionPanel.add(calculatorButton);
-
         panel.add(calculatorOptionPanel, gbc);
+
         gbc.gridy++;
 
         JPanel dailyOptionPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         dailyOptionPanel.add(dailyLabel);
         dailyOptionPanel.add(dailyButton);
-
         panel.add(dailyOptionPanel, gbc);
+
+        gbc.gridy++;
+
+        JPanel reportOptionPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        reportOptionPanel.add(reportLabel);
+        reportOptionPanel.add(reportButton);
+        panel.add(reportOptionPanel, gbc);
 
         setContentPane(panel);
     }
@@ -120,3 +142,15 @@ class DailyButtonListener implements ActionListener {
     }
 }
 
+class ReportButtonListener implements ActionListener {
+    private final MenuFrame menuFrame;
+
+    public ReportButtonListener(MenuFrame menuFrame) {
+        this.menuFrame = menuFrame;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        CSVReader.GenerateReport("vlad123");
+    }
+}
