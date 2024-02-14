@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.net.URL;
 
 import static main.app.utils.Constants.*;
 
@@ -96,8 +97,7 @@ public class LoginFrame extends JFrame {
         // Add a logo to the top panel
         JLabel logoLabel = new JLabel(); // Create a label to hold the logo
         logoLabel.setHorizontalAlignment(JLabel.CENTER); // Set the logo to align center
-        URL logoUrl = getClass().getResource("/images/logo.jpg"); // Get the logo URL from the resources
-        ImageIcon logoIcon = new ImageIcon(logoUrl); // Replace with your logo path
+        ImageIcon logoIcon = new ImageIcon("/Users/segzzy4real/Downloads/logo.png"); // Replace with your logo path
         logoLabel.setIcon(logoIcon); // Add the logo to the label
         topPanel.add(logoLabel, BorderLayout.CENTER); // Add the label to the top panel
 
