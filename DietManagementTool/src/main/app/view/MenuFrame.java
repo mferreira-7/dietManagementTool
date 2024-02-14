@@ -115,7 +115,7 @@ class DailyButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        new DailyFrame();
+        new DailyFrame("vlad123");
         menuFrame.dispose();
     }
 }

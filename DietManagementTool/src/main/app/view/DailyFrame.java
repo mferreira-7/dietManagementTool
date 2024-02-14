@@ -14,13 +14,15 @@ public class DailyFrame extends JFrame {
     ControlPanel controlPanel;
     MealDisplayPanel mealDisplayPanel;
     Meal mealToAdd = new Meal(MealType.Other);
+    String username;
 
-    public DailyFrame() {
+    public DailyFrame(String username) {
         initializeComponents();
         setLayout();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
+        this.username = username;
     }
 
 
@@ -102,7 +104,13 @@ public class DailyFrame extends JFrame {
         return successFlag;
     }
 
+    public void saveMeal(){
+        ReadWriteFoodData writer = new ReadWriteFoodData(username);
+        writer.createAndWriteToCSV(writer.mealToString(mealToAdd));
+        dispose();
+    }
+
     public static void main(String[] args) {
-        new DailyFrame();
+        new DailyFrame("vlad123");
     }
 }

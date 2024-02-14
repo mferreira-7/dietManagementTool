@@ -105,4 +105,18 @@ public class Food {
                 ", sugar=" + sugar +
                 '}';
     }
+
+    public String toSaveString(){
+        return "'" + name + "', " + calories + ", " +
+                servingSize + ", " +
+                totalFat + ", " +
+                saturatedFat + ", " +
+                protein + ", " +
+                sodium + ", " +
+                potassium + ", " +
+                cholesterolMg + ", " +
+                totalCarbs + ", " +
+                fiber + ", " +
+                sugar + "\n";
+    }
 }

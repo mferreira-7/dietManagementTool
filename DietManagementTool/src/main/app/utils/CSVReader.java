@@ -12,7 +12,7 @@ import java.util.List;
 
 public class CSVReader {
     public static void main(String[] args) {
-        String csvFile = "E:\\Projects\\University\\TeamProject\\23-24_CE201-col_team-50\\DietManagementTool\\src\\main\\users\\vlad123.csv";
+        String csvFile = "src\\main\\users\\vlad123.csv";
         String line;
         String csvSplitBy = ",";
 

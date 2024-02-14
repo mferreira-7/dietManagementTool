@@ -21,6 +21,8 @@ public class ControlPanel extends JPanel {
         setLayout(new FlowLayout(FlowLayout.RIGHT));
         add(initialiseAddButton());
         add(setMealTypeButton());
+        add(spacer());
+        add(saveMealButton());
     }
 
 
@@ -66,6 +68,33 @@ public class ControlPanel extends JPanel {
                         JOptionPane.INFORMATION_MESSAGE);
             }
         });
+        return button;
+    }
+
+    private JButton saveMealButton(){
+        JButton button = new JButton("Save Meal");
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                dailyFrame.saveMeal();
+
+                JOptionPane.showMessageDialog(null,
+                        "Meal Saved",
+                        "Notice - Saving",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+        return button;
+    }
+    private JLabel spacer(){
+        JLabel button = new JLabel("                           ");
+
+        //button.setOpaque(false);
+        //button.setContentAreaFilled(false);
+        //button.setBorderPainted(false);
+
+
         return button;
     }
 }

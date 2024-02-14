@@ -1,5 +1,6 @@
 package main.app.utils;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.time.LocalDate;
 
@@ -24,6 +25,8 @@ public class Meal {
         return mealType;
     }
 
+    public void setDate(LocalDate date){this.date = date;}
+
     public void setMealType(MealType newMealType){mealType = newMealType;}
 
     public void addFood(Food food) {
@@ -37,10 +40,14 @@ public class Meal {
         }
     }
 
+    public List<Food> getFoods(){
+        return foods;
+    }
+
     public String displayFoods() {
         String displayString = "";
         for (Food food : foods) {
-            displayString = displayString + "\n" + food.getName();
+            displayString = displayString + ", \n" + food.getName();
         }
         return displayString;
     }
@@ -84,6 +91,11 @@ public class Meal {
         return new Food("Total", totalCalories, totalServingSize, totalTotalFat, totalSaturatedFat,
                 totalProtein, totalSodium, totalPotassium, totalCholesterolMg,
                 totalTotalCarbs, totalFiber, totalSugar);
+    }
+
+    public void clearOverwriteDateAndType(LocalDate date, MealType type){
+        this.date = date; this.mealType = type;
+        foods.clear();
     }
 
     public void changeMealName(String name){ mealName = name;}
