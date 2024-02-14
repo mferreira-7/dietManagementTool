@@ -16,6 +16,7 @@ public class LoginFrame extends JFrame {
     private JButton startButton;
     private JButton signUpButton;
     private JLabel usernameLabel;
+    private JLabel welcomeLabel;
     private JLabel passwordLabel;
     private JLabel newUserLabel;
     private JTextField usernameField;
@@ -32,10 +33,12 @@ public class LoginFrame extends JFrame {
     private void initializeComponents() {
         setTitle("Diet Management Tool");
 
+
         usernameField = new JTextField(20);
         passwordField = new JPasswordField(20);
-        usernameLabel = new JLabel("Enter username to proceed", JLabel.CENTER);
-        passwordLabel = new JLabel("Enter password", JLabel.CENTER);
+        welcomeLabel = new JLabel("WELCOME", JLabel.CENTER);
+        usernameLabel = new JLabel("Enter Username To Proceed", JLabel.CENTER);
+        passwordLabel = new JLabel("Enter Password", JLabel.CENTER);
         newUserLabel = new JLabel("New User?", JLabel.CENTER);
         startButton = new JButton("Log in");
         signUpButton = new JButton("Sign Up");
@@ -52,25 +55,23 @@ public class LoginFrame extends JFrame {
     }
 
     private void applyStyles() {
-        Font labelFont = new Font(FONT_NAME, Font.PLAIN, LABEL_FONT_SIZE);
-        Font fieldFont = new Font(FONT_NAME, Font.PLAIN, FIELD_FONT_SIZE);
-        Color buttonColor = BUTTON_COLOR;
-        Color buttonTextColor = BUTTON_TEXT_COLOR;
+        Font labelFont = new Font(FONT_NAME, Font.PLAIN, 15);
+        Font fieldFont = new Font(FONT_NAME, Font.PLAIN, 13);
+        Font welcomeFont = new Font(FONT_NAME, Font.BOLD, 28);
+        Color signInColor = Color.BLACK;
+        Color signUpColor = Color.GRAY;
 
         usernameLabel.setFont(labelFont);
         passwordLabel.setFont(labelFont);
         newUserLabel.setFont(labelFont);
         usernameField.setFont(fieldFont);
         passwordField.setFont(fieldFont);
+        welcomeLabel.setFont(welcomeFont);
 
         startButton.setFont(labelFont);
         signUpButton.setFont(labelFont);
-        startButton.setBackground(buttonColor);
-        signUpButton.setBackground(buttonColor);
-        startButton.setForeground(buttonTextColor);
-        signUpButton.setForeground(buttonTextColor);
-        startButton.setFocusPainted(false);
-        signUpButton.setFocusPainted(false);
+        startButton.setForeground(signInColor);
+        signUpButton.setForeground(signUpColor);
         startButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         signUpButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         startButton.setMaximumSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
@@ -80,30 +81,65 @@ public class LoginFrame extends JFrame {
     private void setLayout() {
         setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         setResizable(false);
-        JPanel panel = new JPanel(new GridBagLayout());
+        getContentPane().setLayout(new BorderLayout()); // Use BorderLayout for the main layout
+
+        // Assuming SCREEN_HEIGHT and SCREEN_WIDTH are defined and represent the size of the screen
+        int topPanelHeight = (int) (SCREEN_HEIGHT * 0.10); // Calculate 10% of the screen height for the top panel
+
+        // Set the main layout to BorderLayout
+        getContentPane().setLayout(new BorderLayout());
+
+        // Create the top panel with BorderLayout for the logo
+        JPanel topPanel = new JPanel(new BorderLayout());
+        topPanel.setPreferredSize(new Dimension(SCREEN_WIDTH, topPanelHeight)); // Set the preferred size for the top panel
+
+        // Add a logo to the top panel
+        JLabel logoLabel = new JLabel(); // Create a label to hold the logo
+        logoLabel.setHorizontalAlignment(JLabel.CENTER); // Set the logo to align center
+        ImageIcon logoIcon = new ImageIcon("/Users/segzzy4real/Downloads/logo.png"); // Replace with your logo path
+        logoLabel.setIcon(logoIcon); // Add the logo to the label
+        topPanel.add(logoLabel, BorderLayout.CENTER); // Add the label to the top panel
+
+
+        JPanel rightPanel = new JPanel(new GridBagLayout()); // This panel will have the GridBagLayout
+        JPanel leftPanel = new JPanel(new BorderLayout()); // This panel will just contain an image
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.anchor = GridBagConstraints.NORTH; // Change to NORTH if you want components to be aligned to the top
         gbc.insets = new Insets(10, 0, 10, 0);
 
-        panel.add(usernameLabel, gbc);
+        // Add all the components to the right panel
+        rightPanel.add(welcomeLabel, gbc);
         gbc.gridy++;
-        panel.add(usernameField, gbc);
+        rightPanel.add(usernameLabel, gbc);
         gbc.gridy++;
-        panel.add(passwordLabel, gbc);
+        rightPanel.add(usernameField, gbc);
         gbc.gridy++;
-        panel.add(passwordField, gbc);
+        rightPanel.add(passwordLabel, gbc);
         gbc.gridy++;
-        panel.add(startButton, gbc);
+        rightPanel.add(passwordField, gbc);
         gbc.gridy++;
-        panel.add(newUserLabel, gbc);
+        rightPanel.add(startButton, gbc);
         gbc.gridy++;
-        panel.add(signUpButton, gbc);
+        rightPanel.add(newUserLabel, gbc);
+        gbc.gridy++;
+        rightPanel.add(signUpButton, gbc);
 
-        setContentPane(panel);
+        // Add an image to the left panel
+        JLabel imageLabel = new JLabel(new ImageIcon("/Users/segzzy4real/Downloads/image.jpg")); // Replace with your image path
+        imageLabel.setHorizontalAlignment(JLabel.CENTER);
+        leftPanel.add(imageLabel, BorderLayout.CENTER);
+
+        // Add the panels to the frame
+        getContentPane().add(topPanel, BorderLayout.NORTH); // Top panel at the top
+        getContentPane().add(rightPanel, BorderLayout.EAST); // Add the left panel to the left side
+        getContentPane().add(leftPanel, BorderLayout.CENTER); // Add the right panel to the center (which will effectively be the right side)
+
         setLocationRelativeTo(null);
+        setResizable(true);
+//        pack();
     }
 
     private void initializeSignUpButtonAction() {
