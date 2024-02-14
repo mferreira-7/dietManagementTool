@@ -11,8 +11,8 @@ import java.util.Date;
 import java.util.List;
 
 public class CSVReader {
-    public static void main(String[] args) {
-        String csvFile = "E:\\Projects\\University\\TeamProject\\23-24_CE201-col_team-50\\DietManagementTool\\src\\main\\users\\vlad123.csv";
+    public static void GenerateReport(String userName) {
+        String csvFile = "src/main/users/" + userName + ".csv";
         String line;
         String csvSplitBy = ",";
 
@@ -65,5 +65,9 @@ public class CSVReader {
         }
 
         HTMLGenerator.generateHTML(foods);
+    }
+
+    public static void main(String[] args) {
+        GenerateReport("vlad123");
     }
 }
