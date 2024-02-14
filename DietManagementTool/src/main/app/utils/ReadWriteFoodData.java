@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Vector;
 
 public class ReadWriteFoodData
 {
@@ -94,7 +95,7 @@ public class ReadWriteFoodData
         }
     }
 
-    /* NOT IMPLEMENTED FULLY
+
     public Vector<Meal> readIntoMeals()
     {
         //UtilVars
@@ -150,9 +151,10 @@ public class ReadWriteFoodData
                 }
                 else
                 {
-                    readMeals.add(proxyMeal.clone());
+                    readMeals.add(proxyMeal);
 
                     if (data.length > 0){
+                        proxyMeal = new Meal(MealType.NULL);
                         proxyMeal.clearOverwriteDateAndType(newDate,newType);
                         currentType = newType;
                         currentDate = newDate;
@@ -184,7 +186,7 @@ public class ReadWriteFoodData
     }
 
 
-     */
+
     public String mealToString(Meal meal)
     {
         //Util Vars
@@ -214,7 +216,7 @@ public class ReadWriteFoodData
 
     public static void main(String[] args) {
         ReadWriteFoodData goob = new ReadWriteFoodData("Rachapol");
-
+        /*
         Meal example = new Meal(MealType.Breakfast);
 
         Food sausage = FoodItemSearchAPI.getNutritionInfo("Sausage");
@@ -237,14 +239,13 @@ public class ReadWriteFoodData
         second.addFood(fries);
         second.addFood(ketchup);
 
-        goob.createAndWriteToCSV(goob.mealToString(second));
+        goob.createAndWriteToCSV(goob.mealToString(second));*/
 
-        /* NOT IMPLEMENTED FULLY
         Vector<Meal> readIn = goob.readIntoMeals();
 
         for (Meal meals : readIn){
             meals.printFoods();
-        }*/
+        }
 
     }
 }
