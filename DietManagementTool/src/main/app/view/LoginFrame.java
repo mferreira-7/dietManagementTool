@@ -87,8 +87,6 @@ public class LoginFrame extends JFrame {
     private void setLayoutComponents() {
         setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         setResizable(false);
-        getContentPane().setLayout(new BorderLayout()); // Use BorderLayout for the main layout
-
         // Assuming SCREEN_HEIGHT and SCREEN_WIDTH are defined and represent the size of the screen
         int topPanelHeight = (int) (SCREEN_HEIGHT * 0.10); // Calculate 10% of the screen height for the top panel
 
@@ -144,12 +142,13 @@ public class LoginFrame extends JFrame {
                 Image originalImage = originalIcon.getImage();
 
                 // Scale the image to fit the application window or a specific size
-                Image scaledImage = originalImage.getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+                Image scaledImage = originalImage.getScaledInstance(450, 400, Image.SCALE_SMOOTH);
                 ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
                 JLabel imageLabel = new JLabel(scaledIcon);
                 imageLabel.setHorizontalAlignment(JLabel.CENTER);
                 leftPanel.add(imageLabel, BorderLayout.CENTER);
+                leftPanel.setOpaque(false);
             } else {
                 System.err.println("Image file not found");
             }

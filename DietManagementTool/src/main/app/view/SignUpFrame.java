@@ -7,6 +7,10 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
+
+import static main.app.utils.Constants.SCREEN_HEIGHT;
+import static main.app.utils.Constants.SCREEN_WIDTH;
 
 public class SignUpFrame extends JFrame {
     private JTextField fullNameField;
@@ -17,77 +21,101 @@ public class SignUpFrame extends JFrame {
     public SignUpFrame() {
         setTitle("Sign Up Page");
         setSize(700, 500); // Set the frame size
-        setLocationRelativeTo(null);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        // Set the layout
-        setLayout(new BorderLayout());
+        // Assuming SCREEN_HEIGHT and SCREEN_WIDTH are defined and represent the size of the screen
+        int topPanelHeight = (int) (SCREEN_HEIGHT * 0.10); // Calculate 10% of the screen height for the top panel
 
-        // Create the left panel for the image
-        JPanel leftPanel = new JPanel();
-        leftPanel.setPreferredSize(new Dimension(400,350));
-        leftPanel.add(new JLabel(new ImageIcon("/Users/segzzy4real/Downloads/image.jpg")));
+        // Set the layout
+        getContentPane().setLayout(new BorderLayout()); // Use BorderLayout for the main layout
 
         // Create the top panel for the logo
-        JPanel topPanel = new JPanel();
-        topPanel.setBackground(Color.WHITE); // Set the background color to match the image
-        topPanel.setPreferredSize(new Dimension(getWidth(), (int) (getHeight() * 0.10)));
+        JPanel topPanel = new JPanel(new BorderLayout());
+        topPanel.setPreferredSize(new Dimension(SCREEN_WIDTH, topPanelHeight)); // Set the preferred size for the top panel
+        // Add a logo to the top panel
+        JLabel logoLabel = new JLabel(); // Create a label to hold the logo
+        logoLabel.setHorizontalAlignment(JLabel.CENTER); // Set the logo to align center
+        URL logoUrl = getClass().getResource("/main/resources/Images/Image_5.png");
+        ImageIcon logoIcon = new ImageIcon(logoUrl);
+        Image logoImage = logoIcon.getImage();
+        // Scale the Logo to fit the application window or a specific size
+        Image scaledLogo = logoImage.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+        ImageIcon scaledLogoIcon = new ImageIcon(scaledLogo);
+        logoLabel.setIcon(scaledLogoIcon); // Add the logo to the label
+        topPanel.add(logoLabel, BorderLayout.CENTER); // Add the label to the top panel
 
-        // Load the logo image and add it to the top panel
-        ImageIcon logoIcon = new ImageIcon("/Users/segzzy4real/Downloads/logo.png"); // Adjust the path as necessary
-        JLabel logoLabel = new JLabel(logoIcon);
-        topPanel.add(logoLabel);
 
-        // Create the form panel with GridBagLayout for the registration form
-        JPanel formPanel = new JPanel(new GridBagLayout());
+        // Create the left panel for the image
+        JPanel rightPanel = new JPanel(new GridBagLayout());
+        JPanel leftPanel = new JPanel(new BorderLayout()); // This panel will just contain an image
+
+        try {
+            URL imageUrl = getClass().getResource("/main/resources/Images/Image_4.png"); //file path
+            if (imageUrl != null) {
+                ImageIcon originalIcon = new ImageIcon(imageUrl);
+                Image originalImage = originalIcon.getImage();
+
+                // Scale the image to fit the application window or a specific size
+                Image scaledImage = originalImage.getScaledInstance(450, 400, Image.SCALE_SMOOTH);
+                ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+                JLabel imageLabel = new JLabel(scaledIcon);
+                imageLabel.setHorizontalAlignment(JLabel.CENTER);
+                leftPanel.add(imageLabel, BorderLayout.CENTER);
+            } else {
+                System.err.println("Image file not found");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error loading the image.");
+        }
+
+
+        // Create the right panel with GridBagLayout for the registration form
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.insets = new Insets(10, 0, 10, 0);
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.gridwidth = 1;
-        gbc.anchor = GridBagConstraints.CENTER;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.gridwidth = 0;
+        gbc.anchor = GridBagConstraints.NORTH;
 
         // Initialize components like text fields and labels
         initializeComponents();
 
         // Add components to the form panel with GridBagConstraints
-        gbc.anchor = GridBagConstraints.WEST; // Align labels to the left
-        formPanel.add(new JLabel("Fullname:"), gbc);
+        rightPanel.add(new JLabel("Fullname:"), gbc);
         gbc.gridy++;
-        formPanel.add(fullNameField, gbc);
+        rightPanel.add(fullNameField, gbc);
         gbc.gridy++;
-        formPanel.add(new JLabel("Username:"), gbc);
+        rightPanel.add(new JLabel("Username:"), gbc);
         gbc.gridy++;
-        formPanel.add(usernameField, gbc);
+        rightPanel.add(usernameField, gbc);
         gbc.gridy++;
-        formPanel.add(new JLabel("Password:"), gbc);
+        rightPanel.add(new JLabel("Password:"), gbc);
         gbc.gridy++;
-        formPanel.add(passwordField, gbc);
+        rightPanel.add(passwordField, gbc);
+        gbc.gridy++;
+        rightPanel.add(registerButton, gbc);
         gbc.gridy++;
 
-        formPanel.add(registerButton, gbc);
 
+        // Add the panels to the frame
+        getContentPane().add(topPanel, BorderLayout.NORTH); // Top panel at the top
+        getContentPane().add(rightPanel, BorderLayout.EAST); // Add the left panel to the left side
+        getContentPane().add(leftPanel, BorderLayout.CENTER); // Add the right panel to the center (which will effectively be the right side)
 
-        // Set the main panel to split the frame into left and right
-        JPanel mainPanel = new JPanel(new GridLayout(1, 2)); // 1 row, 2 columns
-        mainPanel.add(leftPanel);
-        mainPanel.add(formPanel);
-
-        // Add the main panel to the frame
-        add(mainPanel, BorderLayout.CENTER);
-        add(topPanel, BorderLayout.NORTH);
 
         // Display the frame
         setVisible(true);
-
+        setLocationRelativeTo(null);
 
     }
 
 
     private void initializeComponents() {
         // Setup the text fields to be larger
-        int fieldWidth = 70;
+        int fieldWidth = 18;
         fullNameField = new JTextField(fieldWidth);
         usernameField = new JTextField(fieldWidth);
         passwordField = new JPasswordField(fieldWidth);
