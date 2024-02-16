@@ -54,11 +54,6 @@ public class Person {
         return goal;
     }
 
-    /*
-    public void storeMealData(Meal meal){
-        this.personalMeal = meal;
-
-    }*/
 
     public Vector getAllMeals(){return allMeals;}
 
