@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7df4dd7e-8507-47a8-a98a-032ac916f264" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/SignUpFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/SignUpFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/SignUpFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/SignUpFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/SignUpFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/SignUpFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/resources/Images/Image_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/resources/Images/Image_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/resources/Images/Image_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/resources/Images/Image_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/resources/Images/Image_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/resources/Images/Image_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/resources/Images/Image_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/resources/Images/Image_7.png" afterDir="false" />
-    </list>
+    <list default="true" id="7df4dd7e-8507-47a8-a98a-032ac916f264" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,6 +124,7 @@
       <workItem from="1708073528691" duration="768000" />
       <workItem from="1708074307942" duration="808000" />
       <workItem from="1708075128678" duration="3072000" />
+      <workItem from="1708093542134" duration="212000" />
     </task>
     <servers />
   </component>
