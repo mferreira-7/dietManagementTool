@@ -4,84 +4,230 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.URL;
 
-import static main.app.utils.Constants.*;
+import static main.app.utils.Constants.SCREEN_HEIGHT;
+import static main.app.utils.Constants.SCREEN_WIDTH;
 
 public class LoginFrame extends JFrame {
-    private JButton startButton;
+    private JButton loginButton;
+    private JButton signUpButton;
     private JLabel usernameLabel;
-    private JTextField usernameField;
+    private JLabel welcomeLabel;
 
+    private JLabel passwordLabel;
+    private JTextField usernameField;
+    private JPasswordField passwordField;
 
     public LoginFrame() {
         initializeComponents();
-        setLayout();
+        setLayoutComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
+        setSize(700, 500);
     }
 
     private void initializeComponents() {
         setTitle("Diet Management Tool");
 
         usernameField = new JTextField(20);
-        usernameLabel = new JLabel("Enter username to proceed", JLabel.CENTER);
-        startButton = new JButton("Log in");
+        passwordField = new JPasswordField(20);
+        welcomeLabel = new JLabel("WELCOME", JLabel.CENTER);
+        usernameLabel = new JLabel("Username:", JLabel.CENTER);
+        passwordLabel = new JLabel("Password:", JLabel.CENTER);
+        loginButton = new JButton("Log in");
+        signUpButton = new JButton("Sign Up");
 
-        startButton.addActionListener(new ActionListener() {
+        loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new MenuFrame();
-                dispose();
+                login();
             }
         });
 
+        initializeSignUpButtonAction();
         applyStyles();
     }
 
     private void applyStyles() {
-        Font labelFont = new Font(FONT_NAME, Font.PLAIN, LABEL_FONT_SIZE);
-        Font fieldFont = new Font(FONT_NAME, Font.PLAIN, FIELD_FONT_SIZE);
-        Color buttonColor = BUTTON_COLOR;
-        Color buttonTextColor = BUTTON_TEXT_COLOR;
+        Font labelFont = new Font("Arial", Font.PLAIN, 15);
+        Font fieldFont = new Font("Arial", Font.PLAIN, 13);
+        Font welcomeFont = new Font("Arial", Font.BOLD, 28);
+
+        // Style the signup button
+        signUpButton.setBackground(Color.WHITE);
+        signUpButton.setForeground(Color.GRAY);
+        signUpButton.setOpaque(true);
+        signUpButton.setBorderPainted(false);
+        signUpButton.setFocusPainted(false);
+
+        // Style the login button
+        loginButton.setBackground(Color.WHITE);
+        loginButton.setForeground(Color.BLACK);
+        loginButton.setOpaque(true);
+        loginButton.setBorderPainted(false);
+        loginButton.setFocusPainted(false);
+
 
         usernameLabel.setFont(labelFont);
+        passwordLabel.setFont(labelFont);
         usernameField.setFont(fieldFont);
+        passwordField.setFont(fieldFont);
+        welcomeLabel.setFont(welcomeFont);
 
-        startButton.setFont(labelFont);
-        startButton.setBackground(buttonColor);
-        startButton.setForeground(buttonTextColor);
-        startButton.setFocusPainted(false);
-        startButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
-        startButton.setMaximumSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+        loginButton.setFont(labelFont);
+        signUpButton.setFont(labelFont);
     }
 
-
-    private void setLayout() {
+    private void setLayoutComponents() {
         setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         setResizable(false);
-        JPanel panel = new JPanel(new GridBagLayout());
+        // Assuming SCREEN_HEIGHT and SCREEN_WIDTH are defined and represent the size of the screen
+        int topPanelHeight = (int) (SCREEN_HEIGHT * 0.10); // Calculate 10% of the screen height for the top panel
+
+        // Set the main layout to BorderLayout
+        getContentPane().setLayout(new BorderLayout());
+
+        // Create the top panel with BorderLayout for the logo
+        JPanel topPanel = new JPanel(new BorderLayout());
+        topPanel.setPreferredSize(new Dimension(SCREEN_WIDTH, topPanelHeight)); // Set the preferred size for the top panel
+
+        // Add a logo to the top panel
+        JLabel logoLabel = new JLabel(); // Create a label to hold the logo
+        logoLabel.setHorizontalAlignment(JLabel.CENTER); // Set the logo to align center
+        URL logoUrl = getClass().getResource("/main/resources/Images/Image_5.png");
+        ImageIcon logoIcon = new ImageIcon(logoUrl);
+        Image logoImage = logoIcon.getImage();
+        // Scale the Logo to fit the application window or a specific size
+        Image scaledLogo = logoImage.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+        ImageIcon scaledLogoIcon = new ImageIcon(scaledLogo);
+        logoLabel.setIcon(scaledLogoIcon); // Add the logo to the label
+        topPanel.add(logoLabel, BorderLayout.CENTER); // Add the label to the top panel
+
+
+        JPanel rightPanel = new JPanel(new GridBagLayout()); // This panel will have the GridBagLayout
+        JPanel leftPanel = new JPanel(new BorderLayout()); // This panel will just contain an image
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.anchor = GridBagConstraints.NORTH; // Change to NORTH if you want components to be aligned to the top
+        gbc.insets = new Insets(10, 0, 10, 0);
 
-        panel.add(usernameLabel, gbc);
+        // Add all the components to the right panel
+        rightPanel.add(welcomeLabel, gbc);
         gbc.gridy++;
-        panel.add(usernameField, gbc);
+        rightPanel.add(usernameLabel, gbc);
         gbc.gridy++;
-        panel.add(startButton, gbc);
+        rightPanel.add(usernameField, gbc);
+        gbc.gridy++;
+        rightPanel.add(passwordLabel, gbc);
+        gbc.gridy++;
+        rightPanel.add(passwordField, gbc);
+        gbc.gridy++;
+        rightPanel.add(loginButton, gbc);
+        gbc.gridy++;
+        rightPanel.add(signUpButton, gbc);
+        gbc.gridy++;
 
-        setContentPane(panel);
+        try {
+            URL imageUrl = getClass().getResource("/main/resources/Images/Image_4.png"); //file path
+            if (imageUrl != null) {
+                ImageIcon originalIcon = new ImageIcon(imageUrl);
+                Image originalImage = originalIcon.getImage();
+
+                // Scale the image to fit the application window or a specific size
+                Image scaledImage = originalImage.getScaledInstance(450, 400, Image.SCALE_SMOOTH);
+                ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+                JLabel imageLabel = new JLabel(scaledIcon);
+                imageLabel.setHorizontalAlignment(JLabel.CENTER);
+                leftPanel.add(imageLabel, BorderLayout.CENTER);
+                leftPanel.setOpaque(false);
+            } else {
+                System.err.println("Image file not found");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error loading the image.");
+        }
+
+
+        // Add the panels to the frame
+        getContentPane().add(topPanel, BorderLayout.NORTH); // Top panel at the top
+        getContentPane().add(rightPanel, BorderLayout.EAST); // Add the left panel to the left side
+        getContentPane().add(leftPanel, BorderLayout.CENTER); // Add the right panel to the center (which will effectively be the right side)
+
         setLocationRelativeTo(null);
+        setResizable(true);
+        pack();
+
     }
 
+    private void initializeSignUpButtonAction() {
+        signUpButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SignUpFrame signUpFrame = new SignUpFrame();
+                signUpFrame.setVisible(true);
+                dispose(); // Close the LoginFrame when the SignUpFrame is opened
+            }
+        });
+    }
+
+    private void login() {
+        String username = usernameField.getText().trim();
+        String password = new String(passwordField.getPassword());
+
+        if (verifyUser(username, password) == 1) { // Username and password match
+            JOptionPane.showMessageDialog(this, "Login successful.", "Welcome", JOptionPane.INFORMATION_MESSAGE);
+
+            // Close the LoginFrame
+            dispose();
+
+            // Open the MenuFrame as the main application window
+            MenuFrame menuFrame = new MenuFrame(); // Assuming the MenuFrame has a default constructor
+            menuFrame.setVisible(true);
+
+        } else if (verifyUser(username, password) == 0) { // User file does not exist
+            JOptionPane.showMessageDialog(this, "No account found. Please sign up.", "Account Not Found", JOptionPane.ERROR_MESSAGE);
+        } else { // User exists but password does not match
+            JOptionPane.showMessageDialog(this, "Incorrect username or password.", "Login Failed", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private int verifyUser(String username, String password) {
+        File usersDir = new File("users"); // Updated path
+        File userFile = new File(usersDir, username + ".csv");
+
+        if (!userFile.exists()) {
+            return 0; // User file does not exist
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(userFile))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length >= 2) {
+                    String storedUsername = parts[0].trim();
+                    String storedPassword = parts[1].trim();
+                    if (username.equals(storedUsername) && password.equals(storedPassword)) {
+                        return 1; // Username and password match
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return -1; // User exists but password does not match
+    }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            LoginFrame welcomeScreen = new LoginFrame();
-            welcomeScreen.setVisible(true);
-        });
+        SwingUtilities.invokeLater(() -> new LoginFrame().setVisible(true));
     }
 }
