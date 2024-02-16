@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 
 import static main.app.utils.Constants.SCREEN_HEIGHT;
 import static main.app.utils.Constants.SCREEN_WIDTH;
@@ -101,8 +102,13 @@ public class LoginFrame extends JFrame {
         // Add a logo to the top panel
         JLabel logoLabel = new JLabel(); // Create a label to hold the logo
         logoLabel.setHorizontalAlignment(JLabel.CENTER); // Set the logo to align center
-        ImageIcon logoIcon = new ImageIcon("/Users/segzzy4real/Downloads/logo.png"); // Replace with your logo path
-        logoLabel.setIcon(logoIcon); // Add the logo to the label
+        URL logoUrl = getClass().getResource("/main/resources/Images/Image_5.png");
+        ImageIcon logoIcon = new ImageIcon(logoUrl);
+        Image logoImage = logoIcon.getImage();
+        // Scale the Logo to fit the application window or a specific size
+        Image scaledLogo = logoImage.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+        ImageIcon scaledLogoIcon = new ImageIcon(scaledLogo);
+        logoLabel.setIcon(scaledLogoIcon); // Add the logo to the label
         topPanel.add(logoLabel, BorderLayout.CENTER); // Add the label to the top panel
 
 
@@ -131,10 +137,27 @@ public class LoginFrame extends JFrame {
         rightPanel.add(signUpButton, gbc);
         gbc.gridy++;
 
-        // Add an image to the left panel
-        JLabel imageLabel = new JLabel(new ImageIcon("/Users/segzzy4real/Downloads/image.jpg")); // Replace with your image path
-        imageLabel.setHorizontalAlignment(JLabel.CENTER);
-        leftPanel.add(imageLabel, BorderLayout.CENTER);
+        try {
+            URL imageUrl = getClass().getResource("/main/resources/Images/Image_4.png"); //file path
+            if (imageUrl != null) {
+                ImageIcon originalIcon = new ImageIcon(imageUrl);
+                Image originalImage = originalIcon.getImage();
+
+                // Scale the image to fit the application window or a specific size
+                Image scaledImage = originalImage.getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+                ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+                JLabel imageLabel = new JLabel(scaledIcon);
+                imageLabel.setHorizontalAlignment(JLabel.CENTER);
+                leftPanel.add(imageLabel, BorderLayout.CENTER);
+            } else {
+                System.err.println("Image file not found");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error loading the image.");
+        }
+
 
         // Add the panels to the frame
         getContentPane().add(topPanel, BorderLayout.NORTH); // Top panel at the top
