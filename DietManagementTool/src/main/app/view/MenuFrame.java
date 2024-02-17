@@ -13,6 +13,7 @@ public class MenuFrame extends JFrame {
     private JButton calculatorButton;
     private JButton dailyButton;
     private JButton reportButton;
+    private JButton signOutButton;
     private JLabel calculateLabel;
     private JLabel dailyLabel;
     private JLabel reportLabel;
@@ -46,6 +47,15 @@ public class MenuFrame extends JFrame {
         ReportButtonListener reportButtonListener = new ReportButtonListener(this);
         reportButton.addActionListener(reportButtonListener);
 
+        signOutButton = new JButton("Sign Out"); // Initialize the sign out button
+        signOutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose(); // Dispose of the MenuFrame
+                new LoginFrame().setVisible(true); // Open the LoginFrame
+            }
+        });
+
         applyStyles();
     }
 
@@ -77,6 +87,12 @@ public class MenuFrame extends JFrame {
         reportButton.setForeground(buttonTextColor);
         reportButton.setFocusPainted(false);
 
+        // Apply styles to the sign out button (optional)
+        signOutButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+        signOutButton.setFont(new Font(FONT_NAME, Font.PLAIN, LABEL_FONT_SIZE));
+        signOutButton.setBackground(BUTTON_COLOR);
+        signOutButton.setForeground(BUTTON_TEXT_COLOR);
+        signOutButton.setFocusPainted(false);
     }
 
     private void setLayout() {
@@ -86,6 +102,9 @@ public class MenuFrame extends JFrame {
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.EAST;
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(10, 0, 0, 0);
 
         JPanel calculatorOptionPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         calculatorOptionPanel.add(calculateLabel);
@@ -105,6 +124,12 @@ public class MenuFrame extends JFrame {
         reportOptionPanel.add(reportLabel);
         reportOptionPanel.add(reportButton);
         panel.add(reportOptionPanel, gbc);
+
+        // Position the "Sign Out" button at the last row of the grid
+        gbc.gridx = 0;
+        gbc.gridy = GridBagConstraints.RELATIVE; // Place the button at the next available row
+        panel.add(signOutButton, gbc); // Add the "Sign Out" button to the panel
+
 
         setContentPane(panel);
     }

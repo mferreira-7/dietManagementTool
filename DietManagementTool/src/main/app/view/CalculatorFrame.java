@@ -25,6 +25,7 @@ public class CalculatorFrame extends JFrame {
     private JComboBox<String> goalComboBox;
     private JButton submitButton;
     private CalculatorViewModel viewModel;
+    private JButton backButton;
 
     public CalculatorFrame() {
         viewModel = new CalculatorViewModel();
@@ -62,6 +63,15 @@ public class CalculatorFrame extends JFrame {
         ButtonGroup genderGroup = new ButtonGroup();
         genderGroup.add(maleRadioButton);
         genderGroup.add(femaleRadioButton);
+
+        backButton = new JButton("Back"); // Initialize the back button
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose(); // Dispose of the CalculatorFrame
+                new MenuFrame().setVisible(true); // Open the MenuFrame
+            }
+        });
 
         submitButton.addActionListener(new ActionListener() {
             @Override
@@ -161,6 +171,7 @@ public class CalculatorFrame extends JFrame {
     private void applyStyles() {
         Font labelFont = new Font("Roboto", Font.PLAIN, 18);
         Font fieldFont = new Font("Roboto", Font.PLAIN, 16);
+        backButton.setFont(new Font("Roboto", Font.PLAIN, 18));
         Color buttonColor = new Color(100, 181, 246);
         Color buttonTextColor = Color.BLACK;
 
@@ -181,6 +192,8 @@ public class CalculatorFrame extends JFrame {
         submitButton.setFocusPainted(false);
         submitButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         submitButton.setMaximumSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+
+        backButton.setFocusPainted(false);
     }
 
     private void setLayout() {
@@ -202,8 +215,12 @@ public class CalculatorFrame extends JFrame {
         submitPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         submitPanel.add(submitButton);
 
-        mainPanel.add(submitPanel);
+        JPanel backPanel = new JPanel();
+        backPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+        backPanel.add(backButton);
 
+        mainPanel.add(submitPanel);
+        mainPanel.add(backPanel);
 
         setContentPane(mainPanel);
         setLocationRelativeTo(null);

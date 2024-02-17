@@ -4,6 +4,8 @@ import main.app.utils.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import static main.app.utils.Constants.SCREEN_HEIGHT;
 import static main.app.utils.Constants.SCREEN_WIDTH;
@@ -15,6 +17,7 @@ public class DailyFrame extends JFrame {
     MealDisplayPanel mealDisplayPanel;
     Meal mealToAdd = new Meal(MealType.Other);
     String username;
+    private JButton backButton;
 
     public DailyFrame(String username) {
         initializeComponents();
@@ -31,13 +34,22 @@ public class DailyFrame extends JFrame {
         setResizable(false);
         setLayout(new GridBagLayout());
 
-
+        backButton = new JButton("Back"); // Initialize the back button
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose(); // Dispose of the DailyFrame
+                new MenuFrame().setVisible(true); // Open the MenuFrame
+            }
+        });
+        applyStyles();
     }
 
 
 
     private void applyStyles() {
-
+        backButton.setFont(new Font("Arial", Font.PLAIN, 14));
+        backButton.setFocusPainted(false);
     }
 
     private void setLayout() {
@@ -78,6 +90,15 @@ public class DailyFrame extends JFrame {
         gbc.insets = new Insets(0, 0, 0, 0);
         add(controlPanel, gbc);
 
+        JPanel backButtonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        backButtonPanel.add(backButton);
+        gbc.gridy = 3;
+        gbc.anchor = GridBagConstraints.LINE_START;
+        gbc.fill = GridBagConstraints.NONE;
+        add(backButtonPanel, gbc);
+
+        revalidate();
+        repaint();
         setMealType();
 
         setLocationRelativeTo(null);

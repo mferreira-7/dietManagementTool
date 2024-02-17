@@ -17,6 +17,7 @@ public class SignUpFrame extends JFrame {
     private JTextField usernameField;
     private JPasswordField passwordField;
     private JButton registerButton;
+    private JButton backButton;
 
     public SignUpFrame() {
         setTitle("Sign Up Page");
@@ -94,10 +95,13 @@ public class SignUpFrame extends JFrame {
         gbc.gridy++;
         rightPanel.add(new JLabel("Password:"), gbc);
         gbc.gridy++;
+
         rightPanel.add(passwordField, gbc);
         gbc.gridy++;
         rightPanel.add(registerButton, gbc);
         gbc.gridy++;
+        rightPanel.add(backButton, gbc);
+        //gbc.gridy++;
 
 
         // Add the panels to the frame
@@ -170,6 +174,22 @@ public class SignUpFrame extends JFrame {
         registerButton.setForeground(Color.WHITE);
         registerButton.setFocusPainted(false);
         registerButton.setFont(new Font("Arial", Font.BOLD, 14));
+
+        backButton = new JButton("Back");
+
+        // Style the back button (Optional)
+        backButton.setBackground(Color.LIGHT_GRAY);
+        backButton.setForeground(Color.BLACK);
+        backButton.setFocusPainted(false);
+        backButton.setFont(new Font("Arial", Font.PLAIN, 12));
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose(); // Close the SignUpFrame
+                new LoginFrame().setVisible(true); // Open the LoginFrame
+            }
+        });
     }
 
     private boolean validateInput(String username, String password) {
