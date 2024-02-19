@@ -178,10 +178,13 @@ public class SignUpFrame extends JFrame {
         backButton = new JButton("Back");
 
         // Style the back button (Optional)
-        backButton.setBackground(Color.LIGHT_GRAY);
-        backButton.setForeground(Color.BLACK);
+        backButton = new JButton("Back");
+        backButton.setBackground(Color.BLACK);
+        backButton.setForeground(Color.WHITE);
+        backButton.setOpaque(true);
+        backButton.setBorderPainted(false);
         backButton.setFocusPainted(false);
-        backButton.setFont(new Font("Arial", Font.PLAIN, 12));
+        backButton.setFont(new Font("Arial", Font.BOLD, 14));
 
         backButton.addActionListener(new ActionListener() {
             @Override
