@@ -41,6 +41,7 @@ public class ControlPanel extends JPanel {
                             "Notice - Added item",
                             JOptionPane.INFORMATION_MESSAGE);
 
+
                     mealDisplayPanel.foodItemLabels.setText(dailyFrame.foodList());
 
                 }else {

@@ -191,7 +191,7 @@ public class LoginFrame extends JFrame {
             dispose();
 
             // Open the MenuFrame as the main application window
-            MenuFrame menuFrame = new MenuFrame(); // Assuming the MenuFrame has a default constructor
+            MenuFrame menuFrame = new MenuFrame(username); // Assuming the MenuFrame has a default constructor
             menuFrame.setVisible(true);
 
         } else if (verifyUser(username, password) == 0) { // User file does not exist

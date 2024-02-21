@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import static main.app.utils.Constants.*;
 
@@ -26,15 +28,26 @@ public class CalculatorFrame extends JFrame {
     private JButton submitButton;
     private CalculatorViewModel viewModel;
     private JButton backButton;
+    private String username;
 
-    public CalculatorFrame() {
+    public CalculatorFrame(String username) {
         viewModel = new CalculatorViewModel();
 
         initializeComponents();
         setLayout();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
+        this.username = username;
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                setVisible(false);
+                dispose();
+                new MenuFrame(username);
+            }
+        });
     }
 
 
@@ -69,7 +82,7 @@ public class CalculatorFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose(); // Dispose of the CalculatorFrame
-                new MenuFrame().setVisible(true); // Open the MenuFrame
+                new MenuFrame(username).setVisible(true); // Open the MenuFrame
             }
         });
 
@@ -156,7 +169,7 @@ public class CalculatorFrame extends JFrame {
 
                     // Open NutritionView with the created person
                     NutritionRecommendationViewModel nutritionRecommendationViewModel = new NutritionRecommendationViewModel(person);
-                    new NutritionRecommendationFrame(nutritionRecommendationViewModel);
+                    new NutritionRecommendationFrame(nutritionRecommendationViewModel, username);
 
                     dispose(); // Close the current UserInfoFrame
                     dispose();
@@ -247,8 +260,9 @@ public class CalculatorFrame extends JFrame {
         activityLevelPanel.add(highActivityRadioButton);
         return activityLevelPanel;
     }
-
+}
+/*  Won't work without a username variable
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new CalculatorFrame());
     }
-}
+}*/

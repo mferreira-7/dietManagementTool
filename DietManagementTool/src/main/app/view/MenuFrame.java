@@ -17,13 +17,15 @@ public class MenuFrame extends JFrame {
     private JLabel calculateLabel;
     private JLabel dailyLabel;
     private JLabel reportLabel;
+    private String currentUser;
 
-    public MenuFrame() {
+    public MenuFrame(String currentUser) {
         initializeComponents();
         setLayout();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
+        this.currentUser = currentUser;
     }
 
     private void initializeComponents() {
@@ -134,10 +136,16 @@ public class MenuFrame extends JFrame {
         setContentPane(panel);
     }
 
+    public String getCurrentUser(){return currentUser;}
+
+
+    // getting rid of the main as it wouldn't be called
+/*
     public static void main(String[] args) {
         SwingUtilities.invokeLater(MenuFrame::new);
-    }
+    }*/
 }
+
 
 class CalculatorButtonListener implements ActionListener {
     private final MenuFrame menuFrame;
@@ -148,7 +156,7 @@ class CalculatorButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        new CalculatorFrame();
+        new CalculatorFrame(menuFrame.getCurrentUser());
         menuFrame.dispose();
     }
 }
@@ -162,7 +170,7 @@ class DailyButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        new DailyFrame("vlad123");
+        new DailyFrame(menuFrame.getCurrentUser());
         menuFrame.dispose();
     }
 }
@@ -176,6 +184,6 @@ class ReportButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        CSVReader.GenerateReport("vlad123");
+        CSVReader.GenerateReport(menuFrame.getCurrentUser());
     }
 }

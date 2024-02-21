@@ -32,6 +32,10 @@ public class InputPanel extends JPanel
         return mealTypeComboBox.getItemAt(selected);
     }
 
+    public void clearInputField(){
+        foodInput.setText("");
+    }
+
     //function which adds the text inputs and prompts to the panel
     private void initialise(){
 

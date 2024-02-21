@@ -47,6 +47,7 @@ public class ReadWriteFoodData
                 writeProtected(dataToWrite);
             } else {
                 appendProtected(dataToWrite);//If a file already exists with that name, do above but append not overwrite
+                System.out.println("Appending to file " + dataPath);
             }
         } catch (IOException e) {
             System.out.println("An error occurred creating a file.");

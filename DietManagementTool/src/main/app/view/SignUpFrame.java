@@ -253,7 +253,7 @@ public class SignUpFrame extends JFrame {
         JOptionPane.showMessageDialog(null, "Registration successful! Logging you in...", "Welcome", JOptionPane.INFORMATION_MESSAGE);
 
         // Open the MenuFrame as the main application window
-        MenuFrame menuFrame = new MenuFrame(); // Assuming MenuFrame does not require username in constructor
+        MenuFrame menuFrame = new MenuFrame(username); // Assuming MenuFrame does not require username in constructor
         menuFrame.setVisible(true);
     }
 }

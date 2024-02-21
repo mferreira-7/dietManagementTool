@@ -47,7 +47,9 @@ public class Meal {
     public String displayFoods() {
         String displayString = "";
         for (Food food : foods) {
-            displayString = displayString + ", \n" + food.getName();
+            if (displayString.isEmpty()){
+                displayString = displayString + food.getName();
+            }else displayString = displayString + ", \n" + food.getName();
         }
         return displayString;
     }

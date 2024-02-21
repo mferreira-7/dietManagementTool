@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import static main.app.utils.Constants.SCREEN_HEIGHT;
 import static main.app.utils.Constants.SCREEN_WIDTH;
@@ -22,10 +24,19 @@ public class DailyFrame extends JFrame {
     public DailyFrame(String username) {
         initializeComponents();
         setLayout();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
         this.username = username;
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                setVisible(false);
+                dispose();
+                new MenuFrame(username);
+            }
+        });
     }
 
 
@@ -39,7 +50,7 @@ public class DailyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose(); // Dispose of the DailyFrame
-                new MenuFrame().setVisible(true); // Open the MenuFrame
+                new MenuFrame(username).setVisible(true); // Open the MenuFrame
             }
         });
         applyStyles();
@@ -121,17 +132,29 @@ public class DailyFrame extends JFrame {
         }
 
         mealToAdd.addFood(foodToAdd);
+        inputPanel.clearInputField();
 
         return successFlag;
     }
 
-    public void saveMeal(){
-        ReadWriteFoodData writer = new ReadWriteFoodData(username);
-        writer.createAndWriteToCSV(writer.mealToString(mealToAdd));
-        dispose();
-    }
+    public void saveMeal() {
 
+        if (mealDisplayPanel.noFoodCheck()) {
+            JOptionPane.showMessageDialog(null,
+                    "No foods have been added. ",
+                    "Notice - No items",
+                    JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            ReadWriteFoodData writer = new ReadWriteFoodData(username);
+            writer.createAndWriteToCSV(writer.mealToString(mealToAdd));
+            dispose();
+            new MenuFrame(username).setVisible(true); // Open the MenuFrame
+
+        }
+    }
+    /*
     public static void main(String[] args) {
         new DailyFrame("vlad123");
-    }
+    }*/
 }

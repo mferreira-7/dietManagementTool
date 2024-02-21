@@ -66,8 +66,8 @@ public class CSVReader {
 
         HTMLGenerator.generateHTML(foods);
     }
-
+/*  Example main doesn't work without the user
     public static void main(String[] args) {
         GenerateReport("vlad123");
-    }
+    }*/
 }

@@ -6,18 +6,31 @@ import main.app.viewmodel.NutritionRecommendationViewModel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class NutritionRecommendationFrame {
     private NutritionRecommendationViewModel viewModel;
+    private String user;
 
-    public NutritionRecommendationFrame(NutritionRecommendationViewModel viewModel) {
+    public NutritionRecommendationFrame(NutritionRecommendationViewModel viewModel, String user) {
         this.viewModel = viewModel;
+        this.user = user;
         createAndShowGUI();
     }
 
     private void createAndShowGUI() {
         JFrame frame = new JFrame("Diet Management Tool - Nutrition Results");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                frame.setVisible(false);
+                frame.dispose();
+                new MenuFrame(user);
+            }
+        });
 
         NutritionResult result = viewModel.calculateNutrition();
 
@@ -55,11 +68,11 @@ public class NutritionRecommendationFrame {
         }
         label.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
     }
-
+/* example usage doesn't work without a username
     public static void main(String[] args) {
         // Example usage
         Person person = new Person(0, 25, 70, 175, 1.5, 0, 1);
         NutritionRecommendationViewModel viewModel = new NutritionRecommendationViewModel(person);
         new NutritionRecommendationFrame(viewModel);
-    }
+    }*/
 }
