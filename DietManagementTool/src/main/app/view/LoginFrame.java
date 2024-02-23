@@ -55,24 +55,23 @@ public class LoginFrame extends JFrame {
     }
 
     private void applyStyles() {
-        Font labelFont = new Font("Arial", Font.PLAIN, 15);
+        Font labelFont = new Font("Arial", Font.BOLD, 15);
         Font fieldFont = new Font("Arial", Font.PLAIN, 13);
         Font welcomeFont = new Font("Arial", Font.BOLD, 28);
 
         // Style the signup button
-        signUpButton.setBackground(Color.WHITE);
-        signUpButton.setForeground(Color.GRAY);
+        signUpButton.setBackground(Color.GRAY);
+        signUpButton.setForeground(Color.WHITE);
         signUpButton.setOpaque(true);
         signUpButton.setBorderPainted(false);
         signUpButton.setFocusPainted(false);
 
         // Style the login button
-        loginButton.setBackground(Color.WHITE);
-        loginButton.setForeground(Color.BLACK);
+        loginButton.setBackground(Color.BLACK);
+        loginButton.setForeground(Color.WHITE);
         loginButton.setOpaque(true);
         loginButton.setBorderPainted(false);
         loginButton.setFocusPainted(false);
-
 
         usernameLabel.setFont(labelFont);
         passwordLabel.setFont(labelFont);
