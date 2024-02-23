@@ -212,7 +212,7 @@ public class CalculatorFrame extends JFrame {
 
                     // Open NutritionView with the created person
                     NutritionRecommendationViewModel nutritionRecommendationViewModel = new NutritionRecommendationViewModel(person);
-                    new NutritionRecommendationFrame(nutritionRecommendationViewModel, username);
+                    new NutritionRecommendationFrame(nutritionRecommendationViewModel);
 
                     dispose(); // Close the current UserInfoFrame
                     dispose();
