@@ -142,7 +142,6 @@ public class SignUpFrame extends JFrame {
         add(registerButton);
 
 
-
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -33,11 +33,11 @@ public class Food {
         this.dataCulled = false;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public double getCalories(){
+    public double getCalories() {
         return calories;
     }
 
@@ -106,7 +106,7 @@ public class Food {
                 '}';
     }
 
-    public String toSaveString(){
+    public String toSaveString() {
         return "'" + name + "', " + calories + ", " +
                 servingSize + ", " +
                 totalFat + ", " +

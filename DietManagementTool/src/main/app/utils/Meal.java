@@ -1,8 +1,8 @@
 package main.app.utils;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Meal {
@@ -21,13 +21,17 @@ public class Meal {
         return date;
     }
 
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
     public MealType getMealType() {
         return mealType;
     }
 
-    public void setDate(LocalDate date){this.date = date;}
-
-    public void setMealType(MealType newMealType){mealType = newMealType;}
+    public void setMealType(MealType newMealType) {
+        mealType = newMealType;
+    }
 
     public void addFood(Food food) {
         foods.add(food);
@@ -40,22 +44,22 @@ public class Meal {
         }
     }
 
-    public List<Food> getFoods(){
+    public List<Food> getFoods() {
         return foods;
     }
 
     public String displayFoods() {
         String displayString = "";
         for (Food food : foods) {
-            if (displayString.isEmpty()){
+            if (displayString.isEmpty()) {
                 displayString = displayString + food.getName();
-            }else displayString = displayString + ", \n" + food.getName();
+            } else displayString = displayString + ", \n" + food.getName();
         }
         return displayString;
     }
 
     public Food getTotalNutritionalValues() {
-        if (foods.isEmpty()){
+        if (foods.isEmpty()) {
             System.out.println("There are no food items in this meal yet");
         }
 
@@ -95,21 +99,25 @@ public class Meal {
                 totalTotalCarbs, totalFiber, totalSugar);
     }
 
-    public void clearOverwriteDateAndType(LocalDate date, MealType type){
-        this.date = date; this.mealType = type;
+    public void clearOverwriteDateAndType(LocalDate date, MealType type) {
+        this.date = date;
+        this.mealType = type;
         foods.clear();
     }
 
-    public void changeMealName(String name){ mealName = name;}
+    public void changeMealName(String name) {
+        mealName = name;
+    }
 
-    public String getMealName(){return mealName;}
+    public String getMealName() {
+        return mealName;
+    }
 
     //I get this is somewhat not needed but this is just for convenience.
-    public boolean isMealNull(){
-        if (mealType == MealType.NULL){
+    public boolean isMealNull() {
+        if (mealType == MealType.NULL) {
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
 }
