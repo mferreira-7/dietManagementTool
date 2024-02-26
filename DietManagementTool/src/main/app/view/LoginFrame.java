@@ -21,6 +21,8 @@ public class LoginFrame extends JFrame {
     private JLabel passwordLabel;
     private JTextField usernameField;
     private JPasswordField passwordField;
+    private JButton forgotPasswordButton;
+
 
     public LoginFrame() {
         initializeComponents();
@@ -41,11 +43,19 @@ public class LoginFrame extends JFrame {
         passwordLabel = new JLabel("Password:", JLabel.CENTER);
         loginButton = new JButton("Log in");
         signUpButton = new JButton("Sign Up");
+        forgotPasswordButton = new JButton("Forgot Password?");
 
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 login();
+            }
+        });
+
+        forgotPasswordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                forgotPassword();
             }
         });
 
@@ -80,6 +90,13 @@ public class LoginFrame extends JFrame {
 
         loginButton.setFont(labelFont);
         signUpButton.setFont(labelFont);
+
+        forgotPasswordButton.setBackground(Color.GRAY);
+        forgotPasswordButton.setForeground(Color.WHITE);
+        forgotPasswordButton.setOpaque(true);
+        forgotPasswordButton.setBorderPainted(false);
+        forgotPasswordButton.setFocusPainted(false);
+        forgotPasswordButton.setFont(new Font("Arial", Font.BOLD, 15));
     }
 
     private void setLayoutComponents() {
@@ -129,6 +146,8 @@ public class LoginFrame extends JFrame {
         rightPanel.add(passwordField, gbc);
         gbc.gridy++;
         rightPanel.add(loginButton, gbc);
+        gbc.gridy++;
+        rightPanel.add(forgotPasswordButton, gbc); // Add the forgotPasswordButton here
         gbc.gridy++;
         rightPanel.add(signUpButton, gbc);
         gbc.gridy++;
@@ -223,6 +242,44 @@ public class LoginFrame extends JFrame {
             e.printStackTrace();
         }
         return -1; // User exists but password does not match
+    }
+
+    private void forgotPassword() {
+        String fullName = JOptionPane.showInputDialog(this, "Enter your full name:");
+        if (fullName != null && !fullName.trim().isEmpty()) {
+            String[] credentials = retrievePasswordIfFullNameMatches(fullName.trim());
+            if (credentials != null) {
+                // Display both the username and password
+                JOptionPane.showMessageDialog(this, "Your username is: " + credentials[0] + "\nYour password is: " + credentials[1], "Credentials Retrieved", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Full name was incorrect. Verification failed.", "Verification Failed", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+
+    private String[] retrievePasswordIfFullNameMatches(String fullName) {
+        File usersDir = new File("users");
+        File[] userFiles = usersDir.listFiles();
+        if (userFiles != null) {
+            for (File userFile : userFiles) {
+                try (BufferedReader reader = new BufferedReader(new FileReader(userFile))) {
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        String[] parts = line.split(",");
+                        if (parts.length >= 3) {
+                            String storedFullName = parts[2].trim();
+                            if (fullName.equals(storedFullName)) {
+                                // Return both the username and password
+                                return new String[]{parts[0].trim(), parts[1].trim()};
+                            }
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
     }
 
     public static void main(String[] args) {

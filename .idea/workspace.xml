@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/MenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/MenuFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/NutritionRecommendationFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/NutritionRecommendationFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/ReportFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/ReportFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/SignUpFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/SignUpFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +152,7 @@
       <workItem from="1708161342851" duration="4103000" />
       <workItem from="1708705342380" duration="2318000" />
       <workItem from="1708981094352" duration="3000" />
-      <workItem from="1708981112934" duration="2957000" />
+      <workItem from="1708981112934" duration="4478000" />
     </task>
     <servers />
   </component>
