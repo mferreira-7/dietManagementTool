@@ -18,7 +18,6 @@ public class LoginFrame extends JFrame {
     private JButton signUpButton;
     private JLabel usernameLabel;
     private JLabel welcomeLabel;
-
     private JLabel passwordLabel;
     private JTextField usernameField;
     private JPasswordField passwordField;

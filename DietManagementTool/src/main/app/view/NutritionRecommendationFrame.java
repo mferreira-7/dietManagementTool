@@ -1,22 +1,19 @@
 package main.app.view;
 
 import main.app.model.NutritionResult;
-import main.app.model.Person;
-import main.app.viewmodel.CalculatorViewModel;
 import main.app.viewmodel.NutritionRecommendationViewModel;
-import main.app.view.MenuFrame;
-
 import javax.swing.*;
 import java.awt.*;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class NutritionRecommendationFrame {
+    private final String username;
     private final NutritionRecommendationViewModel viewModel;
 
-    public NutritionRecommendationFrame(NutritionRecommendationViewModel viewModel) {
+    public NutritionRecommendationFrame(NutritionRecommendationViewModel viewModel, String username) {
         this.viewModel = viewModel;
+        this.username = username;
         createAndShowGUI();
     }
 
@@ -45,15 +42,24 @@ public class NutritionRecommendationFrame {
         panel.add(createResultLabel("Potassium: " + (int) result.getPotassium() + "g"));
         panel.add(createResultLabel("Cholesterol: " + (int) result.getCholesterol() + "mg"));
 
-
-
-
+        // Adding a back button
+        JButton backButton = new JButton("Back");
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                MenuFrame menuFrame = new MenuFrame(username);
+                menuFrame.setVisible(true);
+            }
+        });
+        panel.add(backButton);
 
         frame.getContentPane().add(panel, BorderLayout.CENTER);
         frame.setSize(600, 600);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
+
 
     private JLabel createResultLabel(String text) {
         JLabel label = new JLabel(text, JLabel.CENTER);
@@ -72,15 +78,5 @@ public class NutritionRecommendationFrame {
 
         }
         label.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
-    }
-
-
-
-    public static void main(String[] args) {
-        // Example usage
-        Person person = new Person(0, 25, 70, 175, 1.5, 0, 1);
-        NutritionRecommendationViewModel viewModel = new NutritionRecommendationViewModel(person);
-        new NutritionRecommendationFrame(viewModel);
-
     }
 }

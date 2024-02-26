@@ -13,6 +13,7 @@ public class ReportFrame extends JFrame {
     private JButton reportButton;
     private String currentUser;
     private JLabel reportLabel;
+    private JButton backButton;
 
     public ReportFrame(String currentUser) {
         this.currentUser = currentUser;
@@ -29,8 +30,18 @@ public class ReportFrame extends JFrame {
 
         reportLabel = new JLabel("Nutrition Recommendation Calculator ->");
         reportButton = new JButton("Generate");
+        backButton = new JButton("Back");
 
         applyStyles();
+
+        backButton.addActionListener(new ActionListener() { // Add action listener to back button
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                MenuFrame menuFrame = new MenuFrame(currentUser);
+                menuFrame.setVisible(true);
+            }
+        });
     }
 
     private void applyStyles() {
@@ -41,6 +52,7 @@ public class ReportFrame extends JFrame {
         reportButton.setOpaque(true);
         reportButton.setBorderPainted(false);
         reportButton.setFocusPainted(false);
+        backButton.setFont(buttonFont);
     }
 
     private void setLayoutCustom() {
@@ -49,8 +61,10 @@ public class ReportFrame extends JFrame {
         // Panels for date selection
         JPanel startDatePanel = new JPanel();
         JPanel endDatePanel = new JPanel();
+        JPanel buttonPanel = new JPanel(); // Panel to hold buttons
         startDatePanel.setLayout(new FlowLayout());
         endDatePanel.setLayout(new FlowLayout());
+        buttonPanel.setLayout(new FlowLayout()); // Set layout for button panel
 
         // Labels
         startDatePanel.add(new JLabel("Start Date:"));
@@ -81,9 +95,13 @@ public class ReportFrame extends JFrame {
         ReportButtonListener reportButtonListener = new ReportButtonListener(this, startDay, startMonth, startYear, endDay, endMonth, endYear);
         reportButton.addActionListener(reportButtonListener);
 
+        // Add report and back buttons to button panel
+        buttonPanel.add(reportButton);
+        buttonPanel.add(backButton);
+
         mainPanel.add(startDatePanel);
         mainPanel.add(endDatePanel);
-        mainPanel.add(reportButton);
+        mainPanel.add(buttonPanel);
 
         getContentPane().add(mainPanel, BorderLayout.CENTER);
         pack(); // Adjusts the frame size to fit the components
