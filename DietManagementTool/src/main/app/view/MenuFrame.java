@@ -218,21 +218,11 @@ public class MenuFrame extends JFrame {
         setLocationRelativeTo(null);
         setResizable(true);
         pack();
-
-
-//        setContentPane(panel);
     }
 
     public String getCurrentUser() {
         return currentUser;
     }
-
-
-    // getting rid of the main as it wouldn't be called
-/*
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(MenuFrame::new);
-    }*/
 }
 
 
