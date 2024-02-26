@@ -1,6 +1,6 @@
 package main.app.utils;
 
-public enum MealType{
+public enum MealType {
     Other,
     Breakfast,
     Lunch,

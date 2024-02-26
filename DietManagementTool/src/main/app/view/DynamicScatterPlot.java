@@ -12,6 +12,22 @@ public class DynamicScatterPlot extends JPanel {
         dataPoints = new ArrayList<>();
     }
 
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Dynamic Scatter Plot");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            DynamicScatterPlot scatterPlot = new DynamicScatterPlot();
+            frame.add(scatterPlot);
+            frame.setSize(600, 600);
+            frame.setVisible(true);
+
+            // Example of adding data points dynamically
+            scatterPlot.addDataPoint(50, 100);
+            scatterPlot.addDataPoint(100, 200);
+            scatterPlot.addDataPoint(150, 50);
+        });
+    }
+
     public void addDataPoint(int x, int y) {
         dataPoints.add(new Point(x, y));
         repaint();
@@ -40,21 +56,5 @@ public class DynamicScatterPlot extends JPanel {
             g2d.setColor(Color.BLUE);
             g2d.fillOval(x - 3, y - 3, 6, 6);
         }
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Dynamic Scatter Plot");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            DynamicScatterPlot scatterPlot = new DynamicScatterPlot();
-            frame.add(scatterPlot);
-            frame.setSize(600, 600);
-            frame.setVisible(true);
-
-            // Example of adding data points dynamically
-            scatterPlot.addDataPoint(50, 100);
-            scatterPlot.addDataPoint(100, 200);
-            scatterPlot.addDataPoint(150, 50);
-        });
     }
 }

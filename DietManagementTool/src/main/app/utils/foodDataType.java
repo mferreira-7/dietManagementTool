@@ -1,6 +1,6 @@
 package main.app.utils;
 
-enum foodDataType{
+enum foodDataType {
     NAME,
     CALORIES,
     SERVING_SIZE,

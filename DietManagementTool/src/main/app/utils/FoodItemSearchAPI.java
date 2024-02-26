@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Vector;
 import java.net.URLEncoder;
+import java.util.Vector;
 
 
 public class FoodItemSearchAPI {
@@ -41,7 +41,7 @@ public class FoodItemSearchAPI {
 
                 while ((line = reader.readLine()) != null) {
                     // Process the response
-                    if (line.startsWith("{\"items\": [{\"name\":")){
+                    if (line.startsWith("{\"items\": [{\"name\":")) {
                         adaptedLine = line.replaceAll("\"", "");
                         adaptedLine = adaptedLine.replaceAll("}", "");
                         adaptedLine = adaptedLine.replaceAll("\\{", "");
@@ -52,7 +52,7 @@ public class FoodItemSearchAPI {
 
                         String[] dataArr = adaptedLine.split(", ");
 
-                        for (String i:dataArr){
+                        for (String i : dataArr) {
                             results.add(i.toString());//If two results of food data come, only the first will be saved
                         }
 
@@ -90,18 +90,17 @@ public class FoodItemSearchAPI {
                     getStat(foodDataType.FIBER, results),
                     getStat(foodDataType.SUGAR, results)
             );
-        } catch (ArrayIndexOutOfBoundsException e){
-            return new Food("NULL",Double.NaN,Double.NaN,Double.NaN,Double.NaN,
-                    Double.NaN,Double.NaN,Double.NaN,Double.NaN,Double.NaN,Double.NaN,Double.NaN);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            return new Food("NULL", Double.NaN, Double.NaN, Double.NaN, Double.NaN,
+                    Double.NaN, Double.NaN, Double.NaN, Double.NaN, Double.NaN, Double.NaN, Double.NaN);
         }
 
 
     }
 
 
-
-    public static Double getStat(foodDataType TYPE, Vector<String> foodData){
-        switch (TYPE){
+    public static Double getStat(foodDataType TYPE, Vector<String> foodData) {
+        switch (TYPE) {
             case CALORIES -> {
                 return extractNumericalValue(foodData.get(1));
             }
@@ -159,7 +158,7 @@ public class FoodItemSearchAPI {
         return 0.0;
     }
 
-    public static String getName(Vector<String> foodData){
+    public static String getName(Vector<String> foodData) {
 
         String data = foodData.get(0);
 

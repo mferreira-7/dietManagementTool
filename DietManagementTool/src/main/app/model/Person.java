@@ -1,6 +1,5 @@
 package main.app.model;
 
-import main.app.utils.Food;
 import main.app.utils.Meal;
 import main.app.utils.MealType;
 
@@ -55,9 +54,11 @@ public class Person {
     }
 
 
-    public Vector getAllMeals(){return allMeals;}
+    public Vector getAllMeals() {
+        return allMeals;
+    }
 
-    public void printAllMeals(){
+    public void printAllMeals() {
         //UtilVars
         int count = 1;
 
@@ -68,24 +69,24 @@ public class Person {
         }
     }
 
-    public Meal getMeal(int mealNum){
+    public Meal getMeal(int mealNum) {
         //Util Vars
         Meal nullMeal = new Meal(MealType.NULL);
 
-        if (!(allMeals.get(mealNum)).isMealNull() && allMeals.size() >= mealNum){
+        if (!(allMeals.get(mealNum)).isMealNull() && allMeals.size() >= mealNum) {
             return allMeals.get(mealNum);
-        }else {
+        } else {
             System.out.println("Meal not found\n");
             return nullMeal; // if it returns a null meal, the code calling it should be able to handle a null meal
         }
 
     }
 
-    public void deleteMeal(int mealToDelete){
+    public void deleteMeal(int mealToDelete) {
 
-        if (!(allMeals.get(mealToDelete)).isMealNull() && allMeals.size() >= mealToDelete){
+        if (!(allMeals.get(mealToDelete)).isMealNull() && allMeals.size() >= mealToDelete) {
             allMeals.remove(mealToDelete);
-        }else {
+        } else {
             System.out.println("Meal not found, deletion aborted\n");
         }
     }
@@ -96,7 +97,7 @@ public class Person {
 
     }
 
-    public void createMeal(MealType mealType){
+    public void createMeal(MealType mealType) {
 
     }
 }

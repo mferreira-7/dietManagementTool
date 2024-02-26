@@ -15,24 +15,22 @@ import java.net.URL;
 import static main.app.utils.Constants.*;
 
 public class CalculatorFrame extends JFrame {
-    private JTextField ageField;
-//    private JRadioButton maleRadioButton;
-//    private JRadioButton femaleRadioButton;
-    private JTextField weightField;
-    private JTextField heightField;
-//    private JRadioButton lowActivityRadioButton;
+    //    private JRadioButton lowActivityRadioButton;
 //    private JRadioButton moderateActivityRadioButton;
 //    private JRadioButton highActivityRadioButton;
     public JComboBox<String> activityLevelComboBox;
     public JComboBox<String> genderComboBox;
-
+    protected CalculatorViewModel viewModel;
+    protected String username;
+    private JTextField ageField;
+    //    private JRadioButton maleRadioButton;
+//    private JRadioButton femaleRadioButton;
+    private JTextField weightField;
+    private JTextField heightField;
     private JComboBox<String> dietComboBox;
-
     private JComboBox<String> goalComboBox;
     private JButton submitButton;
-    protected CalculatorViewModel viewModel;
     private JButton backButton;
-    protected String username;
 
     public CalculatorFrame(String username) {
         viewModel = new CalculatorViewModel();
@@ -129,8 +127,6 @@ public class CalculatorFrame extends JFrame {
 //                        return;
 //                    }
 //                    int gender = maleRadioButton.isSelected() ? 0 : 1;
-
-
 
 
                     // Validating and parsing weight
@@ -296,7 +292,7 @@ public class CalculatorFrame extends JFrame {
         getContentPane().add(createRowPanel(new JLabel("Gender:"), genderComboBox), gbc);
         getContentPane().add(createRowPanel(new JLabel("Weight (kg):"), weightField), gbc);
         getContentPane().add(createRowPanel(new JLabel("Height (cm):"), heightField), gbc);
-        getContentPane().add(createRowPanel(new JLabel("Activity Level:"),activityLevelComboBox), gbc);   //));
+        getContentPane().add(createRowPanel(new JLabel("Activity Level:"), activityLevelComboBox), gbc);   //));
         getContentPane().add(createRowPanel(new JLabel("Dietary Requirement:"), dietComboBox), gbc);
         getContentPane().add(createRowPanel(new JLabel("Goal:"), goalComboBox), gbc);
 
@@ -319,7 +315,6 @@ public class CalculatorFrame extends JFrame {
         setLocationRelativeTo(null);
         pack();
     }
-
 
 
     private JPanel createRowPanel(JComponent label, JComponent field) {
