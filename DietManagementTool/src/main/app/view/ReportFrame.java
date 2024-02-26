@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.util.Calendar;
 
 public class ReportFrame extends JFrame {
@@ -28,8 +29,6 @@ public class ReportFrame extends JFrame {
 
         reportLabel = new JLabel("Nutrition Recommendation Calculator ->");
         reportButton = new JButton("Generate");
-        ReportButtonListener reportButtonListener = new ReportButtonListener(this);
-        reportButton.addActionListener(reportButtonListener);
 
         applyStyles();
     }
@@ -79,6 +78,9 @@ public class ReportFrame extends JFrame {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
+        ReportButtonListener reportButtonListener = new ReportButtonListener(this, startDay, startMonth, startYear, endDay, endMonth, endYear);
+        reportButton.addActionListener(reportButtonListener);
+
         mainPanel.add(startDatePanel);
         mainPanel.add(endDatePanel);
         mainPanel.add(reportButton);
@@ -104,15 +106,26 @@ public class ReportFrame extends JFrame {
 
 class ReportButtonListener implements ActionListener {
     private final ReportFrame reportFrame;
+    private final JComboBox<Integer> startDay, startMonth, startYear;
+    private final JComboBox<Integer> endDay, endMonth, endYear;
 
-    public ReportButtonListener(ReportFrame reportFrame) {
+    public ReportButtonListener(ReportFrame reportFrame, JComboBox<Integer> startDay, JComboBox<Integer> startMonth, JComboBox<Integer> startYear, JComboBox<Integer> endDay, JComboBox<Integer> endMonth, JComboBox<Integer> endYear) {
         this.reportFrame = reportFrame;
+        this.startDay = startDay;
+        this.startMonth = startMonth;
+        this.startYear = startYear;
+        this.endDay = endDay;
+        this.endMonth = endMonth;
+        this.endYear = endYear;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Assuming CSVReader.GenerateReport is a static method that takes a String parameter
-         CSVReader.GenerateReport(reportFrame.getCurrentUser());
-        System.out.println("Generate Report for: " + reportFrame.getCurrentUser());
+        LocalDate startDate = LocalDate.of(startYear.getItemAt(startYear.getSelectedIndex()), startMonth.getItemAt(startMonth.getSelectedIndex()), startDay.getItemAt(startDay.getSelectedIndex()));
+        LocalDate endDate = LocalDate.of(endYear.getItemAt(endYear.getSelectedIndex()), endMonth.getItemAt(endMonth.getSelectedIndex()), endDay.getItemAt(endDay.getSelectedIndex()));
+
+        // Now, pass these LocalDate objects to your CSVReader method
+        CSVReader.GenerateReport(reportFrame.getCurrentUser(), startDate, endDate);
+        System.out.println("Generated Report for: " + reportFrame.getCurrentUser() + " From: " + startDate + " To: " + endDate);
     }
 }
