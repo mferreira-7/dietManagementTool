@@ -5,30 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7df4dd7e-8507-47a8-a98a-032ac916f264" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/ReportFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/DateFoodList.html" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/DateFoodList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/ControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/ControlPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/FoodItemSearchAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/FoodItemSearchAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/HTMLGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/HTMLGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/InputPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/InputPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/Meal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/MealDisplayPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/MealDisplayPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/MealType.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/MealType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/ReadWriteFoodData.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/ReadWriteFoodData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/badSearchException.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/badSearchException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/foodDataType.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/foodDataType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/model/NutritionResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/model/NutritionResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/NutritionCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/utils/NutritionCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/CalculatorFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/CalculatorFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/DailyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/DailyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/DynamicScatterPlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/DynamicScatterPlot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/MenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/MenuFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/NutritionRecommendationFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/NutritionRecommendationFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/SignUpFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/SignUpFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/viewmodel/NutritionRecommendationViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/viewmodel/NutritionRecommendationViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,10 +51,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Ege",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Projects/University/TeamProject/23-24_CE201-col_team-50",
+    "last_opened_file_path": "M:/23-24_CE201-col_team-50",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -151,8 +133,7 @@
       <workItem from="1708075128678" duration="3072000" />
       <workItem from="1708093542134" duration="212000" />
       <workItem from="1708161342851" duration="4103000" />
-      <workItem from="1708963237336" duration="11000" />
-      <workItem from="1708963984120" duration="18000" />
+      <workItem from="1708705342380" duration="2318000" />
     </task>
     <servers />
   </component>
