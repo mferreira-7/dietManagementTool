@@ -33,6 +33,7 @@ public class HTMLGenerator {
                 "<table>\n" +
                 "<tr>\n" +
                 "<th>Date</th>\n" +
+                "<th>Meal Type</th>\n" + // New column for mealType
                 "<th>Name</th>\n" +
                 "<th>Calories</th>\n" +
                 "<th>Serving Size</th>\n" +
@@ -51,6 +52,7 @@ public class HTMLGenerator {
         for (DateFood food : foods) {
             htmlContent += "<tr>\n" +
                     "<td>" + food.getDate() + "</td>\n" +
+                    "<td>" + food.getMealType() + "</td>\n" + // Add mealType data
                     "<td>" + food.getName() + "</td>\n" +
                     "<td>" + food.getCalories() + "</td>\n" +
                     "<td>" + food.getServingSize() + "</td>\n" +
@@ -79,8 +81,6 @@ public class HTMLGenerator {
         }
     }
 
-
-
     public static void main(String[] args) {
         // Assuming 'foods' is the list of DateFood objects obtained from CSVReader
         // CSVReader csvReader = new CSVReader();
@@ -91,4 +91,3 @@ public class HTMLGenerator {
         generateHTML(foods);
     }
 }
-

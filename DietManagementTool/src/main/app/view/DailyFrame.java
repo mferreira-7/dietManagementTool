@@ -57,7 +57,6 @@ public class DailyFrame extends JFrame {
     }
 
 
-
     private void applyStyles() {
         backButton.setFont(new Font("Arial", Font.PLAIN, 14));
         backButton.setFocusPainted(false);

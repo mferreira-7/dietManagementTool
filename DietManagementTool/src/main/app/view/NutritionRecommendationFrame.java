@@ -1,7 +1,6 @@
 package main.app.view;
 
 import main.app.model.NutritionResult;
-import main.app.model.Person;
 import main.app.viewmodel.NutritionRecommendationViewModel;
 
 import javax.swing.*;
