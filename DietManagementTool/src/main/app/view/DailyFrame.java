@@ -12,7 +12,6 @@ import java.net.URL;
 
 
 import static main.app.utils.Constants.SCREEN_HEIGHT;
-import static main.app.utils.Constants.SCREEN_WIDTH;
 
 public class DailyFrame extends JFrame {
 

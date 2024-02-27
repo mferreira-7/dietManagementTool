@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7df4dd7e-8507-47a8-a98a-032ac916f264" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/CalculatorFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/CalculatorFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/DailyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/DailyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
