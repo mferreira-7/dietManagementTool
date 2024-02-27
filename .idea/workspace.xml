@@ -7,32 +7,14 @@
     <list default="true" id="7df4dd7e-8507-47a8-a98a-032ac916f264" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/CalculatorFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/CalculatorFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/DailyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/DailyFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/MenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/MenuFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/CSVReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/CSVReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/InputPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/InputPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/Meal.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/Meal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/MealDisplayPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/MealDisplayPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ReadWriteFoodData.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ReadWriteFoodData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorButtonListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyButtonListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/MenuFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/MenuFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/MenuFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/MenuFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/NutritionRecommendationFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/NutritionRecommendationFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/ReportButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/ReportButtonListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/SignUpFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/SignUpFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/userdata/vlad123.csv" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/userdata/vlad123.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,27 +50,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;M:/Year 2/TP/23-24_CE201-col_team-50&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "segun",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "M:/Year 2/TP/23-24_CE201-col_team-50",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Ege\23-24_CE201-col_team-50\DietManagementTool\src\main" />

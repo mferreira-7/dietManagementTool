@@ -108,7 +108,6 @@ public class LoginFrame extends JFrame {
         logoLabel.setIcon(scaledLogoIcon); // Add the logo to the label
         topPanel.add(logoLabel, BorderLayout.CENTER); // Add the label to the top panel
 
-
         JPanel rightPanel = new JPanel(new GridBagLayout()); // This panel will have the GridBagLayout
         JPanel leftPanel = new JPanel(new BorderLayout()); // This panel will just contain an image
 

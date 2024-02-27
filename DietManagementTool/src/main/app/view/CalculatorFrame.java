@@ -226,11 +226,8 @@ public class CalculatorFrame extends JFrame {
     }
 
     private void applyStyles() {
-        Font labelFont = new Font("Arial", Font.PLAIN, 18);
+        Font buttonFont = new Font("Arial", Font.BOLD, 14);
         Font fieldFont = new Font("Arial", Font.PLAIN, 16);
-        backButton.setFont(new Font("Arial", Font.PLAIN, 18));
-        Color buttonColor = new Color(100, 181, 246);
-        Color buttonTextColor = Color.BLACK;
 
         ageField.setFont(fieldFont);
         genderComboBox.setFont(fieldFont);
@@ -240,13 +237,20 @@ public class CalculatorFrame extends JFrame {
         goalComboBox.setFont(fieldFont);
         activityLevelComboBox.setFont(fieldFont);
 
-        submitButton.setFont(labelFont);
-        submitButton.setBackground(buttonColor);
-        submitButton.setForeground(buttonTextColor);
+        // Style the submitButton button
+        submitButton.setFont(buttonFont);
+        submitButton.setBackground(Color.BLACK);
+        submitButton.setForeground(Color.WHITE);
+        submitButton.setOpaque(true);
+        submitButton.setBorderPainted(false);
         submitButton.setFocusPainted(false);
-        submitButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
-        submitButton.setMaximumSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
 
+        // Style the backButton button
+        backButton.setFont(buttonFont);
+        backButton.setBackground(Color.BLACK);
+        backButton.setForeground(Color.WHITE);
+        backButton.setOpaque(true);
+        backButton.setBorderPainted(false);
         backButton.setFocusPainted(false);
     }
 
@@ -256,7 +260,7 @@ public class CalculatorFrame extends JFrame {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.insets = new Insets(10, 50, 10, 50); // Top, left, bottom, right paddin
+        gbc.insets = new Insets(10, 50, 10, 50); // Top, left, bottom, right padding
 
         setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         setResizable(false);
