@@ -1,14 +1,13 @@
 package main.app.view;
 
-import main.app.utils.CSVReader;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 
-import static main.app.utils.Constants.*;
+import static main.app.utils.Constants.SCREEN_HEIGHT;
+import static main.app.utils.Constants.SCREEN_WIDTH;
 
 public class MenuFrame extends JFrame {
     private JButton calculatorButton;
@@ -57,8 +56,8 @@ public class MenuFrame extends JFrame {
 
         reportLabel = new JLabel("Generate Report ->");
         reportButton = new JButton("Proceed");
-        ReportButtonListener reportButtonListener = new ReportButtonListener(this);
-        reportButton.addActionListener(reportButtonListener);
+        ReportMenuButtonListener reportMenuButtonListener = new ReportMenuButtonListener(this);
+        reportButton.addActionListener(reportMenuButtonListener);
 
 
         signOutButton = new JButton("Sign Out"); // Initialize the sign out button
@@ -219,19 +218,11 @@ public class MenuFrame extends JFrame {
         setLocationRelativeTo(null);
         setResizable(true);
         pack();
-
-
-//        setContentPane(panel);
     }
 
-    public String getCurrentUser(){return currentUser;}
-
-
-    // getting rid of the main as it wouldn't be called
-/*
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(MenuFrame::new);
-    }*/
+    public String getCurrentUser() {
+        return currentUser;
+    }
 }
 
 
@@ -263,15 +254,16 @@ class DailyButtonListener implements ActionListener {
     }
 }
 
-class ReportButtonListener implements ActionListener {
+class ReportMenuButtonListener implements ActionListener {
     private final MenuFrame menuFrame;
 
-    public ReportButtonListener(MenuFrame menuFrame) {
+    public ReportMenuButtonListener(MenuFrame menuFrame) {
         this.menuFrame = menuFrame;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        CSVReader.GenerateReport(menuFrame.getCurrentUser());
+        new ReportFrame(menuFrame.getCurrentUser());
+        menuFrame.dispose();
     }
 }

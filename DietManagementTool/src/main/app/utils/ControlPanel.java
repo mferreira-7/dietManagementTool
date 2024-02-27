@@ -35,7 +35,7 @@ public class ControlPanel extends JPanel {
 
                 boolean successFlag = dailyFrame.addFoodToMeal();
 
-                if(successFlag){
+                if (successFlag) {
                     JOptionPane.showMessageDialog(null,
                             "Food item added",
                             "Notice - Added item",
@@ -44,7 +44,7 @@ public class ControlPanel extends JPanel {
 
                     mealDisplayPanel.foodItemLabels.setText(dailyFrame.foodList());
 
-                }else {
+                } else {
                     JOptionPane.showMessageDialog(null,
                             "Food not found",
                             "Notice - Item not added",
@@ -55,7 +55,7 @@ public class ControlPanel extends JPanel {
         return button;
     }
 
-    private JButton setMealTypeButton(){
+    private JButton setMealTypeButton() {
         JButton button = new JButton("Set Meal Type");
         button.addActionListener(new ActionListener() {
             @Override
@@ -72,7 +72,7 @@ public class ControlPanel extends JPanel {
         return button;
     }
 
-    private JButton saveMealButton(){
+    private JButton saveMealButton() {
         JButton button = new JButton("Save Meal");
         button.addActionListener(new ActionListener() {
             @Override
@@ -88,7 +88,8 @@ public class ControlPanel extends JPanel {
         });
         return button;
     }
-    private JLabel spacer(){
+
+    private JLabel spacer() {
         JLabel button = new JLabel("                           ");
 
         //button.setOpaque(false);

@@ -142,7 +142,6 @@ public class SignUpFrame extends JFrame {
         add(registerButton);
 
 
-
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -235,8 +234,10 @@ public class SignUpFrame extends JFrame {
 
         File userFile = new File(usersDir, username + ".csv");
         try (FileWriter writer = new FileWriter(userFile)) {
-            writer.write("Username,Password\n"); // Optional: Write header
-            writer.write(username + "," + password + "\n");
+            String fullName = fullNameField.getText().trim();
+
+            writer.write("Username,Password,Fullname\n");
+            writer.write(username + "," + password + "," + fullName + "\n");
 
             // Registration successful, automatically log the user in
             autoLogin(username);

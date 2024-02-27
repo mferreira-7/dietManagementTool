@@ -61,7 +61,6 @@ public class DailyFrame extends JFrame {
     }
 
 
-
     private void applyStyles() {
         backButton.setFont(new Font("Arial", Font.BOLD, 18));
         backButton.setFocusPainted(false);
@@ -200,8 +199,4 @@ public class DailyFrame extends JFrame {
 
         }
     }
-    /*
-    public static void main(String[] args) {
-        new DailyFrame("vlad123");
-    }*/
 }

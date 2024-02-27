@@ -4,15 +4,14 @@ package main.app.utils;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class CSVReader {
-    public static void GenerateReport(String userName) {
-        String csvFile = "src/main/users/" + userName + ".csv";
+
+    public static void GenerateReport(String userName, LocalDate startDate, LocalDate endDate) {
+        String csvFile = "src/main/userdata/" + userName + ".csv";
         String line;
         String csvSplitBy = ",";
 
@@ -27,31 +26,18 @@ public class CSVReader {
                     continue; // Skip processing the first line
                 }
                 String[] data = line.split(csvSplitBy);
-                if (currentFood == null || currentFood.isDataCulled()) {
-                    try {
-                        Date date = new SimpleDateFormat("dd-MM-yyyy").parse(data[0]);
-                        currentFood = new DateFood(date, data[1].replaceAll("'", ""), // name
-                                Double.parseDouble(data[2]), // calories
-                                Double.parseDouble(data[3]), // servingSize
-                                Double.parseDouble(data[4]), // totalFat
-                                Double.parseDouble(data[5]), // saturatedFat
-                                Double.parseDouble(data[6]), // protein
-                                Double.parseDouble(data[7]), // sodium
-                                Double.parseDouble(data[8]), // potassium
-                                Double.parseDouble(data[9]), // cholesterolMg
-                                Double.parseDouble(data[10]), // totalCarbs
-                                Double.parseDouble(data[11]), // fiber
-                                Double.parseDouble(data[12]) // sugar
-                        );
-                        foods.add(currentFood);
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-                    // Handle cases where data needs to be appended to the current food item
-                    // Example: multiple lines for the same food item
-                }
+                LocalDate foodDate = LocalDate.parse(data[0].replaceAll("'", ""));
 
+                // Check if the food date is within the start and end date range
+                if ((foodDate.isAfter(startDate) || foodDate.isEqual(startDate)) && (foodDate.isBefore(endDate) || foodDate.isEqual(endDate))) {
+                    if (currentFood == null || !currentFood.getDate().isEqual(foodDate)) {
+                        currentFood = new DateFood(foodDate, data[1].replaceAll("'", ""), data[2].replaceAll("'", ""), Double.parseDouble(data[3]), Double.parseDouble(data[4]), Double.parseDouble(data[5]), Double.parseDouble(data[6]), Double.parseDouble(data[7]), Double.parseDouble(data[8]), Double.parseDouble(data[9]), Double.parseDouble(data[10]), Double.parseDouble(data[11]), Double.parseDouble(data[12]), Double.parseDouble(data[13]));
+                        foods.add(currentFood);
+                    } else {
+                        // Handle cases where data needs to be appended to the current food item
+                        // Example: multiple lines for the same food item
+                    }
+                }
 
                 currentFood.setDataCulled(true);
             }
@@ -59,15 +45,12 @@ public class CSVReader {
             e.printStackTrace();
         }
 
-        // Print out the foods for verification
+        // Print out the filtered foods for verification
         for (DateFood food : foods) {
             System.out.println(food);
         }
 
+        // Assuming HTMLGenerator is a class you've defined to generate HTML reports
         HTMLGenerator.generateHTML(foods);
     }
-/*  Example main doesn't work without the user
-    public static void main(String[] args) {
-        GenerateReport("vlad123");
-    }*/
 }

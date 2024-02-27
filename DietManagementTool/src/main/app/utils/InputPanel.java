@@ -2,8 +2,7 @@ package main.app.utils;
 
 import javax.swing.*;
 
-public class InputPanel extends JPanel
-{
+public class InputPanel extends JPanel {
     //UtilVars
     MealType[] comboOpt = {main.app.utils.MealType.Other, main.app.utils.MealType.Breakfast, main.app.utils.MealType.Lunch,
             main.app.utils.MealType.Dinner};
@@ -14,30 +13,30 @@ public class InputPanel extends JPanel
             "food-item you " +
             "want to add: ");
     JLabel mealTypePrompt = new JLabel("Enter the type of the meal this is: ");
-    private JTextField foodInput =  new JTextField(60);
+    private JTextField foodInput = new JTextField(60);
     private JComboBox<MealType> mealTypeComboBox = new JComboBox<>(comboOpt);
 
     //Constructor
-    public InputPanel(){
+    public InputPanel() {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         initialise();
     }
 
-    public String getUserSearch(){
+    public String getUserSearch() {
         return foodInput.getText();
     }
 
-    public MealType getMealType(){
+    public MealType getMealType() {
         int selected = mealTypeComboBox.getSelectedIndex();
         return mealTypeComboBox.getItemAt(selected);
     }
 
-    public void clearInputField(){
+    public void clearInputField() {
         foodInput.setText("");
     }
 
     //function which adds the text inputs and prompts to the panel
-    private void initialise(){
+    private void initialise() {
 
         mealTypeComboBox.setEditable(false);
         add(mealTypePrompt);

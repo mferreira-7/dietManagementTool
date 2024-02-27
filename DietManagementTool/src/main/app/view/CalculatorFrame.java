@@ -15,24 +15,17 @@ import java.net.URL;
 import static main.app.utils.Constants.*;
 
 public class CalculatorFrame extends JFrame {
-    private JTextField ageField;
-//    private JRadioButton maleRadioButton;
-//    private JRadioButton femaleRadioButton;
-    private JTextField weightField;
-    private JTextField heightField;
-//    private JRadioButton lowActivityRadioButton;
-//    private JRadioButton moderateActivityRadioButton;
-//    private JRadioButton highActivityRadioButton;
     public JComboBox<String> activityLevelComboBox;
     public JComboBox<String> genderComboBox;
-
+    protected CalculatorViewModel viewModel;
+    protected String username;
+    private JTextField ageField;
+    private JTextField weightField;
+    private JTextField heightField;
     private JComboBox<String> dietComboBox;
-
     private JComboBox<String> goalComboBox;
     private JButton submitButton;
-    protected CalculatorViewModel viewModel;
     private JButton backButton;
-    protected String username;
 
     public CalculatorFrame(String username) {
         viewModel = new CalculatorViewModel();
@@ -51,7 +44,6 @@ public class CalculatorFrame extends JFrame {
                 new MenuFrame(username);
             }
         });
-
 
     }
 
@@ -72,15 +64,6 @@ public class CalculatorFrame extends JFrame {
 
         genderComboBox = new JComboBox<>(genderOptions);
         activityLevelComboBox = new JComboBox<>(activityLevels);
-
-//        ButtonGroup activityLevelGroup = new ButtonGroup();
-//        activityLevelGroup.add(lowActivityRadioButton);
-//        activityLevelGroup.add(moderateActivityRadioButton);
-//        activityLevelGroup.add(highActivityRadioButton);
-
-//        ButtonGroup genderGroup = new ButtonGroup();
-//        genderGroup.add(maleRadioButton);
-//        genderGroup.add(femaleRadioButton);
 
         backButton = new JButton("Back"); // Initialize the back button
         backButton.addActionListener(new ActionListener() {
@@ -122,16 +105,6 @@ public class CalculatorFrame extends JFrame {
                         JOptionPane.showMessageDialog(CalculatorFrame.this, "Please select a gender.");
                         return;
                     }
-
-                    // Check if gender is selected
-//                    if (!maleRadioButton.isSelected() && !femaleRadioButton.isSelected()) {
-//                        JOptionPane.showMessageDialog(CalculatorFrame.this, "Please select a gender.");
-//                        return;
-//                    }
-//                    int gender = maleRadioButton.isSelected() ? 0 : 1;
-
-
-
 
                     // Validating and parsing weight
                     String weightText = weightField.getText();
@@ -179,19 +152,6 @@ public class CalculatorFrame extends JFrame {
                         JOptionPane.showMessageDialog(CalculatorFrame.this, "Please select an activity level.");
                         return;
                     }
-
-                    // Determine the selected activity level
-//                    double activityLevel;
-//                    if (lowActivityRadioButton.isSelected()) {
-//                        activityLevel = 1.2;
-//                    } else if (moderateActivityRadioButton.isSelected()) {
-//                        activityLevel = 1.5;
-//                    } else if (highActivityRadioButton.isSelected()) {
-//                        activityLevel = 1.8;
-//                    } else {
-//                        JOptionPane.showMessageDialog(CalculatorFrame.this, "Please select an activity level.");
-//                        return;
-//                    }
 
                     int dietaryPreference = dietComboBox.getSelectedIndex();
                     int goal = goalComboBox.getSelectedIndex();
@@ -291,16 +251,12 @@ public class CalculatorFrame extends JFrame {
 
         getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
-//        JPanel mainPanel = new JPanel();
-//        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-//        mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-
         // Create and style each row with its own JPanel
         getContentPane().add(createRowPanel(new JLabel("Age:"), ageField), gbc);
         getContentPane().add(createRowPanel(new JLabel("Gender:"), genderComboBox), gbc);
         getContentPane().add(createRowPanel(new JLabel("Weight (kg):"), weightField), gbc);
         getContentPane().add(createRowPanel(new JLabel("Height (cm):"), heightField), gbc);
-        getContentPane().add(createRowPanel(new JLabel("Activity Level:"),activityLevelComboBox), gbc);   //));
+        getContentPane().add(createRowPanel(new JLabel("Activity Level:"), activityLevelComboBox), gbc);   //));
         getContentPane().add(createRowPanel(new JLabel("Dietary Requirement:"), dietComboBox), gbc);
         getContentPane().add(createRowPanel(new JLabel("Goal:"), goalComboBox), gbc);
 
@@ -316,53 +272,20 @@ public class CalculatorFrame extends JFrame {
         backPanel.add(backButton);
         getContentPane().add(backPanel);
 
-
-//        mainPanel.add(submitPanel);
-//        mainPanel.add(backPanel);
-//        setContentPane(mainPanel);
         setLocationRelativeTo(null);
         pack();
     }
-
 
 
     private JPanel createRowPanel(JComponent label, JComponent field) {
         JPanel rowPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(2, 2, 2, 2); // Top, left, bottom, right padding
-//        rowPanel.setLayout(new BoxLayout(rowPanel, BoxLayout.X_AXIS));
         gbc.anchor = GridBagConstraints.WEST;
-//        label.setPreferredSize(new Dimension(100, 20)); // Adjust size as needed
         rowPanel.add(label, gbc);
 
         gbc.anchor = GridBagConstraints.EAST;
-//        rowPanel.add(Box.createRigidArea(new Dimension(2, 0))); // Space between label and field
         rowPanel.add(field, gbc);
         return rowPanel;
     }
-
-//    private JPanel createGenderPanel() {
-//        JPanel genderPanel = new JPanel(new FlowLayout());
-//        genderPanel.add(maleRadioButton);
-//        genderPanel.add(femaleRadioButton);
-//        return genderPanel;
-//    }
-//
-//    private JPanel createActivityLevelPanel() {
-//        JPanel activityLevelPanel = new JPanel(new FlowLayout());
-//        activityLevelPanel.add(lowActivityRadioButton);
-//        activityLevelPanel.add(moderateActivityRadioButton);
-//        activityLevelPanel.add(highActivityRadioButton);
-//        return activityLevelPanel;
-//    }
-
 }
-/*  Won't work without a username variable
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new CalculatorFrame());
-
-
-        public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new CalculatorFrame("username"));
-    }
-}*/

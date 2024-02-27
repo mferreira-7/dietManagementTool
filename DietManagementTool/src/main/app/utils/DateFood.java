@@ -1,9 +1,10 @@
 package main.app.utils;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class DateFood implements Comparable<DateFood> {
-    private Date date;
+    private LocalDate date;
+    private String mealType;
     private String name;
     private double calories;
     private double servingSize;
@@ -18,8 +19,9 @@ public class DateFood implements Comparable<DateFood> {
     private double sugar;
     private boolean dataCulled;
 
-    public DateFood(Date date, String name, double calories, double servingSize, double totalFat, double saturatedFat, double protein, double sodium, double potassium, double cholesterolMg, double totalCarbs, double fiber, double sugar) {
+    public DateFood(LocalDate date, String mealType, String name, double calories, double servingSize, double totalFat, double saturatedFat, double protein, double sodium, double potassium, double cholesterolMg, double totalCarbs, double fiber, double sugar) {
         this.date = date;
+        this.mealType = mealType;
         this.name = name;
         this.calories = calories;
         this.servingSize = servingSize;
@@ -37,8 +39,12 @@ public class DateFood implements Comparable<DateFood> {
 
     // Getters and setters for all fields
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
+    }
+
+    public String getMealType() {
+        return mealType;
     }
 
     public String getName() {
@@ -99,7 +105,7 @@ public class DateFood implements Comparable<DateFood> {
 
     @Override
     public String toString() {
-        return "Date=" + date + ", name='" + name + '\'' + ", calories=" + calories + ", servingSize=" + servingSize + ", totalFat=" + totalFat + ", saturatedFat=" + saturatedFat + ", protein=" + protein + ", sodium=" + sodium + ", potassium=" + potassium + ", cholesterolMg=" + cholesterolMg + ", totalCarbs=" + totalCarbs + ", fiber=" + fiber + ", sugar=" + sugar + '}';
+        return "Date=" + date + ", mealType='" + mealType + ", name='" + name + '\'' + ", calories=" + calories + ", servingSize=" + servingSize + ", totalFat=" + totalFat + ", saturatedFat=" + saturatedFat + ", protein=" + protein + ", sodium=" + sodium + ", potassium=" + potassium + ", cholesterolMg=" + cholesterolMg + ", totalCarbs=" + totalCarbs + ", fiber=" + fiber + ", sugar=" + sugar + '}';
     }
 
     @Override
