@@ -6,8 +6,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.time.LocalDate;
 import java.util.Calendar;
+
+import static main.app.utils.Constants.SCREEN_HEIGHT;
+import static main.app.utils.Constants.SCREEN_WIDTH;
 
 public class ReportFrame extends JFrame {
     private JButton reportButton;
@@ -45,18 +49,60 @@ public class ReportFrame extends JFrame {
     }
 
     private void applyStyles() {
-        Font buttonFont = new Font("Arial", Font.BOLD, 12);
+        Font buttonFont = new Font("Arial", Font.BOLD, 18);
         reportButton.setBackground(Color.BLACK);
         reportButton.setForeground(Color.WHITE);
         reportButton.setFont(buttonFont);
         reportButton.setOpaque(true);
         reportButton.setBorderPainted(false);
         reportButton.setFocusPainted(false);
+
+        backButton.setBackground(Color.BLACK);
+        backButton.setForeground(Color.WHITE);
         backButton.setFont(buttonFont);
+        backButton.setOpaque(true);
+        backButton.setBorderPainted(false);
+        backButton.setFocusPainted(false);
     }
 
     private void setLayoutCustom() {
+
+        setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+        setResizable(false);
+        // Assuming SCREEN_HEIGHT and SCREEN_WIDTH are defined and represent the size of the screen
+        int topPanelHeight = (int) (SCREEN_HEIGHT * 0.10); // Calculate 10% of the screen height for the top panel
+
+        // Set the main layout to BorderLayout
         getContentPane().setLayout(new BorderLayout());
+
+        // Create the top panel with BorderLayout for the logo
+        JPanel topPanel = new JPanel(new BorderLayout());
+        topPanel.setPreferredSize(new Dimension(SCREEN_WIDTH, topPanelHeight)); // Set the preferred size for the top panel
+
+        // Add a logo to the top panel
+        JLabel logoLabel = new JLabel(); // Create a label to hold the logo
+        logoLabel.setHorizontalAlignment(JLabel.CENTER); // Set the logo to align center
+        URL logoUrl = getClass().getResource("/main/resources/Images/Image_5.png");
+        ImageIcon logoIcon = new ImageIcon(logoUrl);
+        Image logoImage = logoIcon.getImage();
+        // Scale the Logo to fit the application window or a specific size
+        Image scaledLogo = logoImage.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+        ImageIcon scaledLogoIcon = new ImageIcon(scaledLogo);
+        logoLabel.setIcon(scaledLogoIcon); // Add the logo to the label
+        topPanel.add(logoLabel, BorderLayout.CENTER); // Add the label to the top panel
+
+
+        JPanel rightPanel = new JPanel(new GridBagLayout()); // This panel will have the GridBagLayout
+        JPanel leftPanel = new JPanel(new BorderLayout()); // This panel will just contain an image
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.NORTH; // Change to NORTH if you want components to be aligned to the top
+        gbc.insets = new Insets(10, 0, 10, 0);
+
+
+//        getContentPane().setLayout(new BorderLayout());
 
         // Panels for date selection
         JPanel startDatePanel = new JPanel();
@@ -65,6 +111,7 @@ public class ReportFrame extends JFrame {
         startDatePanel.setLayout(new FlowLayout());
         endDatePanel.setLayout(new FlowLayout());
         buttonPanel.setLayout(new FlowLayout()); // Set layout for button panel
+
 
         // Labels
         startDatePanel.add(new JLabel("Start Date:"));
@@ -92,6 +139,10 @@ public class ReportFrame extends JFrame {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
+        // Create an empty border for spacing
+        int topSpacing = 60; // Adjust the value to increase or decrease the space
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(topSpacing, 0, 0, 0));
+
         ReportButtonListener reportButtonListener = new ReportButtonListener(this, startDay, startMonth, startYear, endDay, endMonth, endYear);
         reportButton.addActionListener(reportButtonListener);
 
@@ -99,11 +150,43 @@ public class ReportFrame extends JFrame {
         buttonPanel.add(reportButton);
         buttonPanel.add(backButton);
 
-        mainPanel.add(startDatePanel);
-        mainPanel.add(endDatePanel);
-        mainPanel.add(buttonPanel);
+        rightPanel.add(startDatePanel, gbc);
+        gbc.gridy++;
 
-        getContentPane().add(mainPanel, BorderLayout.CENTER);
+        rightPanel.add(endDatePanel, gbc);
+        gbc.gridy++;
+
+        rightPanel.add(buttonPanel, gbc);
+        gbc.gridy++;
+
+
+        try {
+            URL imageUrl = getClass().getResource("/main/resources/Images/Image_4.png"); //file path
+            if (imageUrl != null) {
+                ImageIcon originalIcon = new ImageIcon(imageUrl);
+                Image originalImage = originalIcon.getImage();
+
+                // Scale the image to fit the application window or a specific size
+                Image scaledImage = originalImage.getScaledInstance(400, 400, Image.SCALE_SMOOTH);
+                ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+                JLabel imageLabel = new JLabel(scaledIcon);
+                imageLabel.setHorizontalAlignment(JLabel.CENTER);
+                leftPanel.add(imageLabel, BorderLayout.CENTER);
+                leftPanel.setOpaque(false);
+            } else {
+                System.err.println("Image file not found");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error loading the image.");
+        }
+
+
+        getContentPane().add(topPanel, BorderLayout.NORTH); // Top panel at the top
+        getContentPane().add(rightPanel, BorderLayout.EAST);
+        getContentPane().add(leftPanel, BorderLayout.CENTER); // Add the right panel to the center (which will effectively be the right side)
+
         pack(); // Adjusts the frame size to fit the components
         setLocationRelativeTo(null); // Center the frame
         setResizable(true); // Allow resizing

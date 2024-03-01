@@ -1,3 +1,0 @@
-date,mealType,name,calories,servingSize,totalFat,saturatedFat,protein,sodium,potassium,cholesterolMg,totalCarbs,fiber,sugar
-'2024-02-27','Breakfast','rice', 127.4, 100.0, 0.3, 0.1, 2.7, 1.0, 42.0, 0.0, 28.4, 0.4, 0.0
-'2024-02-27','Breakfast','bean', 129.5, 100.0, 0.5, 0.1, 8.7, 0.0, 138.0, 0.0, 22.6, 6.4, 0.0

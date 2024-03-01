@@ -64,7 +64,7 @@ public class LoginFrame extends JFrame {
     }
 
     private void applyStyles() {
-        Font labelFont = new Font("Arial", Font.BOLD, 15);
+        Font labelFont = new Font("Arial", Font.BOLD, 18);
         Font fieldFont = new Font("Arial", Font.PLAIN, 13);
         Font welcomeFont = new Font("Arial", Font.BOLD, 28);
 
@@ -74,6 +74,13 @@ public class LoginFrame extends JFrame {
         signUpButton.setOpaque(true);
         signUpButton.setBorderPainted(false);
         signUpButton.setFocusPainted(false);
+
+        // Style the forget password button
+        forgotPasswordButton.setBackground(Color.GRAY);
+        forgotPasswordButton.setForeground(Color.WHITE);
+        forgotPasswordButton.setOpaque(true);
+        forgotPasswordButton.setBorderPainted(false);
+        forgotPasswordButton.setFocusPainted(false);
 
         // Style the login button
         loginButton.setBackground(Color.BLACK);
@@ -89,14 +96,9 @@ public class LoginFrame extends JFrame {
         welcomeLabel.setFont(welcomeFont);
 
         loginButton.setFont(labelFont);
+        forgotPasswordButton.setFont(labelFont);
         signUpButton.setFont(labelFont);
 
-        forgotPasswordButton.setBackground(Color.GRAY);
-        forgotPasswordButton.setForeground(Color.WHITE);
-        forgotPasswordButton.setOpaque(true);
-        forgotPasswordButton.setBorderPainted(false);
-        forgotPasswordButton.setFocusPainted(false);
-        forgotPasswordButton.setFont(new Font("Arial", Font.BOLD, 15));
     }
 
     private void setLayoutComponents() {

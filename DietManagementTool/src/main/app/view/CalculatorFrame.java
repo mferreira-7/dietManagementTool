@@ -34,6 +34,7 @@ public class CalculatorFrame extends JFrame {
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
+        setSize(700, 500);
         this.username = username;
 
         addWindowListener(new WindowAdapter() {
@@ -49,7 +50,7 @@ public class CalculatorFrame extends JFrame {
 
 
     private void initializeComponents() {
-        setSize(700, 500);
+        setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         setResizable(false);
         setTitle("Diet Management Tool - Nutrition Recommendation");
 
@@ -186,7 +187,7 @@ public class CalculatorFrame extends JFrame {
     }
 
     private void applyStyles() {
-        Font buttonFont = new Font("Arial", Font.BOLD, 14);
+        Font buttonFont = new Font("Arial", Font.BOLD, 18);
         Font fieldFont = new Font("Arial", Font.PLAIN, 16);
 
         ageField.setFont(fieldFont);
@@ -261,7 +262,6 @@ public class CalculatorFrame extends JFrame {
         getContentPane().add(createRowPanel(new JLabel("Goal:"), goalComboBox), gbc);
 
         JPanel submitPanel = new JPanel();
-        submitButton.setPreferredSize(new Dimension(100, 30)); // Adjust size as needed
         submitPanel.add(submitButton);
         gbc.fill = GridBagConstraints.NONE; // Do not stretch the button
         gbc.anchor = GridBagConstraints.CENTER; // Center the button

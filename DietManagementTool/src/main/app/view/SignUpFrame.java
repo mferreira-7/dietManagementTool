@@ -172,7 +172,7 @@ public class SignUpFrame extends JFrame {
         registerButton.setBackground(Color.BLACK);
         registerButton.setForeground(Color.WHITE);
         registerButton.setFocusPainted(false);
-        registerButton.setFont(new Font("Arial", Font.BOLD, 14));
+        registerButton.setFont(new Font("Arial", Font.BOLD, 18));
 
         backButton = new JButton("Back");
 
@@ -183,7 +183,7 @@ public class SignUpFrame extends JFrame {
         backButton.setOpaque(true);
         backButton.setBorderPainted(false);
         backButton.setFocusPainted(false);
-        backButton.setFont(new Font("Arial", Font.BOLD, 14));
+        backButton.setFont(new Font("Arial", Font.BOLD, 18));
 
         backButton.addActionListener(new ActionListener() {
             @Override
