@@ -54,6 +54,18 @@ public class NutritionRecommendationFrame {
         });
         panel.add(backButton);
 
+//        style the back button
+
+        backButton.setFont(new Font("Arial", Font.BOLD, 18));
+        backButton.setFocusPainted(false);
+
+        // Style the backButton button
+        backButton.setBackground(Color.BLACK);
+        backButton.setForeground(Color.WHITE);
+        backButton.setOpaque(true);
+        backButton.setBorderPainted(false);
+        backButton.setFocusPainted(false);
+
         frame.getContentPane().add(panel, BorderLayout.CENTER);
         frame.setSize(600, 600);
         frame.setLocationRelativeTo(null);
