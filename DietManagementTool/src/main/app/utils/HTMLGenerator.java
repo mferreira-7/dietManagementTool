@@ -7,7 +7,7 @@ import java.util.List;
 
 public class HTMLGenerator {
 
-    public static void generateHTML(List<DateFood> foods) {
+    public static void generateHTML(List<DateFood> foods, String username) {
         // Define the beginning of the HTML document
         String docType = "<!DOCTYPE html>\n";
         String htmlOpen = "<html>\n";
@@ -90,7 +90,7 @@ public class HTMLGenerator {
         String htmlContent = docType + htmlOpen + head + bodyOpen + header + tableHeader + tableRows.toString() + tableClose + svgGraph + footer + bodyClose + htmlClose;
 
         // Write HTML content to a file
-        try (FileWriter fileWriter = new FileWriter("DateFoodList.html")) {
+        try (FileWriter fileWriter = new FileWriter("src\\main\\user_reports\\" + username + ".html")) {
             fileWriter.write(htmlContent);
             System.out.println("HTML file with graph created successfully.");
         } catch (IOException e) {
@@ -100,16 +100,9 @@ public class HTMLGenerator {
 
 
     public static void main(String[] args) {
-        // User ID
         String userId = "vlad123";
-
-        // Creating a LocalDate object for the year 1900
         LocalDate startDate = LocalDate.of(1900, 1, 1);
-
-        // Getting today's date
         LocalDate endDate = LocalDate.now();
-
-        // Assuming CSVReader has a method GenerateReport that takes these arguments
         CSVReader.GenerateReport(userId, startDate, endDate);
     }
 
