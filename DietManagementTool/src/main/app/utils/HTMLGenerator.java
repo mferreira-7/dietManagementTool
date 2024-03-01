@@ -2,40 +2,116 @@ package main.app.utils;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.List;
 
 public class HTMLGenerator {
 
     public static void generateHTML(List<DateFood> foods) {
-        // HTML template
-        String htmlContent = "<!DOCTYPE html>\n" + "<html>\n" + "<head>\n" + "<title>DateFood List</title>\n" + "<style>\n" + "table {\n" + "    font-family: Arial, sans-serif;\n" + "    border-collapse: collapse;\n" + "    width: 100%;\n" + "}\n" + "th, td {\n" + "    border: 1px solid #dddddd;\n" + "    text-align: left;\n" + "    padding: 8px;\n" + "}\n" + "th {\n" + "    background-color: #f2f2f2;\n" + "}\n" + "</style>\n" + "</head>\n" + "<body>\n" + "<table>\n" + "<tr>\n" + "<th>Date</th>\n" + "<th>Meal Type</th>\n" + // New column for mealType
-                "<th>Name</th>\n" + "<th>Calories</th>\n" + "<th>Serving Size</th>\n" + "<th>Total Fat</th>\n" + "<th>Saturated Fat</th>\n" + "<th>Protein</th>\n" + "<th>Sodium</th>\n" + "<th>Potassium</th>\n" + "<th>Cholesterol Mg</th>\n" + "<th>Total Carbs</th>\n" + "<th>Fiber</th>\n" + "<th>Sugar</th>\n" + "</tr>\n";
+        // Define the beginning of the HTML document
+        String docType = "<!DOCTYPE html>\n";
+        String htmlOpen = "<html>\n";
+        String head = "<head>\n" +
+                "<title>Daily Food Intake Summary</title>\n" +
+                "<style>\n" +
+                "table { font-family: Arial, sans-serif; border-collapse: collapse; width: 100%; }\n" +
+                "th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }\n" +
+                "th { background-color: #f2f2f2; }\n" +
+                "footer { margin-top: 20px; padding: 20px; background-color: #f2f2f2; text-align: center; font-family: Arial, sans-serif; }\n" +
+                "h1 { text-align: center; font-family: Arial, sans-serif; }\n" +
+                "</style>\n" +
+                "</head>\n";
+        String bodyOpen = "<body>\n";
+        String header = "<h1>Daily Food Intake Summary</h1>\n";
+        String tableHeader = "<table>\n" +
+                "<tr>\n" +
+                "<th>Date</th>\n" +
+                "<th>Meal Type</th>\n" +
+                "<th>Name</th>\n" +
+                "<th>Calories</th>\n" +
+                "<th>Serving Size</th>\n" +
+                "<th>Total Fat</th>\n" +
+                "<th>Saturated Fat</th>\n" +
+                "<th>Protein</th>\n" +
+                "<th>Sodium</th>\n" +
+                "<th>Potassium</th>\n" +
+                "<th>Cholesterol Mg</th>\n" +
+                "<th>Total Carbs</th>\n" +
+                "<th>Fiber</th>\n" +
+                "<th>Sugar</th>\n" +
+                "</tr>\n";
 
-        // Fill HTML table with data
+        StringBuilder tableRows = new StringBuilder();
         for (DateFood food : foods) {
-            htmlContent += "<tr>\n" + "<td>" + food.getDate() + "</td>\n" + "<td>" + food.getMealType() + "</td>\n" + // Add mealType data
-                    "<td>" + food.getName() + "</td>\n" + "<td>" + food.getCalories() + "</td>\n" + "<td>" + food.getServingSize() + "</td>\n" + "<td>" + food.getTotalFat() + "</td>\n" + "<td>" + food.getSaturatedFat() + "</td>\n" + "<td>" + food.getProtein() + "</td>\n" + "<td>" + food.getSodium() + "</td>\n" + "<td>" + food.getPotassium() + "</td>\n" + "<td>" + food.getCholesterolMg() + "</td>\n" + "<td>" + food.getTotalCarbs() + "</td>\n" + "<td>" + food.getFiber() + "</td>\n" + "<td>" + food.getSugar() + "</td>\n" + "</tr>\n";
+            tableRows.append("<tr>\n")
+                    .append("<td>").append(food.getDate()).append("</td>\n")
+                    .append("<td>").append(food.getMealType()).append("</td>\n")
+                    .append("<td>").append(food.getName()).append("</td>\n")
+                    .append("<td>").append(food.getCalories()).append("</td>\n")
+                    .append("<td>").append(food.getServingSize()).append("</td>\n")
+                    .append("<td>").append(food.getTotalFat()).append("</td>\n")
+                    .append("<td>").append(food.getSaturatedFat()).append("</td>\n")
+                    .append("<td>").append(food.getProtein()).append("</td>\n")
+                    .append("<td>").append(food.getSodium()).append("</td>\n")
+                    .append("<td>").append(food.getPotassium()).append("</td>\n")
+                    .append("<td>").append(food.getCholesterolMg()).append("</td>\n")
+                    .append("<td>").append(food.getTotalCarbs()).append("</td>\n")
+                    .append("<td>").append(food.getFiber()).append("</td>\n")
+                    .append("<td>").append(food.getSugar()).append("</td>\n")
+                    .append("</tr>\n");
         }
 
-        htmlContent += "</table>\n" + "</body>\n" + "</html>";
+        String tableClose = "</table>\n";
+        String footer = "<footer>\n" +
+                "<p>Report generated by the software provided by <strong>Team 50 | University of Essex</strong>.</p>\n" +
+                "</footer>\n";
+        String bodyClose = "</body>\n";
+        String htmlClose = "</html>";
+
+        // Generate SVG for bar graph
+        String svgOpen = "<svg width=\"500\" height=\"300\" style=\"border: 1px solid black;\">\n";
+        StringBuilder svgContent = new StringBuilder();
+        int x = 10; // Starting position for the first bar
+        int maxBarHeight = 200; // Maximum height of the bars
+        double maxCalories = foods.stream().mapToDouble(DateFood::getCalories).max().orElse(1); // Find max calories to scale bar heights
+
+        for (DateFood food : foods) {
+            double barHeight = (food.getCalories() / maxCalories) * maxBarHeight; // Scale the bar height based on calories
+            svgContent.append("<rect x=\"").append(x).append("\" y=\"").append(maxBarHeight - barHeight + 50) // 50 for bottom margin
+                    .append("\" width=\"20\" height=\"").append(barHeight)
+                    .append("\" style=\"fill:blue;stroke-width:1;stroke:black\" />\n");
+            x += 30; // Increment x position for the next bar
+        }
+
+        String svgClose = "</svg>\n";
+        String svgGraph = svgOpen + svgContent.toString() + svgClose;
+
+        // Combine parts into the final HTML content, including the SVG graph
+        String htmlContent = docType + htmlOpen + head + bodyOpen + header + tableHeader + tableRows.toString() + tableClose + svgGraph + footer + bodyClose + htmlClose;
 
         // Write HTML content to a file
         try (FileWriter fileWriter = new FileWriter("DateFoodList.html")) {
             fileWriter.write(htmlContent);
-            System.out.println("HTML file created successfully.");
+            System.out.println("HTML file with graph created successfully.");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void main(String[] args) {
-        // Assuming 'foods' is the list of DateFood objects obtained from CSVReader
-        // CSVReader csvReader = new CSVReader();
-        // List<DateFood> foods = csvReader.readCSV("your_csv_file_path.csv");
-        List<DateFood> foods = new ArrayList<>(); // Sample list of DateFood objects
 
-        // Call generateHTML method
-        generateHTML(foods);
+    public static void main(String[] args) {
+        // User ID
+        String userId = "vlad123";
+
+        // Creating a LocalDate object for the year 1900
+        LocalDate startDate = LocalDate.of(1900, 1, 1);
+
+        // Getting today's date
+        LocalDate endDate = LocalDate.now();
+
+        // Assuming CSVReader has a method GenerateReport that takes these arguments
+        CSVReader.GenerateReport(userId, startDate, endDate);
     }
+
+
 }
