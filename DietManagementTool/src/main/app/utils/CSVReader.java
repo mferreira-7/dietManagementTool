@@ -47,6 +47,6 @@ public class CSVReader {
         }
 
         // Assuming HTMLGenerator is a class you've defined to generate HTML reports
-        HTMLGenerator.generateHTML(foods);
+        HTMLGenerator.generateHTML(foods, userName);
     }
 }
