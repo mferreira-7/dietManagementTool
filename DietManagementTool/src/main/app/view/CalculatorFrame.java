@@ -34,6 +34,7 @@ public class CalculatorFrame extends JFrame {
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
+        setSize(700, 500);
         this.username = username;
 
         addWindowListener(new WindowAdapter() {
@@ -49,7 +50,7 @@ public class CalculatorFrame extends JFrame {
 
 
     private void initializeComponents() {
-        setSize(700, 500);
+        setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         setResizable(false);
         setTitle("Diet Management Tool - Nutrition Recommendation");
 
@@ -186,11 +187,8 @@ public class CalculatorFrame extends JFrame {
     }
 
     private void applyStyles() {
-        Font labelFont = new Font("Arial", Font.PLAIN, 18);
+        Font buttonFont = new Font("Arial", Font.BOLD, 18);
         Font fieldFont = new Font("Arial", Font.PLAIN, 16);
-        backButton.setFont(new Font("Arial", Font.PLAIN, 18));
-        Color buttonColor = new Color(100, 181, 246);
-        Color buttonTextColor = Color.BLACK;
 
         ageField.setFont(fieldFont);
         genderComboBox.setFont(fieldFont);
@@ -200,13 +198,20 @@ public class CalculatorFrame extends JFrame {
         goalComboBox.setFont(fieldFont);
         activityLevelComboBox.setFont(fieldFont);
 
-        submitButton.setFont(labelFont);
-        submitButton.setBackground(buttonColor);
-        submitButton.setForeground(buttonTextColor);
+        // Style the submitButton button
+        submitButton.setFont(buttonFont);
+        submitButton.setBackground(Color.BLACK);
+        submitButton.setForeground(Color.WHITE);
+        submitButton.setOpaque(true);
+        submitButton.setBorderPainted(false);
         submitButton.setFocusPainted(false);
-        submitButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
-        submitButton.setMaximumSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
 
+        // Style the backButton button
+        backButton.setFont(buttonFont);
+        backButton.setBackground(Color.BLACK);
+        backButton.setForeground(Color.WHITE);
+        backButton.setOpaque(true);
+        backButton.setBorderPainted(false);
         backButton.setFocusPainted(false);
     }
 
@@ -216,7 +221,7 @@ public class CalculatorFrame extends JFrame {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.insets = new Insets(10, 50, 10, 50); // Top, left, bottom, right paddin
+        gbc.insets = new Insets(10, 50, 10, 50); // Top, left, bottom, right padding
 
         setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         setResizable(false);
@@ -257,7 +262,6 @@ public class CalculatorFrame extends JFrame {
         getContentPane().add(createRowPanel(new JLabel("Goal:"), goalComboBox), gbc);
 
         JPanel submitPanel = new JPanel();
-        submitButton.setPreferredSize(new Dimension(100, 30)); // Adjust size as needed
         submitPanel.add(submitButton);
         gbc.fill = GridBagConstraints.NONE; // Do not stretch the button
         gbc.anchor = GridBagConstraints.CENTER; // Center the button
