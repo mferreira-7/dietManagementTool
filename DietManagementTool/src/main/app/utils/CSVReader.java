@@ -30,20 +30,16 @@ public class CSVReader {
 
                 // Check if the food date is within the start and end date range
                 if ((foodDate.isAfter(startDate) || foodDate.isEqual(startDate)) && (foodDate.isBefore(endDate) || foodDate.isEqual(endDate))) {
-                    if (currentFood == null || !currentFood.getDate().isEqual(foodDate)) {
-                        currentFood = new DateFood(foodDate, data[1].replaceAll("'", ""), data[2].replaceAll("'", ""), Double.parseDouble(data[3]), Double.parseDouble(data[4]), Double.parseDouble(data[5]), Double.parseDouble(data[6]), Double.parseDouble(data[7]), Double.parseDouble(data[8]), Double.parseDouble(data[9]), Double.parseDouble(data[10]), Double.parseDouble(data[11]), Double.parseDouble(data[12]), Double.parseDouble(data[13]));
-                        foods.add(currentFood);
-                    } else {
-                        // Handle cases where data needs to be appended to the current food item
-                        // Example: multiple lines for the same food item
-                    }
+                    // Directly create a new DateFood object and add it to the foods list
+                    DateFood foodToAdd = new DateFood(foodDate, data[1].replaceAll("'", ""), data[2].replaceAll("'", ""), Double.parseDouble(data[3]), Double.parseDouble(data[4]), Double.parseDouble(data[5]), Double.parseDouble(data[6]), Double.parseDouble(data[7]), Double.parseDouble(data[8]), Double.parseDouble(data[9]), Double.parseDouble(data[10]), Double.parseDouble(data[11]), Double.parseDouble(data[12]), Double.parseDouble(data[13]));
+                    foods.add(foodToAdd);
                 }
-
-                currentFood.setDataCulled(true);
+                // No need to set dataCulled flag here as it's not related to this loop's logic
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
         // Print out the filtered foods for verification
         for (DateFood food : foods) {

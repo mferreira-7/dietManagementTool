@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.Calendar;
 
@@ -139,11 +140,22 @@ class ReportButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        LocalDate startDate = LocalDate.of(startYear.getItemAt(startYear.getSelectedIndex()), startMonth.getItemAt(startMonth.getSelectedIndex()), startDay.getItemAt(startDay.getSelectedIndex()));
-        LocalDate endDate = LocalDate.of(endYear.getItemAt(endYear.getSelectedIndex()), endMonth.getItemAt(endMonth.getSelectedIndex()), endDay.getItemAt(endDay.getSelectedIndex()));
+        try {
+            LocalDate startDate = LocalDate.of(startYear.getItemAt(startYear.getSelectedIndex()), startMonth.getItemAt(startMonth.getSelectedIndex()), startDay.getItemAt(startDay.getSelectedIndex()));
+            LocalDate endDate = LocalDate.of(endYear.getItemAt(endYear.getSelectedIndex()), endMonth.getItemAt(endMonth.getSelectedIndex()), endDay.getItemAt(endDay.getSelectedIndex()));
 
-        // Now, pass these LocalDate objects to your CSVReader method
-        CSVReader.GenerateReport(reportFrame.getCurrentUser(), startDate, endDate);
-        System.out.println("Generated Report for: " + reportFrame.getCurrentUser() + " From: " + startDate + " To: " + endDate);
+            // Validate that startDate is before or equal to endDate
+            if (startDate.isAfter(endDate)) {
+                JOptionPane.showMessageDialog(reportFrame, "Start date must be before end date.", "Date Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Now, pass these LocalDate objects to your CSVReader method
+            CSVReader.GenerateReport(reportFrame.getCurrentUser(), startDate, endDate);
+            System.out.println("Generated Report for: " + reportFrame.getCurrentUser() + " From: " + startDate + " To: " + endDate);
+        } catch (DateTimeException ex) {
+            JOptionPane.showMessageDialog(reportFrame, "Invalid date provided.", "Date Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
+
 }
