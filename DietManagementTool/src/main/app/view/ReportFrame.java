@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.Calendar;
 
@@ -117,15 +118,23 @@ public class ReportFrame extends JFrame {
         startDatePanel.add(new JLabel("Start Date:"));
         endDatePanel.add(new JLabel("End Date:"));
 
-        // Date JComboBoxes for start date
+        Calendar currentCalendar = Calendar.getInstance();
+        int currentYear = currentCalendar.get(Calendar.YEAR);
+        int currentMonth = currentCalendar.get(Calendar.MONTH) + 1; // +1 because Calendar.MONTH is zero-based
+        int currentDay = currentCalendar.get(Calendar.DAY_OF_MONTH);
+
+        // Initialize JComboBoxes for date selection
         JComboBox<Integer> startDay = generateNumbers(1, 31);
         JComboBox<Integer> startMonth = generateNumbers(1, 12);
-        JComboBox<Integer> startYear = generateNumbers(1900, Calendar.getInstance().get(Calendar.YEAR));
+        JComboBox<Integer> startYear = generateNumbers(1900, currentYear - 1);
+        startYear.setSelectedItem(currentYear - 1); // Set startYear to last year
 
-        // Date JComboBoxes for end date
         JComboBox<Integer> endDay = generateNumbers(1, 31);
+        endDay.setSelectedItem(currentDay); // Set endDay to today
         JComboBox<Integer> endMonth = generateNumbers(1, 12);
-        JComboBox<Integer> endYear = generateNumbers(1900, Calendar.getInstance().get(Calendar.YEAR));
+        endMonth.setSelectedItem(currentMonth); // Set endMonth to current month
+        JComboBox<Integer> endYear = generateNumbers(1900, currentYear);
+        endYear.setSelectedItem(currentYear); // Set endYear to this year
 
         // Adding JComboBoxes to panels
         startDatePanel.add(startDay);
