@@ -110,6 +110,8 @@ public class DateFood implements Comparable<DateFood> {
 
     @Override
     public int compareTo(DateFood o) {
-        return 0;
+        // Assuming date is a LocalDate object in DateFood
+        return this.getDate().compareTo(o.getDate());
     }
+
 }
