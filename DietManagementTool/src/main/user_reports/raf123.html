@@ -112,6 +112,102 @@ h1 { text-align: center; }
 <td>0.0</td>
 <td>0.0</td>
 </tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>chicken</td>
+<td>1113.2</td>
+<td>500.0</td>
+<td>64.5</td>
+<td>18.3</td>
+<td>118.7</td>
+<td>361.0</td>
+<td>895.0</td>
+<td>460.0</td>
+<td>0.2</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>milk</td>
+<td>102.6</td>
+<td>200.0</td>
+<td>3.8</td>
+<td>2.4</td>
+<td>7.0</td>
+<td>105.0</td>
+<td>201.0</td>
+<td>16.0</td>
+<td>9.8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>bread</td>
+<td>784.8</td>
+<td>300.0</td>
+<td>10.2</td>
+<td>2.1</td>
+<td>26.5</td>
+<td>1486.0</td>
+<td>294.0</td>
+<td>0.0</td>
+<td>150.7</td>
+<td>8.2</td>
+<td>17.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Breakfast</td>
+<td>chicken</td>
+<td>1113.2</td>
+<td>500.0</td>
+<td>64.5</td>
+<td>18.3</td>
+<td>118.7</td>
+<td>361.0</td>
+<td>895.0</td>
+<td>460.0</td>
+<td>0.2</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>milk</td>
+<td>51.3</td>
+<td>100.0</td>
+<td>1.9</td>
+<td>1.2</td>
+<td>3.5</td>
+<td>52.0</td>
+<td>100.0</td>
+<td>8.0</td>
+<td>4.9</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Lunch</td>
+<td>milk</td>
+<td>102.6</td>
+<td>200.0</td>
+<td>3.8</td>
+<td>2.4</td>
+<td>7.0</td>
+<td>105.0</td>
+<td>201.0</td>
+<td>16.0</td>
+<td>9.8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
 </table>
 <div style="display:flex; justify-content:center; flex-wrap:wrap;">
 <div id="linearRegressionChart" style="width: 100%; max-width: 800px; height: auto; aspect-ratio: 16 / 9; margin: 10px;"></div>
@@ -124,7 +220,7 @@ var data = new google.visualization.DataTable();
 data.addColumn('date', 'Date');
 data.addColumn('number', 'Calories');
 data.addRows([
-[new Date('2024-03-02'), 1021.6],
+[new Date('2024-03-02'), 4289.3],
 ]);
 var options = {
 title: 'Linear Regression - Calories Over Time',
@@ -144,7 +240,9 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var data = google.visualization.arrayToDataTable([
 ['Category', 'Count'],
-['Other', 5],
+['Breakfast', 1],
+['Other', 9],
+['Lunch', 1],
 ]);
 var options = {
 title: 'Meal Type Distribution',
@@ -153,6 +251,78 @@ var chart = new google.visualization.PieChart(document.getElementById('pieChart'
 chart.draw(data, options);
 }
 </script>
+</div>
+<h2>Breakfast</h2>
+<table style="margin-top: 10px;">
+<tr>
+<th>Date</th>
+<th>Meal Type</th>
+<th>Name</th>
+<th>Calories</th>
+<th>Serving Size</th>
+<th>Total Fat</th>
+<th>Saturated Fat</th>
+<th>Protein</th>
+<th>Sodium</th>
+<th>Potassium</th>
+<th>Cholesterol Mg</th>
+<th>Total Carbs</th>
+<th>Fiber</th>
+<th>Sugar</th>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Breakfast</td>
+<td>chicken</td>
+<td>1113.2</td>
+<td>500.0</td>
+<td>64.5</td>
+<td>18.3</td>
+<td>118.7</td>
+<td>361.0</td>
+<td>895.0</td>
+<td>460.0</td>
+<td>0.2</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+</table>
+</div>
+<h2>Lunch</h2>
+<table style="margin-top: 10px;">
+<tr>
+<th>Date</th>
+<th>Meal Type</th>
+<th>Name</th>
+<th>Calories</th>
+<th>Serving Size</th>
+<th>Total Fat</th>
+<th>Saturated Fat</th>
+<th>Protein</th>
+<th>Sodium</th>
+<th>Potassium</th>
+<th>Cholesterol Mg</th>
+<th>Total Carbs</th>
+<th>Fiber</th>
+<th>Sugar</th>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Lunch</td>
+<td>milk</td>
+<td>102.6</td>
+<td>200.0</td>
+<td>3.8</td>
+<td>2.4</td>
+<td>7.0</td>
+<td>105.0</td>
+<td>201.0</td>
+<td>16.0</td>
+<td>9.8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+</table>
 </div>
 <h2>Other</h2>
 <table style="margin-top: 10px;">
@@ -249,6 +419,70 @@ chart.draw(data, options);
 <td>199.0</td>
 <td>371.0</td>
 <td>0.7</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>chicken</td>
+<td>1113.2</td>
+<td>500.0</td>
+<td>64.5</td>
+<td>18.3</td>
+<td>118.7</td>
+<td>361.0</td>
+<td>895.0</td>
+<td>460.0</td>
+<td>0.2</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>milk</td>
+<td>102.6</td>
+<td>200.0</td>
+<td>3.8</td>
+<td>2.4</td>
+<td>7.0</td>
+<td>105.0</td>
+<td>201.0</td>
+<td>16.0</td>
+<td>9.8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>bread</td>
+<td>784.8</td>
+<td>300.0</td>
+<td>10.2</td>
+<td>2.1</td>
+<td>26.5</td>
+<td>1486.0</td>
+<td>294.0</td>
+<td>0.0</td>
+<td>150.7</td>
+<td>8.2</td>
+<td>17.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>milk</td>
+<td>51.3</td>
+<td>100.0</td>
+<td>1.9</td>
+<td>1.2</td>
+<td>3.5</td>
+<td>52.0</td>
+<td>100.0</td>
+<td>8.0</td>
+<td>4.9</td>
 <td>0.0</td>
 <td>0.0</td>
 </tr>
