@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 
 import static main.app.utils.Constants.SCREEN_HEIGHT;
@@ -13,12 +15,14 @@ public class MenuFrame extends JFrame {
     private JButton calculatorButton;
     private JButton dailyButton;
     private JButton reportButton;
+    private JButton viewReportButton;
     private JButton signOutButton;
     private JLabel welcomeLabel;
     private JLabel optionsLable;
     private JLabel calculateLabel;
     private JLabel dailyLabel;
     private JLabel reportLabel;
+    private JLabel viewReportLabel;
     private String currentUser;
 
     public MenuFrame(String currentUser) {
@@ -59,6 +63,25 @@ public class MenuFrame extends JFrame {
         ReportMenuButtonListener reportMenuButtonListener = new ReportMenuButtonListener(this);
         reportButton.addActionListener(reportMenuButtonListener);
 
+        viewReportLabel = new JLabel("View Report ->");
+        viewReportButton = new JButton("Proceed"); // Initialize the view report button
+        viewReportButton.addActionListener(e -> {
+            try {
+                File htmlFile = new File("src/main/user_reports/" + currentUser + ".html");
+                if (htmlFile.exists()) { // Check if the file exists
+                    Desktop.getDesktop().browse(htmlFile.toURI()); // Properly convert the file path to URI and open it
+                    // Display a success message
+                    JOptionPane.showMessageDialog(this, "Report is being opened in your default browser.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Report file not found: " + htmlFile.getAbsolutePath(), "File Not Found", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Failed to open report.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        });
+
+
 
         signOutButton = new JButton("Sign Out"); // Initialize the sign out button
         signOutButton.addActionListener(new ActionListener() {
@@ -80,6 +103,7 @@ public class MenuFrame extends JFrame {
         calculateLabel.setFont(labelFont);
         dailyLabel.setFont(labelFont);
         reportLabel.setFont(labelFont);
+        viewReportLabel.setFont(labelFont);
 
         // Style the calculator button
         calculatorButton.setBackground(Color.BLACK);
@@ -104,6 +128,14 @@ public class MenuFrame extends JFrame {
         reportButton.setOpaque(true);
         reportButton.setBorderPainted(false);
         reportButton.setFocusPainted(false);
+
+        // Style the view report button
+        viewReportButton.setBackground(Color.BLACK);
+        viewReportButton.setForeground(Color.WHITE);
+        viewReportButton.setFont(buttonFont);
+        viewReportButton.setOpaque(true);
+        viewReportButton.setBorderPainted(false);
+        viewReportButton.setFocusPainted(false);
 
         // Style the sign-out button
         signOutButton.setBackground(Color.GRAY);
@@ -180,6 +212,12 @@ public class MenuFrame extends JFrame {
         reportOptionPanel.add(reportLabel);
         reportOptionPanel.add(reportButton);
         rightPanel.add(reportOptionPanel, gbc);
+        gbc.gridy++;
+
+        JPanel viewReportOptionPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        viewReportOptionPanel.add(viewReportLabel);
+        viewReportOptionPanel.add(viewReportButton);
+        rightPanel.add(viewReportOptionPanel, gbc);
 
         // Position the "Sign Out" button at the last row of the grid
         gbc.gridx = 0;
