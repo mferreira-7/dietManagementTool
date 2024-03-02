@@ -26,13 +26,13 @@ public class MenuFrame extends JFrame {
     private String currentUser;
 
     public MenuFrame(String currentUser) {
+        this.currentUser = currentUser;
         initializeComponents();
         setLayout();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
         setSize(700, 500);
-        this.currentUser = currentUser;
     }
 
     private void initializeComponents() {
@@ -42,9 +42,9 @@ public class MenuFrame extends JFrame {
 
         Font labelFont = new Font("Arial", Font.BOLD, 18);
 
-        welcomeLabel = new JLabel("WELCOME ON BOARD");
+        welcomeLabel = new JLabel("Welcome " + currentUser + " On Board!");
         welcomeLabel.setFont(labelFont);
-        optionsLable = new JLabel("Choose Options Below: ");
+        optionsLable = new JLabel("Choose One Of The Options Below: ");
         optionsLable.setFont(labelFont);
 
 

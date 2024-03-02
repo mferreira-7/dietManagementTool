@@ -23,7 +23,6 @@ public class LoginFrame extends JFrame {
     private JPasswordField passwordField;
     private JButton forgotPasswordButton;
 
-
     public LoginFrame() {
         initializeComponents();
         setLayoutComponents();
