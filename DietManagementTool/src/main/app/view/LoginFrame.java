@@ -60,6 +60,7 @@ public class LoginFrame extends JFrame {
         });
 
         initializeSignUpButtonAction();
+        getRootPane().setDefaultButton(loginButton);
         applyStyles();
     }
 

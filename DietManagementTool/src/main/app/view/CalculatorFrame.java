@@ -183,6 +183,7 @@ public class CalculatorFrame extends JFrame {
                 }
             }
         });
+        getRootPane().setDefaultButton(submitButton);
         applyStyles();
     }
 

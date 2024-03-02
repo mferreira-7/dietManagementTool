@@ -47,6 +47,7 @@ public class ReportFrame extends JFrame {
                 menuFrame.setVisible(true);
             }
         });
+        getRootPane().setDefaultButton(reportButton);
     }
 
     private void applyStyles() {

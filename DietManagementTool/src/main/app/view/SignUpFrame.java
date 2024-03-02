@@ -84,6 +84,9 @@ public class SignUpFrame extends JFrame {
         // Initialize components like text fields and labels
         initializeComponents();
 
+        // Set the default button to be the register button
+        getRootPane().setDefaultButton(registerButton);
+
         // Add components to the form panel with GridBagConstraints
         rightPanel.add(new JLabel("Fullname:"), gbc);
         gbc.gridy++;
@@ -142,32 +145,7 @@ public class SignUpFrame extends JFrame {
         add(registerButton);
 
 
-        registerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String username = usernameField.getText().trim();
-                String password = new String(passwordField.getPassword());
-
-                // Username and password validation
-                if (!validateInput(username, password)) {
-                    return;
-                }
-
-                // Check if user already exists
-                if (userExists(username)) {
-                    JOptionPane.showMessageDialog(SignUpFrame.this, "User already exists. Please choose a different username.", "User Exists", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-
-                // Save user information
-                try {
-                    saveUserInformation(username, password);
-                    dispose(); // Close the sign-up window
-                } catch (IOException ioException) {
-                    JOptionPane.showMessageDialog(SignUpFrame.this, "Error saving user information. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        });
+        registerButton.addActionListener(e -> performRegistration());
 
         registerButton.setBackground(Color.BLACK);
         registerButton.setForeground(Color.WHITE);
@@ -194,25 +172,43 @@ public class SignUpFrame extends JFrame {
         });
     }
 
-    private boolean validateInput(String username, String password) {
-        // Username and password cannot be empty
-        if (username.isEmpty() || password.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Username and password cannot be empty.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return false;
+    private void performRegistration() {
+        String username = usernameField.getText().trim();
+        String password = new String(passwordField.getPassword());
+        String fullName = fullNameField.getText().trim();
+
+        if (!validateInput(username, password, fullName)) {
+            return;
         }
 
-        // Username must be between 4 and 16 characters and contain no special characters
-        if (username.length() < 4 || username.length() > 16 || !username.matches("^[a-zA-Z0-9]+$")) {
-            JOptionPane.showMessageDialog(this, "Username must be between 4 and 16 characters and contain no special characters.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return false;
+        if (userExists(username)) {
+            JOptionPane.showMessageDialog(this, "User already exists. Please choose a different username.", "User Exists", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
-        // Password must be between 8 and 20 characters
+        try {
+            saveUserInformation(username, password);
+            JOptionPane.showMessageDialog(this, "Registration successful! Logging you in...", "Welcome", JOptionPane.INFORMATION_MESSAGE);
+            dispose();
+            new MenuFrame(username).setVisible(true);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error saving user information. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private boolean validateInput(String username, String password, String fullName) {
+        if (username.isEmpty() || password.isEmpty() || fullName.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        if (username.length() < 4 || username.length() > 16 || !username.matches("^[a-zA-Z0-9_]+$")) {
+            JOptionPane.showMessageDialog(this, "Username must be between 4 and 16 characters and can only contain alphanumeric characters and underscores.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
         if (password.length() < 8 || password.length() > 20) {
             JOptionPane.showMessageDialog(this, "Password must be between 8 and 20 characters.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-
         return true;
     }
 
