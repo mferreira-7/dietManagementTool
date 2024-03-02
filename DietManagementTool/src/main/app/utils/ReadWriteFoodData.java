@@ -24,7 +24,7 @@ public class ReadWriteFoodData {
     /*Constructor*/
     public ReadWriteFoodData(String username) {
         this.username = username;//Hopefully the username is the same name as the object's name
-        this.dataPath = "src\\main\\userdata\\" + username + ".csv";
+        this.dataPath = "src/main/userdata/" + username + ".csv";
 
         if (new File(dataPath).isFile()) {
             this.initialFileSearch = true;

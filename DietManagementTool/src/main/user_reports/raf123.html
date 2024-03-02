@@ -64,6 +64,54 @@ h1 { text-align: center; }
 <td>9.2</td>
 <td>4.0</td>
 </tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>milk</td>
+<td>51.3</td>
+<td>100.0</td>
+<td>1.9</td>
+<td>1.2</td>
+<td>3.5</td>
+<td>52.0</td>
+<td>100.0</td>
+<td>8.0</td>
+<td>4.9</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>cereal</td>
+<td>386.0</td>
+<td>100.0</td>
+<td>6.8</td>
+<td>1.5</td>
+<td>12.2</td>
+<td>495.0</td>
+<td>489.0</td>
+<td>0.0</td>
+<td>71.9</td>
+<td>9.2</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>egg</td>
+<td>147.0</td>
+<td>100.0</td>
+<td>9.7</td>
+<td>3.1</td>
+<td>12.5</td>
+<td>139.0</td>
+<td>199.0</td>
+<td>371.0</td>
+<td>0.7</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
 </table>
 <div style="display:flex; justify-content:center; flex-wrap:wrap;">
 <div id="linearRegressionChart" style="width: 100%; max-width: 800px; height: auto; aspect-ratio: 16 / 9; margin: 10px;"></div>
@@ -76,7 +124,7 @@ var data = new google.visualization.DataTable();
 data.addColumn('date', 'Date');
 data.addColumn('number', 'Calories');
 data.addRows([
-[new Date('2024-03-02'), 437.3],
+[new Date('2024-03-02'), 1021.6],
 ]);
 var options = {
 title: 'Linear Regression - Calories Over Time',
@@ -96,7 +144,7 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var data = google.visualization.arrayToDataTable([
 ['Category', 'Count'],
-['Other', 2],
+['Other', 5],
 ]);
 var options = {
 title: 'Meal Type Distribution',
@@ -155,6 +203,54 @@ chart.draw(data, options);
 <td>71.9</td>
 <td>9.2</td>
 <td>4.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>milk</td>
+<td>51.3</td>
+<td>100.0</td>
+<td>1.9</td>
+<td>1.2</td>
+<td>3.5</td>
+<td>52.0</td>
+<td>100.0</td>
+<td>8.0</td>
+<td>4.9</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>cereal</td>
+<td>386.0</td>
+<td>100.0</td>
+<td>6.8</td>
+<td>1.5</td>
+<td>12.2</td>
+<td>495.0</td>
+<td>489.0</td>
+<td>0.0</td>
+<td>71.9</td>
+<td>9.2</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>2024-03-02</td>
+<td>Other</td>
+<td>egg</td>
+<td>147.0</td>
+<td>100.0</td>
+<td>9.7</td>
+<td>3.1</td>
+<td>12.5</td>
+<td>139.0</td>
+<td>199.0</td>
+<td>371.0</td>
+<td>0.7</td>
+<td>0.0</td>
+<td>0.0</td>
 </tr>
 </table>
 </div>

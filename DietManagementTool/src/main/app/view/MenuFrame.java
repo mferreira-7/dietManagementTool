@@ -81,8 +81,6 @@ public class MenuFrame extends JFrame {
             }
         });
 
-
-
         signOutButton = new JButton("Sign Out"); // Initialize the sign out button
         signOutButton.addActionListener(new ActionListener() {
             @Override

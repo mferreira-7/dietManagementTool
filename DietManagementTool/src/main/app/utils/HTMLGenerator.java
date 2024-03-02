@@ -101,7 +101,7 @@ public class HTMLGenerator {
     }
 
     private static void writeToFile(String htmlContent, String username) {
-        try (FileWriter fileWriter = new FileWriter("src\\main\\user_reports\\" + username + ".html")) {
+        try (FileWriter fileWriter = new FileWriter("src/main/user_reports/" + username + ".html")) {
             fileWriter.write(htmlContent);
             System.out.println("HTML file with graph created successfully.");
         } catch (IOException e) {
@@ -226,7 +226,7 @@ public class HTMLGenerator {
 
 
     public static void main(String[] args) {
-        String userId = "vlad123";
+        String userId = "raf123";
         LocalDate startDate = LocalDate.of(1900, 1, 1);
         LocalDate endDate = LocalDate.now();
         CSVReader.GenerateReport(userId, startDate, endDate);
