@@ -1,601 +1,1453 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Daily Food Intake Summary</title>
-    <style>
-        table {
-            font-family: Arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        footer {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f2f2f2;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-
-        h1 {
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-    </style>
+<title>vlad123</title>
+<style>
+body { font-family: Arial, sans-serif; padding: 20px; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+th { background-color: #f2f2f2; }
+th:nth-child(1), th:nth-child(3) { width: 10%; }
+th:nth-child(2), th:nth-child(n+4) { width: 5%; }
+footer { margin-top: 20px; padding: 10px; background-color: #f2f2f2; text-align: center; }
+h1 { text-align: center; }
+</style>
 </head>
 <body>
-<h1>Daily Food Intake Summary</h1>
+<h1>vlad123 - Daily Food Intake Summary</h1>
 <table>
-    <tr>
-        <th>Date</th>
-        <th>Meal Type</th>
-        <th>Name</th>
-        <th>Calories</th>
-        <th>Serving Size</th>
-        <th>Total Fat</th>
-        <th>Saturated Fat</th>
-        <th>Protein</th>
-        <th>Sodium</th>
-        <th>Potassium</th>
-        <th>Cholesterol Mg</th>
-        <th>Total Carbs</th>
-        <th>Fiber</th>
-        <th>Sugar</th>
-    </tr>
-    <tr>
-        <td>2024-02-14</td>
-        <td>Breakfast</td>
-        <td>banana</td>
-        <td>89.4</td>
-        <td>100.0</td>
-        <td>0.3</td>
-        <td>0.1</td>
-        <td>1.1</td>
-        <td>1.0</td>
-        <td>22.0</td>
-        <td>0.0</td>
-        <td>23.2</td>
-        <td>2.6</td>
-        <td>12.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-14</td>
-        <td>Lunch</td>
-        <td>salad</td>
-        <td>23.6</td>
-        <td>100.0</td>
-        <td>0.2</td>
-        <td>0.0</td>
-        <td>1.5</td>
-        <td>36.0</td>
-        <td>32.0</td>
-        <td>0.0</td>
-        <td>4.9</td>
-        <td>1.9</td>
-        <td>2.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-14</td>
-        <td>Dinner</td>
-        <td>lasagna</td>
-        <td>788.5</td>
-        <td>500.0</td>
-        <td>42.4</td>
-        <td>19.8</td>
-        <td>57.2</td>
-        <td>2039.0</td>
-        <td>796.0</td>
-        <td>212.0</td>
-        <td>46.0</td>
-        <td>5.0</td>
-        <td>14.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-15</td>
-        <td>Breakfast</td>
-        <td>popcorn chicken</td>
-        <td>718.2</td>
-        <td>200.0</td>
-        <td>42.8</td>
-        <td>7.7</td>
-        <td>35.6</td>
-        <td>2318.0</td>
-        <td>605.0</td>
-        <td>81.0</td>
-        <td>43.3</td>
-        <td>1.9</td>
-        <td>0.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-15</td>
-        <td>Lunch</td>
-        <td>chicken</td>
-        <td>445.3</td>
-        <td>200.0</td>
-        <td>25.8</td>
-        <td>7.3</td>
-        <td>47.5</td>
-        <td>144.0</td>
-        <td>358.0</td>
-        <td>184.0</td>
-        <td>0.1</td>
-        <td>0.0</td>
-        <td>0.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-15</td>
-        <td>Dinner</td>
-        <td>vanilla ice cream</td>
-        <td>208.2</td>
-        <td>100.0</td>
-        <td>11.0</td>
-        <td>6.8</td>
-        <td>3.5</td>
-        <td>80.0</td>
-        <td>102.0</td>
-        <td>44.0</td>
-        <td>23.3</td>
-        <td>0.7</td>
-        <td>21.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-16</td>
-        <td>Breakfast</td>
-        <td>fries</td>
-        <td>1588.6</td>
-        <td>500.0</td>
-        <td>73.9</td>
-        <td>11.7</td>
-        <td>17.0</td>
-        <td>1063.0</td>
-        <td>623.0</td>
-        <td>0.0</td>
-        <td>205.6</td>
-        <td>19.1</td>
-        <td>1.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-16</td>
-        <td>Lunch</td>
-        <td>crisps</td>
-        <td>534.9</td>
-        <td>100.0</td>
-        <td>33.4</td>
-        <td>3.4</td>
-        <td>6.4</td>
-        <td>519.0</td>
-        <td>152.0</td>
-        <td>0.0</td>
-        <td>53.3</td>
-        <td>3.1</td>
-        <td>0.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-16</td>
-        <td>Dinner</td>
-        <td>jelly</td>
-        <td>284.7</td>
-        <td>100.0</td>
-        <td>0.1</td>
-        <td>0.0</td>
-        <td>0.4</td>
-        <td>32.0</td>
-        <td>18.0</td>
-        <td>0.0</td>
-        <td>69.6</td>
-        <td>1.1</td>
-        <td>49.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-17</td>
-        <td>Breakfast</td>
-        <td>popcorn chicken</td>
-        <td>718.2</td>
-        <td>200.0</td>
-        <td>42.8</td>
-        <td>7.7</td>
-        <td>35.6</td>
-        <td>2318.0</td>
-        <td>605.0</td>
-        <td>81.0</td>
-        <td>43.3</td>
-        <td>1.9</td>
-        <td>0.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-17</td>
-        <td>Lunch</td>
-        <td>salad</td>
-        <td>23.6</td>
-        <td>100.0</td>
-        <td>0.2</td>
-        <td>0.0</td>
-        <td>1.5</td>
-        <td>36.0</td>
-        <td>32.0</td>
-        <td>0.0</td>
-        <td>4.9</td>
-        <td>1.9</td>
-        <td>2.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-17</td>
-        <td>Dinner</td>
-        <td>lasagna</td>
-        <td>788.5</td>
-        <td>500.0</td>
-        <td>42.4</td>
-        <td>19.8</td>
-        <td>57.2</td>
-        <td>2039.0</td>
-        <td>796.0</td>
-        <td>212.0</td>
-        <td>46.0</td>
-        <td>5.0</td>
-        <td>14.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-18</td>
-        <td>Breakfast</td>
-        <td>banana</td>
-        <td>89.4</td>
-        <td>100.0</td>
-        <td>0.3</td>
-        <td>0.1</td>
-        <td>1.1</td>
-        <td>1.0</td>
-        <td>22.0</td>
-        <td>0.0</td>
-        <td>23.2</td>
-        <td>2.6</td>
-        <td>12.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-18</td>
-        <td>Lunch</td>
-        <td>chips</td>
-        <td>1622.4</td>
-        <td>300.0</td>
-        <td>103.3</td>
-        <td>10.2</td>
-        <td>19.3</td>
-        <td>1599.0</td>
-        <td>452.0</td>
-        <td>0.0</td>
-        <td>162.9</td>
-        <td>9.2</td>
-        <td>1.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-18</td>
-        <td>Dinner</td>
-        <td>vanilla ice cream</td>
-        <td>208.2</td>
-        <td>100.0</td>
-        <td>11.0</td>
-        <td>6.8</td>
-        <td>3.5</td>
-        <td>80.0</td>
-        <td>102.0</td>
-        <td>44.0</td>
-        <td>23.3</td>
-        <td>0.7</td>
-        <td>21.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-19</td>
-        <td>Breakfast</td>
-        <td>fries</td>
-        <td>953.2</td>
-        <td>300.0</td>
-        <td>44.3</td>
-        <td>7.0</td>
-        <td>10.2</td>
-        <td>638.0</td>
-        <td>374.0</td>
-        <td>0.0</td>
-        <td>123.3</td>
-        <td>11.5</td>
-        <td>0.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-19</td>
-        <td>Lunch</td>
-        <td>crisps</td>
-        <td>534.9</td>
-        <td>100.0</td>
-        <td>33.4</td>
-        <td>3.4</td>
-        <td>6.4</td>
-        <td>519.0</td>
-        <td>152.0</td>
-        <td>0.0</td>
-        <td>53.3</td>
-        <td>3.1</td>
-        <td>0.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-19</td>
-        <td>Dinner</td>
-        <td>jelly</td>
-        <td>284.7</td>
-        <td>100.0</td>
-        <td>0.1</td>
-        <td>0.0</td>
-        <td>0.4</td>
-        <td>32.0</td>
-        <td>18.0</td>
-        <td>0.0</td>
-        <td>69.6</td>
-        <td>1.1</td>
-        <td>49.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-20</td>
-        <td>Breakfast</td>
-        <td>popcorn chicken</td>
-        <td>718.2</td>
-        <td>200.0</td>
-        <td>42.8</td>
-        <td>7.7</td>
-        <td>35.6</td>
-        <td>2318.0</td>
-        <td>605.0</td>
-        <td>81.0</td>
-        <td>43.3</td>
-        <td>1.9</td>
-        <td>0.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-20</td>
-        <td>Lunch</td>
-        <td>salad</td>
-        <td>23.6</td>
-        <td>100.0</td>
-        <td>0.2</td>
-        <td>0.0</td>
-        <td>1.5</td>
-        <td>36.0</td>
-        <td>32.0</td>
-        <td>0.0</td>
-        <td>4.9</td>
-        <td>1.9</td>
-        <td>2.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-20</td>
-        <td>Dinner</td>
-        <td>lasagna</td>
-        <td>788.5</td>
-        <td>500.0</td>
-        <td>42.4</td>
-        <td>19.8</td>
-        <td>57.2</td>
-        <td>2039.0</td>
-        <td>796.0</td>
-        <td>212.0</td>
-        <td>46.0</td>
-        <td>5.0</td>
-        <td>14.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-21</td>
-        <td>Breakfast</td>
-        <td>banana</td>
-        <td>89.4</td>
-        <td>100.0</td>
-        <td>0.3</td>
-        <td>0.1</td>
-        <td>1.1</td>
-        <td>1.0</td>
-        <td>22.0</td>
-        <td>0.0</td>
-        <td>23.2</td>
-        <td>2.6</td>
-        <td>12.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-21</td>
-        <td>Lunch</td>
-        <td>chicken</td>
-        <td>445.3</td>
-        <td>200.0</td>
-        <td>25.8</td>
-        <td>7.3</td>
-        <td>47.5</td>
-        <td>144.0</td>
-        <td>358.0</td>
-        <td>184.0</td>
-        <td>0.1</td>
-        <td>0.0</td>
-        <td>0.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-21</td>
-        <td>Dinner</td>
-        <td>vanilla ice cream</td>
-        <td>208.2</td>
-        <td>100.0</td>
-        <td>11.0</td>
-        <td>6.8</td>
-        <td>3.5</td>
-        <td>80.0</td>
-        <td>102.0</td>
-        <td>44.0</td>
-        <td>23.3</td>
-        <td>0.7</td>
-        <td>21.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-22</td>
-        <td>Breakfast</td>
-        <td>fries</td>
-        <td>1588.6</td>
-        <td>500.0</td>
-        <td>73.9</td>
-        <td>11.7</td>
-        <td>17.0</td>
-        <td>1063.0</td>
-        <td>623.0</td>
-        <td>0.0</td>
-        <td>205.6</td>
-        <td>19.1</td>
-        <td>1.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-22</td>
-        <td>Lunch</td>
-        <td>crisps</td>
-        <td>534.9</td>
-        <td>100.0</td>
-        <td>33.4</td>
-        <td>3.4</td>
-        <td>6.4</td>
-        <td>519.0</td>
-        <td>152.0</td>
-        <td>0.0</td>
-        <td>53.3</td>
-        <td>3.1</td>
-        <td>0.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-22</td>
-        <td>Dinner</td>
-        <td>jelly</td>
-        <td>284.7</td>
-        <td>100.0</td>
-        <td>0.1</td>
-        <td>0.0</td>
-        <td>0.4</td>
-        <td>32.0</td>
-        <td>18.0</td>
-        <td>0.0</td>
-        <td>69.6</td>
-        <td>1.1</td>
-        <td>49.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-23</td>
-        <td>Breakfast</td>
-        <td>popcorn chicken</td>
-        <td>718.2</td>
-        <td>200.0</td>
-        <td>42.8</td>
-        <td>7.7</td>
-        <td>35.6</td>
-        <td>2318.0</td>
-        <td>605.0</td>
-        <td>81.0</td>
-        <td>43.3</td>
-        <td>1.9</td>
-        <td>0.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-23</td>
-        <td>Lunch</td>
-        <td>salad</td>
-        <td>23.6</td>
-        <td>100.0</td>
-        <td>0.2</td>
-        <td>0.0</td>
-        <td>1.5</td>
-        <td>36.0</td>
-        <td>32.0</td>
-        <td>0.0</td>
-        <td>4.9</td>
-        <td>1.9</td>
-        <td>2.0</td>
-    </tr>
-    <tr>
-        <td>2024-02-23</td>
-        <td>Dinner</td>
-        <td>lasagna</td>
-        <td>788.5</td>
-        <td>500.0</td>
-        <td>42.4</td>
-        <td>19.8</td>
-        <td>57.2</td>
-        <td>2039.0</td>
-        <td>796.0</td>
-        <td>212.0</td>
-        <td>46.0</td>
-        <td>5.0</td>
-        <td>14.0</td>
-    </tr>
+<tr>
+<th>Date</th>
+<th>Meal Type</th>
+<th>Name</th>
+<th>Calories</th>
+<th>Serving Size</th>
+<th>Total Fat</th>
+<th>Saturated Fat</th>
+<th>Protein</th>
+<th>Sodium</th>
+<th>Potassium</th>
+<th>Cholesterol Mg</th>
+<th>Total Carbs</th>
+<th>Fiber</th>
+<th>Sugar</th>
+</tr>
+<tr>
+<td>2024-02-14</td>
+<td>Breakfast</td>
+<td>banana</td>
+<td>89.4</td>
+<td>100.0</td>
+<td>0.3</td>
+<td>0.1</td>
+<td>1.1</td>
+<td>1.0</td>
+<td>22.0</td>
+<td>0.0</td>
+<td>23.2</td>
+<td>2.6</td>
+<td>12.0</td>
+</tr>
+<tr>
+<td>2024-02-14</td>
+<td>Lunch</td>
+<td>salad</td>
+<td>23.6</td>
+<td>100.0</td>
+<td>0.2</td>
+<td>0.0</td>
+<td>1.5</td>
+<td>36.0</td>
+<td>32.0</td>
+<td>0.0</td>
+<td>4.9</td>
+<td>1.9</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>2024-02-14</td>
+<td>Dinner</td>
+<td>lasagna</td>
+<td>788.5</td>
+<td>500.0</td>
+<td>42.4</td>
+<td>19.8</td>
+<td>57.2</td>
+<td>2039.0</td>
+<td>796.0</td>
+<td>212.0</td>
+<td>46.0</td>
+<td>5.0</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>2024-02-14</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-15</td>
+<td>Breakfast</td>
+<td>popcorn chicken</td>
+<td>718.2</td>
+<td>200.0</td>
+<td>42.8</td>
+<td>7.7</td>
+<td>35.6</td>
+<td>2318.0</td>
+<td>605.0</td>
+<td>81.0</td>
+<td>43.3</td>
+<td>1.9</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-15</td>
+<td>Lunch</td>
+<td>chicken</td>
+<td>445.3</td>
+<td>200.0</td>
+<td>25.8</td>
+<td>7.3</td>
+<td>47.5</td>
+<td>144.0</td>
+<td>358.0</td>
+<td>184.0</td>
+<td>0.1</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-15</td>
+<td>Dinner</td>
+<td>vanilla ice cream</td>
+<td>208.2</td>
+<td>100.0</td>
+<td>11.0</td>
+<td>6.8</td>
+<td>3.5</td>
+<td>80.0</td>
+<td>102.0</td>
+<td>44.0</td>
+<td>23.3</td>
+<td>0.7</td>
+<td>21.0</td>
+</tr>
+<tr>
+<td>2024-02-15</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-16</td>
+<td>Breakfast</td>
+<td>fries</td>
+<td>1588.6</td>
+<td>500.0</td>
+<td>73.9</td>
+<td>11.7</td>
+<td>17.0</td>
+<td>1063.0</td>
+<td>623.0</td>
+<td>0.0</td>
+<td>205.6</td>
+<td>19.1</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>2024-02-16</td>
+<td>Lunch</td>
+<td>crisps</td>
+<td>534.9</td>
+<td>100.0</td>
+<td>33.4</td>
+<td>3.4</td>
+<td>6.4</td>
+<td>519.0</td>
+<td>152.0</td>
+<td>0.0</td>
+<td>53.3</td>
+<td>3.1</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-16</td>
+<td>Dinner</td>
+<td>jelly</td>
+<td>284.7</td>
+<td>100.0</td>
+<td>0.1</td>
+<td>0.0</td>
+<td>0.4</td>
+<td>32.0</td>
+<td>18.0</td>
+<td>0.0</td>
+<td>69.6</td>
+<td>1.1</td>
+<td>49.0</td>
+</tr>
+<tr>
+<td>2024-02-16</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-17</td>
+<td>Breakfast</td>
+<td>popcorn chicken</td>
+<td>718.2</td>
+<td>200.0</td>
+<td>42.8</td>
+<td>7.7</td>
+<td>35.6</td>
+<td>2318.0</td>
+<td>605.0</td>
+<td>81.0</td>
+<td>43.3</td>
+<td>1.9</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-17</td>
+<td>Lunch</td>
+<td>salad</td>
+<td>23.6</td>
+<td>100.0</td>
+<td>0.2</td>
+<td>0.0</td>
+<td>1.5</td>
+<td>36.0</td>
+<td>32.0</td>
+<td>0.0</td>
+<td>4.9</td>
+<td>1.9</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>2024-02-17</td>
+<td>Dinner</td>
+<td>lasagna</td>
+<td>788.5</td>
+<td>500.0</td>
+<td>42.4</td>
+<td>19.8</td>
+<td>57.2</td>
+<td>2039.0</td>
+<td>796.0</td>
+<td>212.0</td>
+<td>46.0</td>
+<td>5.0</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>2024-02-17</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-18</td>
+<td>Breakfast</td>
+<td>banana</td>
+<td>89.4</td>
+<td>100.0</td>
+<td>0.3</td>
+<td>0.1</td>
+<td>1.1</td>
+<td>1.0</td>
+<td>22.0</td>
+<td>0.0</td>
+<td>23.2</td>
+<td>2.6</td>
+<td>12.0</td>
+</tr>
+<tr>
+<td>2024-02-18</td>
+<td>Lunch</td>
+<td>chips</td>
+<td>1622.4</td>
+<td>300.0</td>
+<td>103.3</td>
+<td>10.2</td>
+<td>19.3</td>
+<td>1599.0</td>
+<td>452.0</td>
+<td>0.0</td>
+<td>162.9</td>
+<td>9.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>2024-02-18</td>
+<td>Dinner</td>
+<td>vanilla ice cream</td>
+<td>208.2</td>
+<td>100.0</td>
+<td>11.0</td>
+<td>6.8</td>
+<td>3.5</td>
+<td>80.0</td>
+<td>102.0</td>
+<td>44.0</td>
+<td>23.3</td>
+<td>0.7</td>
+<td>21.0</td>
+</tr>
+<tr>
+<td>2024-02-18</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-19</td>
+<td>Breakfast</td>
+<td>fries</td>
+<td>953.2</td>
+<td>300.0</td>
+<td>44.3</td>
+<td>7.0</td>
+<td>10.2</td>
+<td>638.0</td>
+<td>374.0</td>
+<td>0.0</td>
+<td>123.3</td>
+<td>11.5</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-19</td>
+<td>Lunch</td>
+<td>crisps</td>
+<td>534.9</td>
+<td>100.0</td>
+<td>33.4</td>
+<td>3.4</td>
+<td>6.4</td>
+<td>519.0</td>
+<td>152.0</td>
+<td>0.0</td>
+<td>53.3</td>
+<td>3.1</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-19</td>
+<td>Dinner</td>
+<td>jelly</td>
+<td>284.7</td>
+<td>100.0</td>
+<td>0.1</td>
+<td>0.0</td>
+<td>0.4</td>
+<td>32.0</td>
+<td>18.0</td>
+<td>0.0</td>
+<td>69.6</td>
+<td>1.1</td>
+<td>49.0</td>
+</tr>
+<tr>
+<td>2024-02-19</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-20</td>
+<td>Breakfast</td>
+<td>popcorn chicken</td>
+<td>718.2</td>
+<td>200.0</td>
+<td>42.8</td>
+<td>7.7</td>
+<td>35.6</td>
+<td>2318.0</td>
+<td>605.0</td>
+<td>81.0</td>
+<td>43.3</td>
+<td>1.9</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-20</td>
+<td>Lunch</td>
+<td>salad</td>
+<td>23.6</td>
+<td>100.0</td>
+<td>0.2</td>
+<td>0.0</td>
+<td>1.5</td>
+<td>36.0</td>
+<td>32.0</td>
+<td>0.0</td>
+<td>4.9</td>
+<td>1.9</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>2024-02-20</td>
+<td>Dinner</td>
+<td>lasagna</td>
+<td>788.5</td>
+<td>500.0</td>
+<td>42.4</td>
+<td>19.8</td>
+<td>57.2</td>
+<td>2039.0</td>
+<td>796.0</td>
+<td>212.0</td>
+<td>46.0</td>
+<td>5.0</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>2024-02-20</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-21</td>
+<td>Breakfast</td>
+<td>banana</td>
+<td>89.4</td>
+<td>100.0</td>
+<td>0.3</td>
+<td>0.1</td>
+<td>1.1</td>
+<td>1.0</td>
+<td>22.0</td>
+<td>0.0</td>
+<td>23.2</td>
+<td>2.6</td>
+<td>12.0</td>
+</tr>
+<tr>
+<td>2024-02-21</td>
+<td>Lunch</td>
+<td>chicken</td>
+<td>445.3</td>
+<td>200.0</td>
+<td>25.8</td>
+<td>7.3</td>
+<td>47.5</td>
+<td>144.0</td>
+<td>358.0</td>
+<td>184.0</td>
+<td>0.1</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-21</td>
+<td>Dinner</td>
+<td>vanilla ice cream</td>
+<td>208.2</td>
+<td>100.0</td>
+<td>11.0</td>
+<td>6.8</td>
+<td>3.5</td>
+<td>80.0</td>
+<td>102.0</td>
+<td>44.0</td>
+<td>23.3</td>
+<td>0.7</td>
+<td>21.0</td>
+</tr>
+<tr>
+<td>2024-02-21</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-22</td>
+<td>Breakfast</td>
+<td>fries</td>
+<td>1588.6</td>
+<td>500.0</td>
+<td>73.9</td>
+<td>11.7</td>
+<td>17.0</td>
+<td>1063.0</td>
+<td>623.0</td>
+<td>0.0</td>
+<td>205.6</td>
+<td>19.1</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>2024-02-22</td>
+<td>Lunch</td>
+<td>crisps</td>
+<td>534.9</td>
+<td>100.0</td>
+<td>33.4</td>
+<td>3.4</td>
+<td>6.4</td>
+<td>519.0</td>
+<td>152.0</td>
+<td>0.0</td>
+<td>53.3</td>
+<td>3.1</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-22</td>
+<td>Dinner</td>
+<td>jelly</td>
+<td>284.7</td>
+<td>100.0</td>
+<td>0.1</td>
+<td>0.0</td>
+<td>0.4</td>
+<td>32.0</td>
+<td>18.0</td>
+<td>0.0</td>
+<td>69.6</td>
+<td>1.1</td>
+<td>49.0</td>
+</tr>
+<tr>
+<td>2024-02-22</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-23</td>
+<td>Breakfast</td>
+<td>popcorn chicken</td>
+<td>718.2</td>
+<td>200.0</td>
+<td>42.8</td>
+<td>7.7</td>
+<td>35.6</td>
+<td>2318.0</td>
+<td>605.0</td>
+<td>81.0</td>
+<td>43.3</td>
+<td>1.9</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-23</td>
+<td>Lunch</td>
+<td>salad</td>
+<td>23.6</td>
+<td>100.0</td>
+<td>0.2</td>
+<td>0.0</td>
+<td>1.5</td>
+<td>36.0</td>
+<td>32.0</td>
+<td>0.0</td>
+<td>4.9</td>
+<td>1.9</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>2024-02-23</td>
+<td>Dinner</td>
+<td>lasagna</td>
+<td>788.5</td>
+<td>500.0</td>
+<td>42.4</td>
+<td>19.8</td>
+<td>57.2</td>
+<td>2039.0</td>
+<td>796.0</td>
+<td>212.0</td>
+<td>46.0</td>
+<td>5.0</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>2024-02-23</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
 </table>
-<svg width="500" height="300" style="border: 1px solid black;">
-    <rect x="10" y="238.9792899408284" width="20" height="11.020710059171599"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="40" y="247.0907297830375" width="20" height="2.9092702169625246"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="70" y="152.7983234714004" width="20" height="97.2016765285996"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="100" y="161.46449704142012" width="20" height="88.53550295857988"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="130" y="195.1060157790927" width="20" height="54.8939842209073"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="160" y="224.3343195266272" width="20" height="25.665680473372777"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="190" y="54.166666666666686" width="20" height="195.83333333333331"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="220" y="184.06065088757396" width="20" height="65.93934911242603"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="250" y="214.90384615384616" width="20" height="35.09615384615385"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="280" y="161.46449704142012" width="20" height="88.53550295857988"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="310" y="247.0907297830375" width="20" height="2.9092702169625246"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="340" y="152.7983234714004" width="20" height="97.2016765285996"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="370" y="238.9792899408284" width="20" height="11.020710059171599"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="400" y="50.0" width="20" height="200.0" style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="430" y="224.3343195266272" width="20" height="25.665680473372777"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="460" y="132.49506903353057" width="20" height="117.50493096646943"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="490" y="184.06065088757396" width="20" height="65.93934911242603"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="520" y="214.90384615384616" width="20" height="35.09615384615385"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="550" y="161.46449704142012" width="20" height="88.53550295857988"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="580" y="247.0907297830375" width="20" height="2.9092702169625246"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="610" y="152.7983234714004" width="20" height="97.2016765285996"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="640" y="238.9792899408284" width="20" height="11.020710059171599"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="670" y="195.1060157790927" width="20" height="54.8939842209073"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="700" y="224.3343195266272" width="20" height="25.665680473372777"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="730" y="54.166666666666686" width="20" height="195.83333333333331"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="760" y="184.06065088757396" width="20" height="65.93934911242603"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="790" y="214.90384615384616" width="20" height="35.09615384615385"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="820" y="161.46449704142012" width="20" height="88.53550295857988"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="850" y="247.0907297830375" width="20" height="2.9092702169625246"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-    <rect x="880" y="152.7983234714004" width="20" height="97.2016765285996"
-          style="fill:blue;stroke-width:1;stroke:black"/>
-</svg>
+<div style="display:flex; justify-content:center; flex-wrap:wrap;">
+<div id="linearRegressionChart" style="width: 100%; max-width: 800px; height: auto; aspect-ratio: 16 / 9; margin: 10px;"></div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawLinearRegressionChart);
+function drawLinearRegressionChart() {
+var data = new google.visualization.DataTable();
+data.addColumn('date', 'Date');
+data.addColumn('number', 'Calories');
+data.addRows([
+[new Date('2024-02-14'), 1051.5],
+[new Date('2024-02-15'), 1521.7],
+[new Date('2024-02-16'), 2558.2],
+[new Date('2024-02-17'), 1680.3000000000002],
+[new Date('2024-02-18'), 2070.0],
+[new Date('2024-02-19'), 1922.8],
+[new Date('2024-02-20'), 1680.3000000000002],
+[new Date('2024-02-21'), 892.9000000000001],
+[new Date('2024-02-22'), 2558.2],
+[new Date('2024-02-23'), 1680.3000000000002],
+]);
+var options = {
+title: 'Linear Regression - Calories Over Time',
+hAxis: {title: 'Date'},
+vAxis: {title: 'Calories'},
+legend: 'none',
+};
+var chart = new google.visualization.LineChart(document.getElementById('linearRegressionChart'));
+chart.draw(data, options);
+}
+</script>
+<div id="pieChart" style="width: 100%; max-width: 800px; height: auto; aspect-ratio: 16 / 9; margin: 10px;"></div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Category', 'Count'],
+['Breakfast', 10],
+['Dinner', 10],
+['Lunch', 10],
+['Other', 10],
+]);
+var options = {
+title: 'Meal Type Distribution',
+};
+var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
+chart.draw(data, options);
+}
+</script>
+</div>
+<h2>Breakfast</h2>
+<table style="margin-top: 10px;">
+<tr>
+<th>Date</th>
+<th>Meal Type</th>
+<th>Name</th>
+<th>Calories</th>
+<th>Serving Size</th>
+<th>Total Fat</th>
+<th>Saturated Fat</th>
+<th>Protein</th>
+<th>Sodium</th>
+<th>Potassium</th>
+<th>Cholesterol Mg</th>
+<th>Total Carbs</th>
+<th>Fiber</th>
+<th>Sugar</th>
+</tr>
+<tr>
+<td>2024-02-14</td>
+<td>Breakfast</td>
+<td>banana</td>
+<td>89.4</td>
+<td>100.0</td>
+<td>0.3</td>
+<td>0.1</td>
+<td>1.1</td>
+<td>1.0</td>
+<td>22.0</td>
+<td>0.0</td>
+<td>23.2</td>
+<td>2.6</td>
+<td>12.0</td>
+</tr>
+<tr>
+<td>2024-02-15</td>
+<td>Breakfast</td>
+<td>popcorn chicken</td>
+<td>718.2</td>
+<td>200.0</td>
+<td>42.8</td>
+<td>7.7</td>
+<td>35.6</td>
+<td>2318.0</td>
+<td>605.0</td>
+<td>81.0</td>
+<td>43.3</td>
+<td>1.9</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-16</td>
+<td>Breakfast</td>
+<td>fries</td>
+<td>1588.6</td>
+<td>500.0</td>
+<td>73.9</td>
+<td>11.7</td>
+<td>17.0</td>
+<td>1063.0</td>
+<td>623.0</td>
+<td>0.0</td>
+<td>205.6</td>
+<td>19.1</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>2024-02-17</td>
+<td>Breakfast</td>
+<td>popcorn chicken</td>
+<td>718.2</td>
+<td>200.0</td>
+<td>42.8</td>
+<td>7.7</td>
+<td>35.6</td>
+<td>2318.0</td>
+<td>605.0</td>
+<td>81.0</td>
+<td>43.3</td>
+<td>1.9</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-18</td>
+<td>Breakfast</td>
+<td>banana</td>
+<td>89.4</td>
+<td>100.0</td>
+<td>0.3</td>
+<td>0.1</td>
+<td>1.1</td>
+<td>1.0</td>
+<td>22.0</td>
+<td>0.0</td>
+<td>23.2</td>
+<td>2.6</td>
+<td>12.0</td>
+</tr>
+<tr>
+<td>2024-02-19</td>
+<td>Breakfast</td>
+<td>fries</td>
+<td>953.2</td>
+<td>300.0</td>
+<td>44.3</td>
+<td>7.0</td>
+<td>10.2</td>
+<td>638.0</td>
+<td>374.0</td>
+<td>0.0</td>
+<td>123.3</td>
+<td>11.5</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-20</td>
+<td>Breakfast</td>
+<td>popcorn chicken</td>
+<td>718.2</td>
+<td>200.0</td>
+<td>42.8</td>
+<td>7.7</td>
+<td>35.6</td>
+<td>2318.0</td>
+<td>605.0</td>
+<td>81.0</td>
+<td>43.3</td>
+<td>1.9</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-21</td>
+<td>Breakfast</td>
+<td>banana</td>
+<td>89.4</td>
+<td>100.0</td>
+<td>0.3</td>
+<td>0.1</td>
+<td>1.1</td>
+<td>1.0</td>
+<td>22.0</td>
+<td>0.0</td>
+<td>23.2</td>
+<td>2.6</td>
+<td>12.0</td>
+</tr>
+<tr>
+<td>2024-02-22</td>
+<td>Breakfast</td>
+<td>fries</td>
+<td>1588.6</td>
+<td>500.0</td>
+<td>73.9</td>
+<td>11.7</td>
+<td>17.0</td>
+<td>1063.0</td>
+<td>623.0</td>
+<td>0.0</td>
+<td>205.6</td>
+<td>19.1</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>2024-02-23</td>
+<td>Breakfast</td>
+<td>popcorn chicken</td>
+<td>718.2</td>
+<td>200.0</td>
+<td>42.8</td>
+<td>7.7</td>
+<td>35.6</td>
+<td>2318.0</td>
+<td>605.0</td>
+<td>81.0</td>
+<td>43.3</td>
+<td>1.9</td>
+<td>0.0</td>
+</tr>
+</table>
+</div>
+<h2>Lunch</h2>
+<table style="margin-top: 10px;">
+<tr>
+<th>Date</th>
+<th>Meal Type</th>
+<th>Name</th>
+<th>Calories</th>
+<th>Serving Size</th>
+<th>Total Fat</th>
+<th>Saturated Fat</th>
+<th>Protein</th>
+<th>Sodium</th>
+<th>Potassium</th>
+<th>Cholesterol Mg</th>
+<th>Total Carbs</th>
+<th>Fiber</th>
+<th>Sugar</th>
+</tr>
+<tr>
+<td>2024-02-14</td>
+<td>Lunch</td>
+<td>salad</td>
+<td>23.6</td>
+<td>100.0</td>
+<td>0.2</td>
+<td>0.0</td>
+<td>1.5</td>
+<td>36.0</td>
+<td>32.0</td>
+<td>0.0</td>
+<td>4.9</td>
+<td>1.9</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>2024-02-15</td>
+<td>Lunch</td>
+<td>chicken</td>
+<td>445.3</td>
+<td>200.0</td>
+<td>25.8</td>
+<td>7.3</td>
+<td>47.5</td>
+<td>144.0</td>
+<td>358.0</td>
+<td>184.0</td>
+<td>0.1</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-16</td>
+<td>Lunch</td>
+<td>crisps</td>
+<td>534.9</td>
+<td>100.0</td>
+<td>33.4</td>
+<td>3.4</td>
+<td>6.4</td>
+<td>519.0</td>
+<td>152.0</td>
+<td>0.0</td>
+<td>53.3</td>
+<td>3.1</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-17</td>
+<td>Lunch</td>
+<td>salad</td>
+<td>23.6</td>
+<td>100.0</td>
+<td>0.2</td>
+<td>0.0</td>
+<td>1.5</td>
+<td>36.0</td>
+<td>32.0</td>
+<td>0.0</td>
+<td>4.9</td>
+<td>1.9</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>2024-02-18</td>
+<td>Lunch</td>
+<td>chips</td>
+<td>1622.4</td>
+<td>300.0</td>
+<td>103.3</td>
+<td>10.2</td>
+<td>19.3</td>
+<td>1599.0</td>
+<td>452.0</td>
+<td>0.0</td>
+<td>162.9</td>
+<td>9.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>2024-02-19</td>
+<td>Lunch</td>
+<td>crisps</td>
+<td>534.9</td>
+<td>100.0</td>
+<td>33.4</td>
+<td>3.4</td>
+<td>6.4</td>
+<td>519.0</td>
+<td>152.0</td>
+<td>0.0</td>
+<td>53.3</td>
+<td>3.1</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-20</td>
+<td>Lunch</td>
+<td>salad</td>
+<td>23.6</td>
+<td>100.0</td>
+<td>0.2</td>
+<td>0.0</td>
+<td>1.5</td>
+<td>36.0</td>
+<td>32.0</td>
+<td>0.0</td>
+<td>4.9</td>
+<td>1.9</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>2024-02-21</td>
+<td>Lunch</td>
+<td>chicken</td>
+<td>445.3</td>
+<td>200.0</td>
+<td>25.8</td>
+<td>7.3</td>
+<td>47.5</td>
+<td>144.0</td>
+<td>358.0</td>
+<td>184.0</td>
+<td>0.1</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-22</td>
+<td>Lunch</td>
+<td>crisps</td>
+<td>534.9</td>
+<td>100.0</td>
+<td>33.4</td>
+<td>3.4</td>
+<td>6.4</td>
+<td>519.0</td>
+<td>152.0</td>
+<td>0.0</td>
+<td>53.3</td>
+<td>3.1</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>2024-02-23</td>
+<td>Lunch</td>
+<td>salad</td>
+<td>23.6</td>
+<td>100.0</td>
+<td>0.2</td>
+<td>0.0</td>
+<td>1.5</td>
+<td>36.0</td>
+<td>32.0</td>
+<td>0.0</td>
+<td>4.9</td>
+<td>1.9</td>
+<td>2.0</td>
+</tr>
+</table>
+</div>
+<h2>Dinner</h2>
+<table style="margin-top: 10px;">
+<tr>
+<th>Date</th>
+<th>Meal Type</th>
+<th>Name</th>
+<th>Calories</th>
+<th>Serving Size</th>
+<th>Total Fat</th>
+<th>Saturated Fat</th>
+<th>Protein</th>
+<th>Sodium</th>
+<th>Potassium</th>
+<th>Cholesterol Mg</th>
+<th>Total Carbs</th>
+<th>Fiber</th>
+<th>Sugar</th>
+</tr>
+<tr>
+<td>2024-02-14</td>
+<td>Dinner</td>
+<td>lasagna</td>
+<td>788.5</td>
+<td>500.0</td>
+<td>42.4</td>
+<td>19.8</td>
+<td>57.2</td>
+<td>2039.0</td>
+<td>796.0</td>
+<td>212.0</td>
+<td>46.0</td>
+<td>5.0</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>2024-02-15</td>
+<td>Dinner</td>
+<td>vanilla ice cream</td>
+<td>208.2</td>
+<td>100.0</td>
+<td>11.0</td>
+<td>6.8</td>
+<td>3.5</td>
+<td>80.0</td>
+<td>102.0</td>
+<td>44.0</td>
+<td>23.3</td>
+<td>0.7</td>
+<td>21.0</td>
+</tr>
+<tr>
+<td>2024-02-16</td>
+<td>Dinner</td>
+<td>jelly</td>
+<td>284.7</td>
+<td>100.0</td>
+<td>0.1</td>
+<td>0.0</td>
+<td>0.4</td>
+<td>32.0</td>
+<td>18.0</td>
+<td>0.0</td>
+<td>69.6</td>
+<td>1.1</td>
+<td>49.0</td>
+</tr>
+<tr>
+<td>2024-02-17</td>
+<td>Dinner</td>
+<td>lasagna</td>
+<td>788.5</td>
+<td>500.0</td>
+<td>42.4</td>
+<td>19.8</td>
+<td>57.2</td>
+<td>2039.0</td>
+<td>796.0</td>
+<td>212.0</td>
+<td>46.0</td>
+<td>5.0</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>2024-02-18</td>
+<td>Dinner</td>
+<td>vanilla ice cream</td>
+<td>208.2</td>
+<td>100.0</td>
+<td>11.0</td>
+<td>6.8</td>
+<td>3.5</td>
+<td>80.0</td>
+<td>102.0</td>
+<td>44.0</td>
+<td>23.3</td>
+<td>0.7</td>
+<td>21.0</td>
+</tr>
+<tr>
+<td>2024-02-19</td>
+<td>Dinner</td>
+<td>jelly</td>
+<td>284.7</td>
+<td>100.0</td>
+<td>0.1</td>
+<td>0.0</td>
+<td>0.4</td>
+<td>32.0</td>
+<td>18.0</td>
+<td>0.0</td>
+<td>69.6</td>
+<td>1.1</td>
+<td>49.0</td>
+</tr>
+<tr>
+<td>2024-02-20</td>
+<td>Dinner</td>
+<td>lasagna</td>
+<td>788.5</td>
+<td>500.0</td>
+<td>42.4</td>
+<td>19.8</td>
+<td>57.2</td>
+<td>2039.0</td>
+<td>796.0</td>
+<td>212.0</td>
+<td>46.0</td>
+<td>5.0</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>2024-02-21</td>
+<td>Dinner</td>
+<td>vanilla ice cream</td>
+<td>208.2</td>
+<td>100.0</td>
+<td>11.0</td>
+<td>6.8</td>
+<td>3.5</td>
+<td>80.0</td>
+<td>102.0</td>
+<td>44.0</td>
+<td>23.3</td>
+<td>0.7</td>
+<td>21.0</td>
+</tr>
+<tr>
+<td>2024-02-22</td>
+<td>Dinner</td>
+<td>jelly</td>
+<td>284.7</td>
+<td>100.0</td>
+<td>0.1</td>
+<td>0.0</td>
+<td>0.4</td>
+<td>32.0</td>
+<td>18.0</td>
+<td>0.0</td>
+<td>69.6</td>
+<td>1.1</td>
+<td>49.0</td>
+</tr>
+<tr>
+<td>2024-02-23</td>
+<td>Dinner</td>
+<td>lasagna</td>
+<td>788.5</td>
+<td>500.0</td>
+<td>42.4</td>
+<td>19.8</td>
+<td>57.2</td>
+<td>2039.0</td>
+<td>796.0</td>
+<td>212.0</td>
+<td>46.0</td>
+<td>5.0</td>
+<td>14.0</td>
+</tr>
+</table>
+</div>
+<h2>Other</h2>
+<table style="margin-top: 10px;">
+<tr>
+<th>Date</th>
+<th>Meal Type</th>
+<th>Name</th>
+<th>Calories</th>
+<th>Serving Size</th>
+<th>Total Fat</th>
+<th>Saturated Fat</th>
+<th>Protein</th>
+<th>Sodium</th>
+<th>Potassium</th>
+<th>Cholesterol Mg</th>
+<th>Total Carbs</th>
+<th>Fiber</th>
+<th>Sugar</th>
+</tr>
+<tr>
+<td>2024-02-14</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-15</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-16</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-17</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-18</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-19</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-20</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-21</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-22</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>2024-02-23</td>
+<td>Other</td>
+<td>snack</td>
+<td>150.0</td>
+<td>50.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>220.0</td>
+<td>70.0</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>1.0</td>
+<td>10.0</td>
+</tr>
+</table>
+</div>
 <footer>
-    <p>Report generated by the software provided by <strong>Team 50 | University of Essex</strong>.</p>
+<p>Report generated by Diet Management Tool developed by <strong>Team 50 | University of Essex</strong></p>
 </footer>
 </body>
 </html>

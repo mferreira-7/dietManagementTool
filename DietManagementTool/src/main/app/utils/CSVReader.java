@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CSVReader {
@@ -40,11 +41,13 @@ public class CSVReader {
             e.printStackTrace();
         }
 
+        Collections.sort(foods);
 
         // Print out the filtered foods for verification
         for (DateFood food : foods) {
             System.out.println(food);
         }
+
 
         // Assuming HTMLGenerator is a class you've defined to generate HTML reports
         HTMLGenerator.generateHTML(foods, userName);
