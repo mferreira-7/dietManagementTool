@@ -61,7 +61,7 @@ public class ReportFrame extends JFrame {
                     // Display a success message
                     JOptionPane.showMessageDialog(this, "Report is being opened in your default browser.", "Success", JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Report file not found: " + htmlFile.getAbsolutePath(), "File Not Found", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Report file not found ", "File Not Found", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (IOException ex) {
                 ex.printStackTrace();

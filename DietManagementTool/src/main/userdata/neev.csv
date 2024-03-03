@@ -1,2 +1,0 @@
-date,mealType,name,calories,servingSize,totalFat,saturatedFat,protein,sodium,potassium,cholesterolMg,totalCarbs,fiber,sugar
-'2024-03-03','Lunch','chicken', 445.3, 200.0, 25.8, 7.3, 47.5, 144.0, 358.0, 184.0, 0.1, 0.0, 0.0
