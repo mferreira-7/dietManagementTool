@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.time.DateTimeException;
 import java.time.LocalDate;
@@ -18,6 +20,7 @@ public class ReportFrame extends JFrame {
     private JButton reportButton;
     private String currentUser;
     private JLabel reportLabel;
+    private JButton viewReportButton;
     private JButton backButton;
 
     public ReportFrame(String currentUser) {
@@ -36,6 +39,7 @@ public class ReportFrame extends JFrame {
         reportLabel = new JLabel("Nutrition Recommendation Calculator ->");
         reportButton = new JButton("Generate");
         backButton = new JButton("Back");
+        viewReportButton = new JButton("View Report"); // Initialize the view report button
 
         applyStyles();
 
@@ -48,10 +52,28 @@ public class ReportFrame extends JFrame {
             }
         });
         getRootPane().setDefaultButton(reportButton);
+
+        viewReportButton.addActionListener(e -> {
+            try {
+                File htmlFile = new File("src/main/user_reports/" + currentUser + ".html");
+                if (htmlFile.exists()) { // Check if the file exists
+                    Desktop.getDesktop().browse(htmlFile.toURI()); // Properly convert the file path to URI and open it
+                    // Display a success message
+                    JOptionPane.showMessageDialog(this, "Report is being opened in your default browser.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Report file not found: " + htmlFile.getAbsolutePath(), "File Not Found", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Failed to open report.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        });
     }
 
     private void applyStyles() {
         Font buttonFont = new Font("Arial", Font.BOLD, 18);
+
+        // Style the report button
         reportButton.setBackground(Color.BLACK);
         reportButton.setForeground(Color.WHITE);
         reportButton.setFont(buttonFont);
@@ -59,12 +81,21 @@ public class ReportFrame extends JFrame {
         reportButton.setBorderPainted(false);
         reportButton.setFocusPainted(false);
 
+        // Style the back button
         backButton.setBackground(Color.BLACK);
         backButton.setForeground(Color.WHITE);
         backButton.setFont(buttonFont);
         backButton.setOpaque(true);
         backButton.setBorderPainted(false);
         backButton.setFocusPainted(false);
+
+        // Style the view report button
+        viewReportButton.setBackground(Color.BLACK);
+        viewReportButton.setForeground(Color.WHITE);
+        viewReportButton.setFont(buttonFont);
+        viewReportButton.setOpaque(true);
+        viewReportButton.setBorderPainted(false);
+        viewReportButton.setFocusPainted(false);
     }
 
     private void setLayoutCustom() {
@@ -103,9 +134,6 @@ public class ReportFrame extends JFrame {
         gbc.anchor = GridBagConstraints.NORTH; // Change to NORTH if you want components to be aligned to the top
         gbc.insets = new Insets(10, 0, 10, 0);
 
-
-//        getContentPane().setLayout(new BorderLayout());
-
         // Panels for date selection
         JPanel startDatePanel = new JPanel();
         JPanel endDatePanel = new JPanel();
@@ -113,7 +141,6 @@ public class ReportFrame extends JFrame {
         startDatePanel.setLayout(new FlowLayout());
         endDatePanel.setLayout(new FlowLayout());
         buttonPanel.setLayout(new FlowLayout()); // Set layout for button panel
-
 
         // Labels
         startDatePanel.add(new JLabel("Start Date:"));
@@ -159,6 +186,7 @@ public class ReportFrame extends JFrame {
         // Add report and back buttons to button panel
         buttonPanel.add(reportButton);
         buttonPanel.add(backButton);
+        buttonPanel.add(viewReportButton);
 
         rightPanel.add(startDatePanel, gbc);
         gbc.gridy++;
@@ -168,7 +196,6 @@ public class ReportFrame extends JFrame {
 
         rightPanel.add(buttonPanel, gbc);
         gbc.gridy++;
-
 
         try {
             URL imageUrl = getClass().getResource("/main/resources/Images/Image_4.png"); //file path
@@ -249,5 +276,4 @@ class ReportButtonListener implements ActionListener {
             JOptionPane.showMessageDialog(reportFrame, "Invalid date provided.", "Date Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
 }
