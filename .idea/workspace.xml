@@ -5,7 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7df4dd7e-8507-47a8-a98a-032ac916f264" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/NutritionRecommendationFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/NutritionRecommendationFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DietManagementTool/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/SignUpFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/DietManagementTool/src/main/app/view/SignUpFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/CSVReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/CSVReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ControlPanel$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/DateFood.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/DateFood.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/Food.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/Food.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/FoodItemSearchAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/FoodItemSearchAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/HTMLGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/HTMLGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/InputPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/InputPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/Meal.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/Meal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/MealType.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/MealType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ReadWriteFoodData.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/ReadWriteFoodData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/foodDataType.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/utils/foodDataType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/CalculatorFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DailyFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DynamicScatterPlot.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/DynamicScatterPlot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/LoginFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/MenuFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/MenuFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/MenuFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/MenuFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/NutritionRecommendationFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/NutritionRecommendationFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/NutritionRecommendationFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/NutritionRecommendationFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/ReportButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/ReportButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/ReportFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/ReportFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/ReportFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/ReportFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/ReportMenuButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/ReportMenuButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/SignUpFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/SignUpFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/SignUpFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/app/view/SignUpFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/userdata/vlad123.csv" beforeDir="false" afterPath="$PROJECT_DIR$/production/23-24_CE201-col_team-50/main/userdata/vlad123.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +87,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;segun&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;M:/Year 2/TP/23-24_CE201-col_team-50&quot;,
@@ -145,6 +186,9 @@
       <workItem from="1708705342380" duration="2318000" />
       <workItem from="1708981094352" duration="3000" />
       <workItem from="1708981112934" duration="4478000" />
+      <workItem from="1709426014541" duration="55000" />
+      <workItem from="1709426074054" duration="7000" />
+      <workItem from="1709426216769" duration="2316000" />
     </task>
     <servers />
   </component>

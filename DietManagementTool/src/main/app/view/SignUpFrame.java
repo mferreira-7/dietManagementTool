@@ -188,9 +188,7 @@ public class SignUpFrame extends JFrame {
 
         try {
             saveUserInformation(username, password);
-            JOptionPane.showMessageDialog(this, "Registration successful! Logging you in...", "Welcome", JOptionPane.INFORMATION_MESSAGE);
-            dispose();
-            new MenuFrame(username).setVisible(true);
+            autoLogin(username);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error saving user information. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -234,9 +232,6 @@ public class SignUpFrame extends JFrame {
 
             writer.write("Username,Password,Fullname\n");
             writer.write(username + "," + password + "," + fullName + "\n");
-
-            // Registration successful, automatically log the user in
-            autoLogin(username);
         } catch (IOException ioException) {
             JOptionPane.showMessageDialog(this, "Error saving user information. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -250,7 +245,9 @@ public class SignUpFrame extends JFrame {
         JOptionPane.showMessageDialog(null, "Registration successful! Logging you in...", "Welcome", JOptionPane.INFORMATION_MESSAGE);
 
         // Open the MenuFrame as the main application window
-        MenuFrame menuFrame = new MenuFrame(username); // Assuming MenuFrame does not require username in constructor
-        menuFrame.setVisible(true);
+        EventQueue.invokeLater(() -> {
+            MenuFrame menuFrame = new MenuFrame(username);
+            menuFrame.setVisible(true);
+        });
     }
 }
