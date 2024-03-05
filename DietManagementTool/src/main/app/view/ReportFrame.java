@@ -154,7 +154,7 @@ public class ReportFrame extends JFrame {
         // Initialize JComboBoxes for date selection
         JComboBox<Integer> startDay = generateNumbers(1, 31);
         JComboBox<Integer> startMonth = generateNumbers(1, 12);
-        JComboBox<Integer> startYear = generateNumbers(1900, currentYear - 1);
+        JComboBox<Integer> startYear = generateNumbers(1900, currentYear);
         startYear.setSelectedItem(currentYear - 1); // Set startYear to last year
 
         JComboBox<Integer> endDay = generateNumbers(1, 31);
