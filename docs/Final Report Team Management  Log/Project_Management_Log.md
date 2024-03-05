@@ -1,4 +1,4 @@
-﻿**Project Management Log**
+**Project Management Log**
 
 **Project management discussion**
 
@@ -23,20 +23,20 @@ Overall, while our teamwork and progress on the project have been remarkable, we
 
 <table>
   <tr>
-    <td><img src="MVPFiles/charts/chartWeek3.png" alt="image"></td>
-    <td><img src="MVPFiles/charts/chartWeek4.png" alt="image"></td>
-    <td><img src="MVPFiles/charts/chartWeek5n6.png" alt="image"></td>
+    <td><img src="FinalProduct Files/chartWeek3.png" alt="image"></td>
+    <td><img src="FinalProduct Files/chartWeek4.png" alt="image"></td>
+    <td><img src="FinalProduct Files/chartWeek5n6.png" alt="image"></td>
   </tr>
   <tr>
-    <td><img src="MVPFiles/charts/chartWeek6.png" alt="image"></td>
-    <td><img src="MVPFiles/charts/chartWeek7n9.png" alt="image"></td>
+    <td><img src="FinalProduct Files/chartWeek6.png" alt="image"></td>
+    <td><img src="FinalProduct Files/chartWeek7n9.png" alt="image"></td>
     <td><img src="FinalProduct Files/week_10-11_sprint_4.png" alt="image"></td>
   </tr>
   <tr>
     <td><img src="FinalProduct Files/week_17-19_sprint_5.png" alt="image"></td>
     <td><img src="FinalProduct Files/Sprint_6.png" alt="image"></td>
     <td><img src="FinalProduct Files/sprint_7.png" alt="image"></td>
-    <td><img src="docs/Final Report Team Management  Log/FinalProduct Files/sprint_8.png" alt="image"></td>
+    <td><img src="FinalProduct Files/sprint_8.png" alt="image"></td>
   </tr>
   <tr>
 
