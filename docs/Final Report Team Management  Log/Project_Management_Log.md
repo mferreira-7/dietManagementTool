@@ -36,6 +36,8 @@ Overall, while our teamwork and progress on the project have been remarkable, we
     <td><img src="FinalProduct Files/week_17-19_sprint_5.png" alt="image"></td>
     <td><img src="FinalProduct Files/Sprint_6.png" alt="image"></td>
     <td><img src="FinalProduct Files/sprint_7.png" alt="image"></td>
+  </tr>
+  <tr>
     <td><img src="FinalProduct Files/sprint_8.png" alt="image"></td>
   </tr>
   <tr>
