@@ -1,6 +1,4 @@
-**Project Management Log**
-
-**Project management discussion**
+## Project management discussion
 
 Project management discussions entail the collaborative exchange of ideas and implementation strategies, fostering effective communication among team members and our supervisor to oversee the project's execution. These discussions encompass various aspects such as team meetings, progress tracking utilizing tools like JIRA and GitLab, strategic risk management, problem-solving, and crucial decision-making. Above all, project management discussions emphasise the significance of cooperative teamwork to ensure the project leads to success without any difficulties.
 
@@ -19,7 +17,7 @@ Overall, while our teamwork and progress on the project have been remarkable, we
 
 
 
-**Sprint Burndown Charts**
+## Sprint Burndown Charts
 
 <table>
   <tr>
@@ -45,11 +43,11 @@ Overall, while our teamwork and progress on the project have been remarkable, we
   </tr>
 </table>
 
-**Burndown-Charts Discussion**
+## Burndown-Charts Discussion
 
 Burndown charts is a key tool in Agile and Scrum methodologies, providing a visual representation of work left to do versus time remaining in a sprint.
 
-**Understanding Burndown Charts:**
+## Understanding Burndown Charts:
 
 - **Work Remaining**: The Y-axis typically represents the amount of work remaining (measured in story points, time, or issue counts).
 - **Time**: The X-axis shows the time left in the sprint.
@@ -63,8 +61,8 @@ Burndown charts is a key tool in Agile and Scrum methodologies, providing a visu
 
 Each team member demonstrates commendable self-discipline, diligently completing their assigned tasks within the specified timelines. The team exhibits strong communication skills, fostering a conflict-free and well-organised working environment. It is crucial to build upon these strengths and maintain effective communication to ensure the continued success of the project.
 
-**Product Backlog**
-
+## Product Backlog
+This image only contains the last commits in the backlog, you can look to Jira for full version
 <img src="FinalProduct Files/backlog.png" alt="image">
 
 
