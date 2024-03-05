@@ -58,7 +58,9 @@ Burndown charts show how well the team is doing in the sprint, whether we're on 
 Each team member demonstrates commendable self-discipline, diligently completing their assigned tasks within the specified timelines. The team exhibits strong communication skills, fostering a conflict-free and well-organised working environment. It is crucial to build upon these strengths and maintain effective communication to ensure the continued success of the project.
 
 ## Product Backlog
-This image only contains the last commits in the backlog, you can look to Jira for full version
+
+This image only contains the last commits in sprint 9 which is the latest one.
+
 <img src="FinalProduct Files/backlog.png" alt="image">
 
 
