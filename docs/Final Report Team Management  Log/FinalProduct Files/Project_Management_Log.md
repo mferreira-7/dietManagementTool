@@ -1,4 +1,4 @@
-﻿**Project Management Log**
+**Project Management Log**
 
 **Project management discussion**
 
@@ -63,7 +63,7 @@ Each team member demonstrates commendable self-discipline, diligently completing
 
 **Product Backlog**
 
-<img src="FinalProduct Files/backlog.png" alt="image">
+<img src="docs/Final Report Team Management  Log/FinalProduct Files/backlog.png" alt="image">
 
 
 
