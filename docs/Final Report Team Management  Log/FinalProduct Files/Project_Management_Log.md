@@ -63,7 +63,7 @@ Each team member demonstrates commendable self-discipline, diligently completing
 
 **Product Backlog**
 
-<img src="docs/Final Report Team Management  Log/FinalProduct Files/backlog.png" alt="image">
+<img src="backlog.png" alt="image">
 
 
 
